@@ -41,6 +41,16 @@ window.PROFILE = {
       results: '',
     },
     {
+      slug: 'csa',
+      name: 'CSA',
+      description: '', // Escreva um resumo do projeto CSA.
+      tags: [], // Adicione as tecnologias utilizadas.
+      context: '', // Qual era o desafio?
+      contribution: '', // O que você fez?
+      architecture: '', // Como foi feito?
+      results: '', // Resultados e aprendizados.
+    },
+    {
       slug: 'arquitetura-medalhao', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Arquitetura medalhão com Dremio e S3',
       description: 'Atuação em um projeto de arquitetura medalhão com Dremio e S3, coletando dados do PostgreSQL.',
