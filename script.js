@@ -41,7 +41,7 @@
       const category = document.createElement('span'); category.textContent = project.category || 'GITHUB / REPOSITÓRIO';
       const number = document.createElement('span'); number.className = 'project-number'; number.textContent = String(index + 1).padStart(2, '0');
       top.append(category, number);
-      const title = document.createElement('h3'); title.textContent = project.name;
+      const title = document.createElement('h4'); title.textContent = project.name;
       const description = document.createElement('p'); description.textContent = project.description || 'Veja os detalhes e o código deste projeto no GitHub.';
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
@@ -50,6 +50,43 @@
       byId('project-list').append(card);
     });
   }
+  function renderProfessionalProjects() {
+    const projects = profile.professionalProjects || [];
+    byId('professional-section').hidden = projects.length === 0;
+    projects.forEach((project, index) => {
+      const card = document.createElement('article');
+      card.className = 'project-card professional-card';
+      const top = document.createElement('div'); top.className = 'project-top';
+      const category = document.createElement('span'); category.textContent = 'EXPERIÊNCIA PROFISSIONAL';
+      const number = document.createElement('span'); number.className = 'project-number';
+      number.textContent = String(index + 1).padStart(2, '0'); top.append(category, number);
+      const title = document.createElement('h4'); title.textContent = project.name;
+      const description = document.createElement('p'); description.className = 'project-text';
+      description.textContent = project.description || '';
+      const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
+      card.append(top, title, description, tags);
+      const sections = [
+        ['context', 'Contexto e desafio'],
+        ['contribution', 'Minha participação'],
+        ['architecture', 'Arquitetura e solução'],
+        ['results', 'Resultados e aprendizados'],
+      ].filter(([key]) => typeof project[key] === 'string' && project[key].trim());
+      if (sections.length) {
+        const details = document.createElement('details'); details.className = 'project-details';
+        const summary = document.createElement('summary'); summary.textContent = 'Ler sobre o projeto';
+        summary.setAttribute('aria-label', `Ler sobre o projeto: ${project.name}`);
+        details.append(summary);
+        for (const [key, label] of sections) {
+          const heading = document.createElement('h5'); heading.textContent = label;
+          const text = document.createElement('p'); text.className = 'project-text'; text.textContent = project[key];
+          details.append(heading, text);
+        }
+        card.append(details);
+      }
+      byId('professional-list').append(card);
+    });
+  }
+  renderProfessionalProjects();
   async function loadProjects() {
     if (profile.projects?.length) { renderProjects(profile.projects); return; }
     if (!username) { setText('project-status', 'Novos projetos serão adicionados em breve.'); return; }

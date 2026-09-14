@@ -48,3 +48,26 @@ A configuração depende de você controlar o DNS de `batista.io` ou ter autoriz
 Com GitHub Actions, o domínio é definido nas configurações do GitHub Pages; o arquivo CNAME não é necessário. O domínio não é configurado automaticamente por este projeto.
 
 Documentação: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages e https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+
+## Escrever sobre projetos em empresas
+
+Em `profile.js`, a lista `professionalProjects` reúne relatos sem precisar de repositório. Ela é independente dos projetos do GitHub: ambos aparecem na página.
+
+Já estão cadastrados Kafka, sistema de recomendação e arquitetura medalhão com Dremio, S3 e PostgreSQL, com resumos baseados nas informações fornecidas. Para cada projeto, preencha:
+
+- `description`: resumo sempre visível no cartão.
+- `context`: problema e objetivo do projeto.
+- `contribution`: sua participação, atividades e decisões.
+- `architecture`: componentes, fluxo dos dados e solução.
+- `results`: resultados e aprendizados.
+- `tags`: tecnologias utilizadas.
+
+Os campos vazios ficam ocultos. Ao preencher um relato, o cartão ganha a opção **Ler sobre o projeto**, que expande o texto na própria página. Use crases para textos com mais de uma linha:
+
+```js
+contribution: `Escreva aqui sua participação no projeto.
+
+Continue em outro parágrafo para detalhar uma decisão.`,
+```
+
+Edite o arquivo localmente ou pelo GitHub e envie a alteração à branch `main` para atualizar o site. Não há editor de texto dentro da página pública.
