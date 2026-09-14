@@ -21,6 +21,7 @@ window.PROFILE = {
   // Campos vazios não aparecem no site. Duplique um objeto para adicionar outro projeto.
   professionalProjects: [
     {
+      page: 'kafka.html',
       slug: 'kafka', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Projeto com Apache Kafka',
       description: 'Atuação em um projeto com Apache Kafka no ambiente de uma empresa.',
@@ -31,6 +32,7 @@ window.PROFILE = {
       results: '', // Quais foram os resultados? Inclua números apenas se tiver os dados.
     },
     {
+      page: 'sistema-de-recomendacao.html',
       slug: 'sistema-de-recomendacao', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Sistema de recomendação',
       description: 'Atuação em um sistema de recomendação desenvolvido em uma empresa.',
@@ -41,6 +43,7 @@ window.PROFILE = {
       results: '',
     },
     {
+      page: 'csa.html',
       slug: 'csa',
       name: 'CSA',
       description: '', // Escreva um resumo do projeto CSA.
@@ -51,6 +54,7 @@ window.PROFILE = {
       results: '', // Resultados e aprendizados.
     },
     {
+      page: 'arquitetura-medalhao.html',
       slug: 'arquitetura-medalhao', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Arquitetura medalhão com Dremio e S3',
       description: 'Atuação em um projeto de arquitetura medalhão com Dremio e S3, coletando dados do PostgreSQL.',

@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const id = new URLSearchParams(window.location.search).get('projeto');
+  const id = document.body.dataset.project || new URLSearchParams(window.location.search).get('projeto');
   const projects = window.PROFILE?.professionalProjects || [];
   const project = projects.find((item, index) => (item.slug || String(index)) === id);
   const byId = (value) => document.getElementById(value);

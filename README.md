@@ -83,3 +83,9 @@ Exemplo de formato (ajuste o nível e o texto à sua experiência):
 ```
 
 Duplique um item para adicionar novas ferramentas. Envie as mudanças à branch `main` para publicá-las.
+
+## Páginas individuais
+
+Cada projeto profissional tem um arquivo HTML próprio: `kafka.html`, `sistema-de-recomendacao.html`, `csa.html` e `arquitetura-medalhao.html`. O campo `page` em `profile.js` define o endereço do cartão. Os textos continuam no objeto de cada projeto em `profile.js`.
+
+Para criar outra página, copie um desses arquivos, ajuste `data-project` para o novo `slug`, atualize o título e adicione o novo HTML à etapa de cópia em `.github/workflows/pages.yml`. Os endereços antigos de `projeto.html?projeto=...` continuam funcionando.

@@ -22,7 +22,7 @@ jobs:
       - name: Preparar arquivos públicos
         run: |
           mkdir _site
-          cp index.html projeto.html styles.css script.js projeto.js profile.js _site/
+          cp index.html projeto.html kafka.html sistema-de-recomendacao.html csa.html arquitetura-medalhao.html styles.css script.js projeto.js profile.js _site/
           cp -r assets _site/assets
           if [ -f CNAME ]; then cp CNAME _site/; fi
       - uses: actions/upload-pages-artifact@v4
