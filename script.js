@@ -65,24 +65,12 @@
       description.textContent = project.description || '';
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
-      const sections = [
-        ['context', 'Contexto e desafio'],
-        ['contribution', 'Minha participação'],
-        ['architecture', 'Arquitetura e solução'],
-        ['results', 'Resultados e aprendizados'],
-      ].filter(([key]) => typeof project[key] === 'string' && project[key].trim());
-      if (sections.length) {
-        const details = document.createElement('details'); details.className = 'project-details';
-        const summary = document.createElement('summary'); summary.textContent = 'Ler sobre o projeto';
-        summary.setAttribute('aria-label', `Ler sobre o projeto: ${project.name}`);
-        details.append(summary);
-        for (const [key, label] of sections) {
-          const heading = document.createElement('h5'); heading.textContent = label;
-          const text = document.createElement('p'); text.className = 'project-text'; text.textContent = project[key];
-          details.append(heading, text);
-        }
-        card.append(details);
-      }
+      const link = document.createElement('a');
+      link.href = `projeto.html?projeto=${encodeURIComponent(project.slug || String(index))}`;
+      link.className = 'professional-project-link';
+      link.textContent = 'Conhecer o projeto →';
+      link.setAttribute('aria-label', `Conhecer o projeto: ${project.name}`);
+      card.append(link);
       byId('professional-list').append(card);
     });
   }

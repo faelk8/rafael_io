@@ -9,8 +9,15 @@
 .professional-projects{margin-bottom:48px;align-items:start}
 .project-card h4{font:500 24px var(--heading);letter-spacing:-.7px;margin:0 0 12px;overflow-wrap:anywhere}
 .project-text{white-space:pre-wrap;overflow-wrap:anywhere}
-.project-details{border-top:1px solid var(--line);margin-top:24px;padding-top:18px}
-.project-details summary{cursor:pointer;color:var(--accent);font-size:14px}
-.project-details summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
-.project-details h5{font:500 16px var(--heading);margin:24px 0 10px}
-.project-details p{margin-bottom:0}
+.professional-card{position:relative}
+.professional-project-link::after{content:'';position:absolute;inset:0;border-radius:7px}
+.professional-card:focus-within,.professional-card:hover{border-color:var(--accent)}
+.project-page{max-width:880px;padding-block:48px 80px;min-height:70vh}
+.project-back{display:inline-block;color:var(--muted);font-size:14px;margin-bottom:48px}
+.project-page h1{font-size:clamp(36px,6vw,64px);letter-spacing:-2px;overflow-wrap:anywhere}
+.project-page-intro{font-size:20px;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}
+.project-page .tags{margin:24px 0 40px}
+.project-story-section{border-top:1px solid var(--line);padding-top:30px;margin-top:36px}
+.project-story-section h2{font-size:28px;letter-spacing:-1px;margin-bottom:18px}
+.project-story-section p{font-size:17px;color:var(--muted);line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere}
+.project-empty{color:var(--muted);border-top:1px solid var(--line);padding-top:28px}

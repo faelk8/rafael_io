@@ -62,7 +62,7 @@ Já estão cadastrados Kafka, sistema de recomendação e arquitetura medalhão 
 - `results`: resultados e aprendizados.
 - `tags`: tecnologias utilizadas.
 
-Os campos vazios ficam ocultos. Ao preencher um relato, o cartão ganha a opção **Ler sobre o projeto**, que expande o texto na própria página. Use crases para textos com mais de uma linha:
+Cada cartão abre uma página própria pelo botão **Conhecer o projeto**. Preencha `context`, `contribution`, `architecture` e `results` em `profile.js` para escrever o relato. Os campos vazios ficam ocultos. O campo `slug` identifica a página: use um valor único, sem espaços, e mantenha-o estável para preservar os links. Use crases para textos com mais de uma linha:
 
 ```js
 contribution: `Escreva aqui sua participação no projeto.
