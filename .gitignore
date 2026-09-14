@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+node_modules/
+_site/
+.env
+.env.*
+!.env.example
+
+# Configuração local do editor e dos agentes
+.agents/
+.codex/
