@@ -21,3 +21,12 @@
 .project-story-section h2{font-size:28px;letter-spacing:-1px;margin-bottom:18px}
 .project-story-section p{font-size:17px;color:var(--muted);line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere}
 .project-empty{color:var(--muted);border-top:1px solid var(--line);padding-top:28px}
+
+.skills-intro{color:var(--muted);margin:24px 0 30px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skill-card{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:28px;overflow-wrap:anywhere}
+.skill-card .eyebrow{margin-bottom:20px}
+.skill-card h3{color:var(--text)}
+.skill-level{color:var(--accent);font-size:13px;margin:16px 0 0}
+.skill-description{white-space:pre-wrap;color:var(--muted);font-size:14px;margin:16px 0 0}
+@media(max-width:640px){.skills-grid{grid-template-columns:1fr}.header{height:auto;min-height:86px;gap:16px;flex-wrap:wrap;padding-block:20px}nav{gap:16px;flex-wrap:wrap}}

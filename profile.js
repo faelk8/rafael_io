@@ -8,6 +8,14 @@ window.PROFILE = {
   github: 'faelk8', // Somente o usuário, sem https://github.com/
   email: '',
   linkedin: '', // URL completa do seu perfil
+  // Ferramentas e conhecimentos. Duplique um item para adicionar outra ferramenta.
+  // Em level, informe seu domínio: 'Básico', 'Intermediário' ou 'Avançado'.
+  // Nível e descrição vazios ficam ocultos; preencha conforme sua experiência.
+  skills: [
+    { name: 'Python', category: 'Linguagem', level: '', description: '' },
+    { name: 'Bancos de dados', category: 'Dados', level: '', description: '' },
+    { name: 'Docker', category: 'Containers', level: '', description: '' },
+  ],
   // Experiências em empresas: não precisam de repositório ou link.
   // Use crases (`) nos textos para escrever vários parágrafos, separados por uma linha vazia.
   // Campos vazios não aparecem no site. Duplique um objeto para adicionar outro projeto.

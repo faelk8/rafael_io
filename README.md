@@ -71,3 +71,15 @@ Continue em outro parágrafo para detalhar uma decisão.`,
 ```
 
 Edite o arquivo localmente ou pelo GitHub e envie a alteração à branch `main` para atualizar o site. Não há editor de texto dentro da página pública.
+
+## Ferramentas e nível de domínio
+
+Edite `skills` em `profile.js`. Cada item tem `name` (ferramenta), `category` (área), `level` (seu nível de domínio) e `description` (como você usa a ferramenta). Python, bancos de dados e Docker já estão cadastrados. Os níveis começam vazios para você informar sua experiência real; nível e descrição só aparecem quando preenchidos.
+
+Exemplo de formato (ajuste o nível e o texto à sua experiência):
+
+```js
+{ name: 'Python', category: 'Linguagem', level: 'Intermediário', description: 'Descreva aqui como você utiliza Python.' },
+```
+
+Duplique um item para adicionar novas ferramentas. Envie as mudanças à branch `main` para publicá-las.

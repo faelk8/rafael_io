@@ -74,6 +74,28 @@
       byId('professional-list').append(card);
     });
   }
+  function renderSkills() {
+    const skills = profile.skills || [];
+    byId('conhecimentos').hidden = skills.length === 0;
+    for (const skill of skills) {
+      const card = document.createElement('article'); card.className = 'skill-card';
+      if (skill.category) {
+        const category = document.createElement('p'); category.className = 'eyebrow';
+        category.textContent = skill.category; card.append(category);
+      }
+      const name = document.createElement('h3'); name.textContent = skill.name; card.append(name);
+      if (skill.level?.trim()) {
+        const level = document.createElement('p'); level.className = 'skill-level';
+        level.textContent = `Domínio: ${skill.level}`; card.append(level);
+      }
+      if (skill.description?.trim()) {
+        const description = document.createElement('p'); description.className = 'skill-description';
+        description.textContent = skill.description; card.append(description);
+      }
+      byId('skills-list').append(card);
+    }
+  }
+  renderSkills();
   renderProfessionalProjects();
   async function loadProjects() {
     if (profile.projects?.length) { renderProjects(profile.projects); return; }
