@@ -9,3 +9,10 @@ _site/
 # Configuração local do editor e dos agentes
 .agents/
 .codex/
+
+# Cache local do Brave
+.cache/BraveSoftware/
+
+# Cache gerado pelo Python
+__pycache__/
+*.py[cod]
