@@ -1,159 +1,155 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#10141c" />
-    <meta name="description" content="Conheça os projetos profissionais de Rafael Batista." />
-    <title>Apache Kafka · Rafael Batista</title>
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
 
-  <body data-project="kafka">
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <header class="header wrap">
-      <a class="brand" href="../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
-      <nav aria-label="Navegação principal">
-        <a href="../index.html#sobre">Sobre</a><a href="../index.html#projetos">Projetos</a
-        ><a href="../index.html#conhecimentos">Ferramentas</a
-        ><a href="../index.html#contato">Contato ↗</a>
-      </nav>
-    </header>
-    <main class="wrap project-page" id="conteudo">
-      <a class="project-back" href="../index.html#projetos">← Voltar para os projetos</a>
-      <article id="project-article" aria-labelledby="project-title">
-        <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
-        <h1 id="project-title">Apache Kafka</h1>
-        <p class="project-page-intro" id="project-description">
-          Centralização de dados de clientes com Kafka e Debezium em tempo real.
-        </p>
-        <div class="tags" id="project-tags" aria-label="Tecnologias">
-          <span class="tag">Apache Kafka</span><span class="tag">Debezium</span
-          ><span class="tag">Amazon EC2</span><span class="tag">Apache Airflow</span
-          ><span class="tag">Python</span><span class="tag">KSQL</span
-          ><span class="tag">Grafana</span><span class="tag">Loki</span
-          ><span class="tag">Promtail</span>
-        </div>
-        <!-- Edite o relato diretamente nos parágrafos abaixo. -->
-        <div id="project-story">
-          <section class="project-story-section">
-            <h2>Problema e objetivo</h2>
-            <p>
-              O projeto nasceu da necessidade de reunir os dados das bases dos clientes em um
-              ponto central, permitindo análises em tempo real para apoiar a tomada de decisão. No
-              início, a integração envolvia aproximadamente 1.400 bases, o que exigia uma
-              estrutura capaz de organizar a coleta e preservar a identificação de cada origem. O
-              Kafka foi adotado como ponto central desse fluxo, reunindo os dados que seriam
-              utilizados nas análises e no acompanhamento da operação.
-            </p>
-          </section>
-          <section class="project-story-section">
-            <h2>Arquitetura planejada</h2>
-            <p>
-              A arquitetura foi planejada com um cluster Kafka distribuído em três instâncias
-              Amazon EC2 e o Debezium executado em nove instâncias. Essa distribuição buscava
-              equilibrar a carga das conexões e da coleta, com capacidade para manter a operação
-              diante da indisponibilidade de parte das instâncias. As tabelas equivalentes dos
-              diferentes clientes compartilhavam os mesmos tópicos, enquanto cada mensagem
-              mantinha a identificação da base de origem para que os registros pudessem ser
-              distinguidos ao longo do processamento.
-            </p>
-            <p>
-              Os dados permaneciam no Kafka por 7 dias, período suficiente para que fossem
-              processados e utilizados nas análises. Após esse prazo, as mensagens eram
-              descartadas, liberando espaço para os dados mais recentes. A operação do fluxo era
-              contínua, com coleta 24 horas por dia, sete dias por semana, e um volume médio de 45
-              GB de dados por dia.
-            </p>
-            <p>
-              Os dados eram enviados para o S3 em formato Parquet com granularidade diária,
-              permitindo análises históricas e consultas de longo prazo. Além disso, os dados eram
-              enviados para o PostgreSQL, onde ficavam disponíveis para outras formas de consumo.
-            </p>
-          </section>
-          <figure class="architecture-figure">
-            <a
-              href="../assets/arquitetura-kafka.svg"
-              target="_blank"
-              rel="noopener"
-              aria-label="Abrir imagem da arquitetura Kafka em tamanho completo"
-            >
-              <img
-                src="../assets/arquitetura-kafka.svg"
-                width="1200"
-                height="820"
-                loading="lazy"
-                alt="Arquitetura: bases dos clientes passam pelo Debezium e chegam ao Kafka, que distribui dados para S3, PostgreSQL e análises com Python e KSQL. Airflow automatiza as conexões; Promtail, Loki e Grafana apoiam o monitoramento."
-              />
-            </a>
-          </figure>
-          <section class="project-story-section">
-            <h2>Descrição e funcionamento</h2>
-            <p>
-              A coleta abrangia 27 tabelas de cada base de cliente. Os dados saíam dessas bases,
-              passavam pelo Debezium e eram encaminhados aos tópicos correspondentes no Kafka,
-              formando um fluxo que operava continuamente, 24 horas por dia, sete dias por semana.
-              A identificação de origem acompanhava as mensagens para permitir a consolidação dos
-              dados sem perder a associação com cada cliente.
-            </p>
-            <p>
-              Cada conexão era feita de forma automática com um arquivo JSON com mais de 260
-              linhas, reunindo parâmetros de conexão, regras de tratamento e padronização e
-              ajustes dos identificadores dos registros. Essa configuração organizava a entrada
-              dos dados no fluxo central e definia como as informações de cada base seriam
-              tratadas antes de serem utilizadas nas etapas seguintes.
-            </p>
-          </section>
-          <section class="project-story-section">
-            <h2>Manutenção</h2>
-            <p>
-              Fui responsável pela configuração das instâncias e dos softwares utilizados no
-              projeto, além do desenvolvimento dos códigos executados no Airflow para apoiar a
-              manutenção preventiva. A operação exigia acompanhar a disponibilidade das conexões e
-              as mudanças no conjunto de clientes atendidos, incluindo a entrada de novas bases, a
-              retirada de bases descontinuadas e a verificação das conexões existentes. Esse
-              acompanhamento orientava as ações necessárias para manter a estrutura de coleta
-              alinhada ao ambiente em operação.
-            </p>
-          </section>
-          <section class="project-story-section">
-            <h2>Automação da operação</h2>
-            <p>
-              As rotinas executadas no Airflow automatizavam a inclusão de novas bases, a remoção
-              de conexões de bases descontinuadas e a verificação do estado das conexões ativas.
-              Conforme a situação identificada, os códigos executavam ações de correção ou
-              interrompiam conexões em condições críticas. A automação foi desenvolvida com foco
-              preventivo, para acompanhar as mudanças das bases e tratar os problemas de conexão
-              dentro da própria rotina operacional.
-            </p>
-          </section>
-          <section class="project-story-section">
-            <h2>Evolução</h2>
-            <p>
-              Após um ano de projeto, o ambiente havia passado de aproximadamente 1.400 para cerca
-              de 1.800 bases conectadas. Nesse período, não foram observados sinais de sobrecarga
-              no sistema. Esse crescimento permitiu acompanhar o comportamento da estrutura diante
-              do aumento de conexões e da continuidade da coleta no dia a dia.
-            </p>
-          </section>
-          <section class="project-story-section">
-            <h2>Análise de dados</h2>
-            <p>
-              Os dados dos tópicos eram consultados com KSQL e analisados em tempo real por
-              rotinas em Python. O fluxo de acompanhamento também utilizava Promtail e Loki para
-              disponibilizar informações no Grafana, onde eram monitoradas situações como falhas
-              de pagamento, aumentos de pedidos fora do padrão e volumes de acesso atípicos. Dessa
-              forma, os dados centralizados apoiavam tanto as análises quanto a identificação de
-              eventos que exigiam atenção da operação.
-            </p>
-          </section>
-        </div>
-      </article>
-    </main>
-    <footer class="wrap footer">
-      <a class="brand" href="../index.html" aria-label="Voltar ao início">Rafael Batista</a
-      ><span>Rafael Batista</span><a href="../index.html#projetos">Todos os projetos ↑</a>
-    </footer>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10141c" />
+  <meta name="description" content="Conheça os projetos profissionais de Rafael Batista." />
+  <title>Apache Kafka · Rafael Batista</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body data-project="kafka">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header wrap">
+    <a class="brand" href="../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html#sobre">Sobre</a><a href="../index.html#projetos">Projetos</a><a
+        href="../index.html#conhecimentos">Ferramentas</a><a href="../index.html#contato">Contato
+        ↗</a>
+    </nav>
+  </header>
+  <main class="wrap project-page" id="conteudo">
+    <a class="project-back" href="../index.html#projetos">← Voltar para os projetos</a>
+    <article id="project-article" aria-labelledby="project-title">
+      <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
+      <h1 id="project-title">Apache Kafka</h1>
+      <p class="project-page-intro" id="project-description">
+        Centralização de dados de clientes com Kafka e Debezium em tempo real.
+      </p>
+      <div class="tags" id="project-tags" aria-label="Tecnologias">
+        <span class="tag">Apache Kafka</span><span class="tag">Debezium</span><span
+          class="tag">Amazon EC2</span><span class="tag">Apache Airflow</span><span
+          class="tag">Python</span><span class="tag">KSQL</span><span
+          class="tag">Grafana</span><span class="tag">Loki</span><span class="tag">Promtail</span>
+      </div>
+      <!-- Edite o relato diretamente nos parágrafos abaixo. -->
+      <div id="project-story">
+        <section class="project-story-section">
+          <h2>Problema e objetivo</h2>
+          <p>
+            O projeto nasceu da necessidade de reunir os dados das bases dos clientes em um
+            ponto central, permitindo análises em tempo real para apoiar a tomada de decisão. No
+            início, a integração envolvia aproximadamente 1.400 bases, o que exigia uma
+            estrutura capaz de organizar a coleta e preservar a identificação de cada origem. O
+            Kafka foi adotado como ponto central desse fluxo, reunindo os dados que seriam
+            utilizados nas análises e no acompanhamento da operação.
+          </p>
+        </section>
+        <section class="project-story-section">
+          <h2>Arquitetura planejada</h2>
+          <p>
+            A arquitetura foi planejada com um cluster Kafka distribuído em três instâncias
+            Amazon EC2 e o Debezium executado em nove instâncias. Essa distribuição buscava
+            equilibrar a carga das conexões e da coleta, com capacidade para manter a operação
+            diante de uma possível indisponibilidade de parte das instâncias. As tabelas
+            equivalentes dos
+            diferentes clientes compartilhavam os mesmos tópicos, enquanto cada mensagem
+            mantinha a identificação da base de origem para que os registros pudessem ser
+            distinguidos ao longo do processamento.
+          </p>
+          <p>
+            Os dados permaneciam no Kafka por 7 dias, período suficiente para que fossem
+            processados e utilizados nas análises. Após esse prazo, as mensagens eram
+            descartadas, liberando espaço para os dados mais recentes. A operação do fluxo era
+            contínua, com coleta 24 horas por dia, sete dias por semana, e um volume médio de 45
+            GB de dados por dia.
+          </p>
+          <p>
+            Os dados eram enviados para o S3 em formato Parquet com granularidade diária,
+            permitindo análises históricas e consultas de longo prazo. Além disso, os dados eram
+            enviados para o PostgreSQL, onde ficavam disponíveis para outras formas de consumo.
+          </p>
+        </section>
+        <figure class="architecture-figure">
+          <a href="../assets/arquitetura-kafka.svg" target="_blank" rel="noopener"
+            aria-label="Abrir imagem da arquitetura Kafka em tamanho completo">
+            <img src="../assets/arquitetura-kafka.svg" width="1200" height="820" loading="lazy"
+              alt="Arquitetura: bases dos clientes passam pelo Debezium e chegam ao Kafka, que distribui dados para S3, PostgreSQL e análises com Python e KSQL. Airflow automatiza as conexões; Promtail, Loki e Grafana apoiam o monitoramento." />
+          </a>
+        </figure>
+        <section class="project-story-section">
+          <h2>Descrição e funcionamento</h2>
+          <p>
+            A coleta abrangia 27 tabelas de cada base de cliente. Os dados saíam dessas bases,
+            passavam pelo Debezium e eram encaminhados aos tópicos correspondentes no Kafka,
+            formando um fluxo que operava continuamente, 24 horas por dia, sete dias por semana.
+            A identificação de origem acompanhava as mensagens para permitir a consolidação dos
+            dados sem perder a associação com cada cliente.
+          </p>
+          <p>
+            Cada conexão era feita de forma automática com um arquivo JSON com mais de 260
+            linhas, reunindo parâmetros de conexão, regras de tratamento e padronização e
+            ajustes dos identificadores dos registros. Essa configuração organizava a entrada
+            dos dados no fluxo central e definia como as informações de cada base seriam
+            tratadas antes de serem utilizadas nas etapas seguintes.
+          </p>
+        </section>
+        <section class="project-story-section">
+          <h2>Manutenção</h2>
+          <p>
+            Fui responsável pela configuração das instâncias e dos softwares utilizados no
+            projeto, além do desenvolvimento dos códigos executados no Airflow para apoiar a
+            manutenção preventiva. A operação exigia acompanhar a disponibilidade das conexões e
+            as mudanças no conjunto de clientes atendidos, incluindo a entrada de novas bases, a
+            retirada de bases descontinuadas e a verificação das conexões existentes. Esse
+            acompanhamento orientava as ações necessárias para manter a estrutura de coleta
+            alinhada ao ambiente em operação.
+          </p>
+        </section>
+        <section class="project-story-section">
+          <h2>Automação da operação</h2>
+          <p>
+            As rotinas executadas no Airflow automatizavam a inclusão de novas bases, a remoção
+            de conexões de bases descontinuadas e a verificação do estado das conexões ativas.
+            Conforme a situação identificada, os códigos executavam ações de correção ou
+            interrompiam conexões em condições críticas. A automação foi desenvolvida com foco
+            preventivo, para acompanhar as mudanças das bases e tratar os problemas de conexão
+            dentro da própria rotina operacional.
+          </p>
+        </section>
+        <section class="project-story-section">
+          <h2>Evolução</h2>
+          <p>
+            Após um ano de projeto, o ambiente havia passado de aproximadamente 1.400 para cerca
+            de 1.800 bases conectadas. Nesse período, não foram observados sinais de sobrecarga
+            no sistema. Esse crescimento permitiu acompanhar o comportamento da estrutura diante
+            do aumento de conexões e da continuidade da coleta no dia a dia. Não foi necessário
+            realizar ajustes na arquitetura, o que indicou que a distribuição das instâncias e a
+            configuração do fluxo estavam adequadas para o volume de dados e a quantidade de
+            conexões.
+          </p>
+        </section>
+        <section class="project-story-section">
+          <h2>Análise de dados</h2>
+          <p>
+            Os dados dos tópicos eram consultados com KSQL e analisados em tempo real por
+            rotinas em Python. O fluxo de acompanhamento também utilizava Promtail e Loki para
+            disponibilizar informações no Grafana, onde eram monitoradas situações como falhas
+            de pagamento, aumentos de pedidos fora do padrão e volumes de acesso atípicos. Dessa
+            forma, os dados centralizados apoiavam tanto as análises quanto a identificação de
+            eventos que exigiam atenção da operação.
+          </p>
+        </section>
+      </div>
+    </article>
+  </main>
+  <footer class="wrap footer">
+    <a class="brand" href="../index.html" aria-label="Voltar ao início">Rafael
+      Batista</a><span>Rafael Batista</span><a href="../index.html#projetos">Todos os projetos ↑</a>
+  </footer>
+</body>
+
 </html>
