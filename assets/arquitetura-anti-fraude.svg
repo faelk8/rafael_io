@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">Arquitetura do sistema de detecção de fraude</title>
+<desc id="desc">Dados de PostgreSQL e MongoDB são tratados e armazenados no ClickHouse. O sistema consome pedidos do RabbitMQ e usa análises estatísticas e dados históricos para encaminhar pedidos às filas de aprovados ou reprovados.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#80baff"/></marker></defs>
+<rect width="1200" height="900" rx="20" fill="#10141c"/>
+<g font-family="Arial, sans-serif">
+<text x="48" y="55" fill="#edf2fa" font-size="28" font-weight="700">Arquitetura de dados · Detecção de fraude</text>
+<rect x="48" y="120" width="280" height="95" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="68" y="153" fill="#80baff" font-size="20" font-weight="700">PostgreSQL</text>
+<text x="68" y="183" fill="#edf2fa" font-size="16">Dados relacionais</text>
+<rect x="48" y="250" width="280" height="95" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="68" y="283" fill="#80baff" font-size="20" font-weight="700">MongoDB</text>
+<text x="68" y="313" fill="#edf2fa" font-size="16">Dados NoSQL</text>
+<rect x="400" y="170" width="280" height="130" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="420" y="203" fill="#80baff" font-size="20" font-weight="700">Preparação dos dados</text>
+<text x="420" y="233" fill="#edf2fa" font-size="16">Tratamento</text>
+<text x="420" y="257" fill="#edf2fa" font-size="16">Sumarização</text>
+<rect x="752" y="150" width="400" height="170" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="772" y="183" fill="#80baff" font-size="20" font-weight="700">ClickHouse</text>
+<text x="772" y="213" fill="#edf2fa" font-size="16">Histórico para análise</text>
+<text x="772" y="237" fill="#edf2fa" font-size="16">Compras legítimas validadas</text>
+<text x="772" y="261" fill="#edf2fa" font-size="16">Compras confirmadas como fraude</text>
+<path d="M328 167H362V215H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M328 297H362V255H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M680 235H752" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="48" y="450" width="280" height="130" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="68" y="483" fill="#80baff" font-size="20" font-weight="700">Novos pedidos</text>
+<text x="68" y="513" fill="#edf2fa" font-size="16">Dados da transação</text>
+<text x="68" y="537" fill="#edf2fa" font-size="16">Encaminhamento para avaliação</text>
+<rect x="400" y="450" width="280" height="130" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="420" y="483" fill="#80baff" font-size="20" font-weight="700">RabbitMQ</text>
+<text x="420" y="513" fill="#edf2fa" font-size="16">Fila de entrada</text>
+<text x="420" y="537" fill="#edf2fa" font-size="16">Consumo dos pedidos</text>
+<rect x="752" y="420" width="400" height="190" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="772" y="453" fill="#80baff" font-size="20" font-weight="700">Análise estatística</text>
+<text x="772" y="483" fill="#edf2fa" font-size="16">Navegação e histórico de compras</text>
+<text x="772" y="507" fill="#edf2fa" font-size="16">Dados pessoais e outros fatores</text>
+<text x="772" y="531" fill="#edf2fa" font-size="16">Agrupamento e análise de outliers</text>
+<text x="772" y="555" fill="#edf2fa" font-size="16">Classificação do pedido</text>
+<path d="M328 515H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M680 515H752" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M952 320V420" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="400" y="730" width="280" height="115" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="420" y="763" fill="#80baff" font-size="20" font-weight="700">Fila de aprovados</text>
+<text x="420" y="793" fill="#edf2fa" font-size="16">Pedidos aprovados</text>
+<text x="420" y="817" fill="#edf2fa" font-size="16">após a avaliação</text>
+<rect x="752" y="730" width="400" height="115" rx="12" fill="#18283d" stroke="#476e9e"/>
+<text x="772" y="763" fill="#80baff" font-size="20" font-weight="700">Fila de reprovados</text>
+<text x="772" y="793" fill="#edf2fa" font-size="16">Pedidos reprovados</text>
+<text x="772" y="817" fill="#edf2fa" font-size="16">após a avaliação</text>
+<path d="M952 610V665H540V730" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M952 665V730" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)"/>
+</g></svg>
