@@ -20,11 +20,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
       - name: Preparar arquivos públicos
-        run: |
-          mkdir _site
-          cp index.html projeto.html kafka.html sistema-de-recomendacao.html csa.html arquitetura-medalhao.html styles.css script.js projeto.js profile.js _site/
-          cp -r assets _site/assets
-          if [ -f CNAME ]; then cp CNAME _site/; fi
+        run: python3 scripts/build.py
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
