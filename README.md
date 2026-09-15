@@ -8,6 +8,8 @@ Na pasta do projeto, execute:
 
 ```sh
 python3 -m http.server 8000
+# ou
+python3 scripts/dev.py --port 8001
 ```
 
 Abra http://localhost:8000.
@@ -86,6 +88,17 @@ Duplique um item para adicionar novas ferramentas. Envie as mudanças à branch 
 
 ## Páginas individuais
 
-Cada projeto profissional tem um arquivo HTML próprio: `kafka.html`, `sistema-de-recomendacao.html`, `csa.html` e `arquitetura-medalhao.html`. O campo `page` em `profile.js` define o endereço do cartão. Os textos continuam no objeto de cada projeto em `profile.js`.
+As páginas individuais ficam na pasta `projetos/`. O Kafka está em `projetos/kafka.html`. O campo `page` em `profile.js` define o endereço do cartão. Os textos continuam no objeto de cada projeto em `profile.js`.
 
-Para criar outra página, copie um desses arquivos, ajuste `data-project` para o novo `slug`, atualize o título e adicione o novo HTML à etapa de cópia em `.github/workflows/pages.yml`. Os endereços antigos de `projeto.html?projeto=...` continuam funcionando.
+O build inclui automaticamente os arquivos da pasta `projetos/`. Os endereços antigos de `projeto.html?projeto=...` continuam funcionando.
+
+
+## Prévia com atualização automática
+
+Execute `python3 scripts/dev.py` e abra http://localhost:8000/projetos/kafka.html. Ao salvar HTML, CSS, JavaScript ou texto, o navegador recarrega automaticamente. Mantenha o terminal aberto; encerre com Ctrl+C. Se a porta estiver ocupada, use `python3 scripts/dev.py --port 8001`.
+
+O relato do Kafka agora é editado **diretamente em `projetos/kafka.html`**, nos elementos `<h2>` e `<p>`. Ele não depende de JavaScript para aparecer. `texto/kafka.txt` permanece como rascunho de referência e não substitui mais o conteúdo do HTML. O resumo do cartão da página inicial continua em `profile.js`.
+
+Para gerar a versão de publicação, execute `python3 scripts/build.py`. O resultado fica em `_site/`. O GitHub Actions executa esse build a cada push para `main`; salvar localmente atualiza apenas a prévia.
+
+Se a porta solicitada estiver ocupada, a prévia escolhe automaticamente a próxima disponível (até 20 tentativas). Abra o endereço mostrado no terminal.
