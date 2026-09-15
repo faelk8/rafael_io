@@ -66,7 +66,7 @@
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
       const link = document.createElement('a');
-      link.href = /^[a-z0-9-]+\.html$/.test(project.page || '')
+      link.href = /^(?:projetos\/)?[a-z0-9-]+\.html$/.test(project.page || '')
         ? project.page
         : `projeto.html?projeto=${encodeURIComponent(project.slug || String(index))}`;
       link.className = 'professional-project-link';
