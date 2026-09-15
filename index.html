@@ -1,61 +1,120 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10141c">
-  <meta name="description" content="Rafael Batista — um espaço para compartilhar projetos, ideias e um pouco sobre mim.">
-  <title>Rafael Batista · Projetos & ideias</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="profile.js" defer></script>
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="header wrap">
-    <a class="brand" href="#" aria-label="Rafael Batista, início">Rafael Batista</a>
-    <nav aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#conhecimentos">Ferramentas</a><a href="#contato">Contato <span aria-hidden="true">↗</span></a></nav>
-  </header>
-  <main id="conteudo">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> MEU ESPAÇO NA INTERNET</p>
-        <h1 id="hero-title">Olá, eu sou<br><span id="hero-name">Rafael Batista</span></h1>
-        <p class="intro" id="intro">Projetos, ideias e um pouco sobre mim.<br>Bem-vindo ao meu canto da internet.</p>
-        <div class="hero-actions"><a class="button" href="#projetos">Explore meus projetos <span aria-hidden="true">↗</span></a><a class="text-link" href="#sobre">Um pouco sobre mim <span aria-hidden="true">↓</span></a></div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-label">RAFAEL BATISTA <span>001</span></div>
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
-        <div class="monogram">Rafael<br>Batista</div><span class="orbit-dot"></span>
-        <div class="art-bottom"><span>IDEIAS → PROJETOS</span><span>↗</span></div>
-      </div>
-      <div class="hero-bottom"><span>UM POUCO DE QUEM SOU. UM POUCO DO QUE CRIO.</span><a href="#sobre" aria-label="Ir para sobre mim">Role para explorar ↓</a></div>
-    </section>
-    <section class="section wrap about" id="sobre" aria-labelledby="about-title">
-      <div><p class="eyebrow">01 / SOBRE MIM</p><h2 id="about-title">Por trás<br>dos projetos<span class="accent">.</span></h2></div>
-      <div class="about-copy"><p class="large-copy" id="about-lead">Um espaço para compartilhar o que estou construindo.</p><p id="bio">Sou Rafael Batista. Aqui você vai encontrar meus projetos e acompanhar as próximas atualizações deste espaço.</p><div class="tags" id="interests" aria-label="Interesses"></div><div class="about-note"><span class="accent">↳</span> Este site também é um projeto em evolução.</div></div>
-    </section>
-    <section class="section wrap" id="projetos" aria-labelledby="projects-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / PROJETOS</p><h2 id="projects-title">Ideias em prática<span class="accent">.</span></h2></div><a class="text-link" id="github-link" hidden>Ver no GitHub ↗</a></div>
-      <div id="professional-section" hidden>
-        <h3 class="project-group-title">Projetos em empresas</h3>
-        <p class="project-group-description">Experiências profissionais e projetos dos quais participei.</p>
-        <div class="projects professional-projects" id="professional-list"></div>
-      </div>
-      <h3 class="project-group-title">Projetos no GitHub</h3>
-      <div class="projects" id="project-list"></div>
-      <p class="project-status" id="project-status" role="status"></p>
-    </section>
-    <section class="section wrap" id="conhecimentos" aria-labelledby="skills-title" hidden>
-      <p class="eyebrow">03 / CONHECIMENTOS</p>
-      <h2 id="skills-title">Ferramentas que conheço<span class="accent">.</span></h2>
-      <p class="skills-intro">Tecnologias e áreas de conhecimento que fazem parte da minha experiência.</p>
-      <div class="skills-grid" id="skills-list"></div>
-    </section>
-    <section class="section wrap contact" id="contato" aria-labelledby="contact-title"><p class="eyebrow">04 / CONTATO</p><div class="contact-row"><h2 id="contact-title">Toda boa ideia começa<br>com uma conversa<span class="accent">.</span></h2><span class="contact-arrow" aria-hidden="true">↗</span></div><p id="contact-description">Os canais de contato serão adicionados em breve.</p><div class="contact-links" id="contact-links"></div></section>
-  </main>
-  <footer class="wrap footer"><a class="brand" href="#" aria-label="Voltar ao início">Rafael Batista</a><span>© <span id="year"></span> Rafael Batista</span><a href="#">De volta ao topo ↑</a></footer>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10141c" />
+    <meta
+      name="description"
+      content="Rafael Batista — um espaço para compartilhar projetos, ideias e um pouco sobre mim."
+    />
+    <title>Rafael Batista · Projetos & ideias</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="profile.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header wrap">
+      <a class="brand" href="#" aria-label="Rafael Batista, início">Rafael Batista</a>
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a
+        ><a href="#conhecimentos">Ferramentas</a
+        ><a href="#contato">Contato <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="conteudo">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> MEU ESPAÇO NA INTERNET</p>
+          <h1 id="hero-title">Olá, eu sou<br /><span id="hero-name">Rafael Batista</span></h1>
+          <p class="intro" id="intro">
+            Projetos, ideias e um pouco sobre mim.<br />Bem-vindo ao meu canto da internet.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#projetos"
+              >Explore meus projetos <span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="#sobre"
+              >Um pouco sobre mim <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-label">RAFAEL BATISTA <span>001</span></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="monogram">Rafael<br />Batista</div>
+          <span class="orbit-dot"></span>
+          <div class="art-bottom"><span>IDEIAS → PROJETOS</span><span>↗</span></div>
+        </div>
+        <div class="hero-bottom">
+          <span>UM POUCO DE QUEM SOU. UM POUCO DO QUE CRIO.</span
+          ><a href="#sobre" aria-label="Ir para sobre mim">Role para explorar ↓</a>
+        </div>
+      </section>
+      <section class="section wrap about" id="sobre" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">01 / SOBRE MIM</p>
+          <h2 id="about-title">Por trás<br />dos projetos<span class="accent">.</span></h2>
+        </div>
+        <div class="about-copy">
+          <p class="large-copy" id="about-lead">
+            Um espaço para compartilhar o que estou construindo.
+          </p>
+          <p id="bio">
+            Sou Rafael Batista. Aqui você vai encontrar meus projetos e acompanhar as próximas
+            atualizações deste espaço.
+          </p>
+          <div class="tags" id="interests" aria-label="Interesses"></div>
+          <div class="about-note">
+            <span class="accent">↳</span> Este site também é um projeto em evolução.
+          </div>
+        </div>
+      </section>
+      <section class="section wrap" id="projetos" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / PROJETOS</p>
+            <h2 id="projects-title">Ideias em prática<span class="accent">.</span></h2>
+          </div>
+          <a class="text-link" id="github-link" hidden>Ver no GitHub ↗</a>
+        </div>
+        <div id="professional-section" hidden>
+          <h3 class="project-group-title">Projetos em empresas</h3>
+          <p class="project-group-description">
+            Experiências profissionais e projetos dos quais participei.
+          </p>
+          <div class="projects professional-projects" id="professional-list"></div>
+        </div>
+        <h3 class="project-group-title">Projetos no GitHub</h3>
+        <div class="projects" id="project-list"></div>
+        <p class="project-status" id="project-status" role="status"></p>
+      </section>
+      <section class="section wrap" id="conhecimentos" aria-labelledby="skills-title" hidden>
+        <p class="eyebrow">03 / CONHECIMENTOS</p>
+        <h2 id="skills-title">Ferramentas que conheço<span class="accent">.</span></h2>
+        <p class="skills-intro">
+          Tecnologias e áreas de conhecimento que fazem parte da minha experiência.
+        </p>
+        <div class="skills-grid" id="skills-list"></div>
+      </section>
+      <section class="section wrap contact" id="contato" aria-labelledby="contact-title">
+        <p class="eyebrow">04 / CONTATO</p>
+        <div class="contact-row">
+          <h2 id="contact-title">
+            Toda boa ideia começa<br />com uma conversa<span class="accent">.</span>
+          </h2>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </div>
+        <p id="contact-description">Os canais de contato serão adicionados em breve.</p>
+        <div class="contact-links" id="contact-links"></div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <a class="brand" href="#" aria-label="Voltar ao início">Rafael Batista</a
+      ><span>© <span id="year"></span> Rafael Batista</span><a href="#">De volta ao topo ↑</a>
+    </footer>
+  </body>
 </html>
