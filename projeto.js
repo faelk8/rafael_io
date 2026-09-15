@@ -9,6 +9,10 @@
     document.title = 'Projeto não encontrado · Rafael Batista';
     return;
   }
+  if (['kafka', 'arquitetura-medalhao', 'sistema-de-recomendacao'].includes(project.slug)) {
+    window.location.replace(new URL(project.page, window.location.href).href);
+    return;
+  }
   document.title = `${project.name} · Rafael Batista`;
   document.querySelector('meta[name="description"]').content = project.description || project.name;
   byId('project-article').hidden = false;
@@ -19,17 +23,20 @@
     span.className = 'tag'; span.textContent = tag;
     byId('project-tags').append(span);
   }
-  const sections = [
+  // Páginas com relato próprio mantêm o conteúdo escrito no HTML.
+  if (document.body.dataset.story === 'html') return;
+  const defaultSections = [
     ['context', 'Contexto e desafio'],
     ['contribution', 'O que eu fiz'],
     ['architecture', 'Como foi feito'],
     ['results', 'Resultados e aprendizados'],
   ];
-  for (const [key, label] of sections) {
-    if (typeof project[key] !== 'string' || !project[key].trim()) continue;
+  const sections = project.sections || defaultSections.map(([key, title]) => ({ title, text: project[key] }));
+  for (const item of sections) {
+    if (typeof item.text !== 'string' || !item.text.trim()) continue;
     const section = document.createElement('section'); section.className = 'project-story-section';
-    const heading = document.createElement('h2'); heading.textContent = label;
-    const text = document.createElement('p'); text.textContent = project[key];
+    const heading = document.createElement('h2'); heading.textContent = item.title;
+    const text = document.createElement('p'); text.textContent = item.text;
     section.append(heading, text);
     byId('project-story').append(section);
   }
