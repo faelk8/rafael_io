@@ -44,6 +44,63 @@ p, li, figcaption{text-align:justify;hyphens:auto}
 .architecture-figure figcaption{margin-top:14px;font-size:14px;color:var(--muted)}
 .architecture-download{display:inline-block;margin-top:14px;color:var(--accent);font-size:14px}
 
+/* Cards compactos, com altura uniforme em todas as linhas de cada seção. */
+.projects,
+.skills-grid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: 16px;
+}
+.professional-projects {
+  align-items: stretch;
+}
+.project-card,
+.skill-card {
+  height: 100%;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 7px;
+}
+.project-card {
+  min-height: 210px;
+}
+.project-card .project-top {
+  margin-bottom: 12px;
+}
+.project-card h4,
+.skill-card h3 {
+  font-size: 20px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.project-card > p {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+.project-card .tags {
+  padding-top: 6px;
+  gap: 6px;
+  align-content: flex-start;
+}
+.project-card .tag {
+  padding: 2px 8px;
+}
+.project-card > a {
+  margin-top: 10px;
+}
+.skill-card {
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+}
+.skill-card .eyebrow {
+  margin-bottom: 10px;
+}
+.skill-card .skill-description {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
 /* Listas nos relatos seguem a tipografia dos parágrafos. */
 .project-story-section ul,
 .project-story-section ol {

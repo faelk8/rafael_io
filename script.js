@@ -39,8 +39,7 @@
       const card = document.createElement('article'); card.className = 'project-card';
       const top = document.createElement('div'); top.className = 'project-top';
       const category = document.createElement('span'); category.textContent = project.category || 'GITHUB / REPOSITÓRIO';
-      const number = document.createElement('span'); number.className = 'project-number'; number.textContent = String(index + 1).padStart(2, '0');
-      top.append(category, number);
+      top.append(category);
       const title = document.createElement('h4'); title.textContent = project.name;
       const description = document.createElement('p'); description.textContent = project.description || 'Veja os detalhes e o código deste projeto no GitHub.';
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
@@ -58,8 +57,7 @@
       card.className = 'project-card professional-card';
       const top = document.createElement('div'); top.className = 'project-top';
       const category = document.createElement('span'); category.textContent = 'EXPERIÊNCIA PROFISSIONAL';
-      const number = document.createElement('span'); number.className = 'project-number';
-      number.textContent = String(index + 1).padStart(2, '0'); top.append(category, number);
+      top.append(category);
       const title = document.createElement('h4'); title.textContent = project.name;
       const description = document.createElement('p'); description.className = 'project-text';
       description.textContent = project.description || '';
