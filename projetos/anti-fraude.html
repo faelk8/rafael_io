@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10141c" />
+    <meta name="description" content="Conheça os projetos profissionais de Rafael Batista." />
+    <title>Detecção de fraude com estatística · Rafael Batista</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../profile.js" defer></script>
+    <script src="../projeto.js" defer></script>
+</head>
+
+<body data-project="anti-fraude" data-story="html">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header wrap">
+        <a class="brand" href="../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
+        <nav aria-label="Navegação principal">
+            <a href="../index.html#sobre">Sobre</a><a href="../index.html#projetos">Projetos</a><a
+                href="../index.html#conhecimentos">Ferramentas</a><a
+                href="../index.html#contato">Contato ↗</a>
+        </nav>
+    </header>
+    <main class="wrap project-page" id="conteudo">
+        <a class="project-back" href="../index.html#projetos">← Voltar para os projetos</a>
+        <article id="project-article" aria-labelledby="project-title">
+            <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
+            <h1 id="project-title">Detecção de fraude com estatística</h1>
+            <p class="project-page-intro" id="project-description"></p>
+            <div class="tags" id="project-tags" aria-label="Tecnologias"></div>
+            <div id="project-story">
+              <section class="project-story-section">
+<h2>Problema e objetivo</h2>
+<p>
+              O projeto foi desenvolvido para reduzir as perdas financeiras causadas por fraudes
+              em transações. A solução utilizava técnicas estatísticas para identificar padrões
+              anômalos nos pedidos e apoiar sua classificação, buscando distinguir compras
+              legítimas de operações fraudulentas sem reprovar indevidamente os clientes.
+            </p>
+</section>
+              <section class="project-story-section">
+<h2>Arquitetura planejada</h2>
+<p>
+              Os dados eram coletados de duas fontes: o banco relacional PostgreSQL e o banco
+              NoSQL MongoDB. Após o tratamento e a sumarização, as informações eram armazenadas no
+              ClickHouse e utilizadas como referência nas análises. O histórico reunia dois
+              grupos: compras legítimas, aprovadas e validadas por terceiros, e compras
+              confirmadas como fraudulentas. Essa separação permitia comparar as características
+              dos novos pedidos com os padrões observados em cada grupo.
+            </p>
+<p>
+              O fluxo de avaliação começava com o envio dos dados de um novo pedido ao RabbitMQ. O
+              sistema de detecção consumia essas mensagens, analisava as informações do pedido em
+              conjunto com os dados históricos e publicava o resultado na fila correspondente à
+              classificação: pedidos aprovados ou reprovados.
+            </p>
+</section>
+<figure class="architecture-figure">
+<a href="../assets/arquitetura-anti-fraude.svg" target="_blank" rel="noopener" aria-label="Ampliar arquitetura do sistema de detecção de fraude">
+<img src="../assets/arquitetura-anti-fraude.svg" width="1200" height="900" loading="lazy" alt="PostgreSQL e MongoDB alimentam o tratamento dos dados e o ClickHouse. Novos pedidos chegam pelo RabbitMQ ao sistema de análise estatística, que consulta o histórico e encaminha os resultados para filas de aprovados ou reprovados." />
+</a></figure>
+              <section class="project-story-section">
+<h2>Funcionamento</h2>
+<p>
+              A análise cruzava informações de navegação, histórico de compras, dados pessoais e
+              outros fatores para avaliar a probabilidade de fraude. Técnicas de agrupamento e
+              análise de valores atípicos (outliers) ajudavam a identificar transações que se
+              afastavam do comportamento habitual dos clientes. O resultado dessa avaliação
+              orientava o encaminhamento de cada pedido para a fila de aprovados ou de reprovados.
+            </p>
+</section>
+              <section class="project-story-section">
+<h2>Resultados</h2>
+<p>
+              Com essa abordagem, foi possível reduzir em 97% os falsos positivos, ou seja, os
+              casos em que compras legítimas eram classificadas como suspeitas de fraude. Esse
+              resultado atendia ao objetivo de tornar a identificação de fraudes mais precisa e
+              reduzir as reprovações indevidas.
+            </p>
+</section>
+</div>
+        </article>
+    </main>
+    <footer class="wrap footer">
+        <a class="brand" href="../index.html" aria-label="Voltar ao início">Rafael
+            Batista</a><span>Rafael Batista</span><a href="../index.html#projetos">Todos os projetos
+            ↑</a>
+    </footer>
+</body>
+
+</html>
