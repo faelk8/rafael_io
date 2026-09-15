@@ -41,7 +41,7 @@ window.PROFILE = {
       slug: 'sistema-de-recomendacao', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Sistema de recomendação',
       description: 'Atuação em um sistema de recomendação desenvolvido em uma empresa.',
-      tags: ['Sistema de recomendação'],
+      tags: ['Sistema de recomendação', 'Redis', 'Estatística', 'TF-IDF', 'SQL'],
       // Edite o relato diretamente em projetos/sistema-de-recomendacao.html.
     },
     {

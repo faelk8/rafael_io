@@ -43,3 +43,16 @@ p, li, figcaption{text-align:justify;hyphens:auto}
 .architecture-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
 .architecture-figure figcaption{margin-top:14px;font-size:14px;color:var(--muted)}
 .architecture-download{display:inline-block;margin-top:14px;color:var(--accent);font-size:14px}
+
+/* Listas nos relatos seguem a tipografia dos parágrafos. */
+.project-story-section ul,
+.project-story-section ol {
+  margin: 0 0 1.35em;
+  padding-left: 1.5em;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.9;
+}
+.project-story-section li + li {
+  margin-top: 6px;
+}

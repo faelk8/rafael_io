@@ -1,81 +1,108 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#10141c" />
-    <meta name="description" content="Minha participação em um sistema de recomendação desenvolvido em uma empresa." />
-    <title>Sistema de recomendação · Rafael Batista</title>
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body data-project="sistema-de-recomendacao" data-story="html">
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <header class="header wrap">
-      <a class="brand" href="../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
-      <nav aria-label="Navegação principal">
-        <a href="../index.html#sobre">Sobre</a>
-        <a href="../index.html#projetos">Projetos</a>
-        <a href="../index.html#conhecimentos">Ferramentas</a>
-        <a href="../index.html#contato">Contato ↗</a>
-      </nav>
-    </header>
-    <main class="wrap project-page" id="conteudo">
-      <a class="project-back" href="../index.html#projetos">← Voltar para os projetos</a>
-      <article id="project-article" aria-labelledby="project-title">
-        <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
-        <h1 id="project-title">Sistema de recomendação</h1>
-        <p class="project-page-intro" id="project-description">
-          Minha participação em um sistema de recomendação desenvolvido em uma empresa.
-        </p>
-        <div class="tags" aria-label="Tecnologias">
-          <span class="tag">Sistema de recomendação</span>
-        </div>
-        <!-- Escreva o relato nos parágrafos. Os comentários são orientações só para o editor. -->
-        <div id="project-story">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10141c" />
+  <meta name="description"
+    content="Minha participação em um sistema de recomendação desenvolvido em uma empresa." />
+  <title>Sistema de recomendação · Rafael Batista</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body data-project="sistema-de-recomendacao" data-story="html">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header wrap">
+    <a class="brand" href="../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html#sobre">Sobre</a>
+      <a href="../index.html#projetos">Projetos</a>
+      <a href="../index.html#conhecimentos">Ferramentas</a>
+      <a href="../index.html#contato">Contato ↗</a>
+    </nav>
+  </header>
+  <main class="wrap project-page" id="conteudo">
+    <a class="project-back" href="../index.html#projetos">← Voltar para os projetos</a>
+    <article id="project-article" aria-labelledby="project-title">
+      <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
+      <h1 id="project-title">Sistema de recomendação</h1>
+      <p class="project-page-intro" id="project-description">
+        Recomendação de produtos para clientes de uma empresa, com base em dados de compras e
+        comportamento.
+      </p>
+      <div class="tags" aria-label="Tecnologias">
+        <span class="tag">Sistema de recomendação</span>
+        <span class="tag">Redis</span>
+        <span class="tag">Estatística</span>
+        <span class="tag">TF-IDF</span>
+        <span class="tag">SQL</span>
+      </div>
+      <!-- Escreva o relato nos parágrafos. Os comentários são orientações só para o editor. -->
+      <div id="project-story">
         <section class="project-story-section">
           <h2>Problema e objetivo</h2>
           <p>
-            <!-- Descreva o problema, o público atendido e o objetivo do projeto. -->
+            Com o objetivo de aumentar a conversão de vendas, a empresa buscava uma solução para
+            recomendar produtos aos clientes com base em suas compras anteriores e comportamento de
+            navegação. A meta era criar um sistema que pudesse analisar os dados disponíveis e
+            fornecer recomendações personalizadas em tempo real.
           </p>
         </section>
         <section class="project-story-section">
           <h2>Arquitetura planejada</h2>
+          <p>A análise considerava os seguintes dados:</p>
+          <ul>
+            <li>Produtos mais comprados</li>
+            <li>Produtos mais visualizados</li>
+            <li>Grupos de produtos relacionados</li>
+          </ul>
           <p>
-            <!-- Descreva os componentes, as fontes de dados e como eles se conectavam. -->
+            A arquitetura do sistema de recomendação foi planejada para coletar e processar esses
+            dados, utilizando algoritmos de filtragem colaborativa e baseada em conteúdo. O sistema
+            foi projetado para identificar padrões de comportamento dos clientes e gerar
+            recomendações relevantes.
           </p>
         </section>
         <section class="project-story-section">
           <h2>Funcionamento</h2>
           <p>
-            <!-- Explique o fluxo dos dados e como a solução funcionava na prática. -->
+            Todos os dias os produtos eram analisados e classificados de acordo com a frequência de
+            compra e visualização. O sistema então gerava uma lista de recomendações personalizadas
+            para cada cliente, que ficava disponível no Redis, quando um cliente acessava o site, as
+            recomendações eram exibidas com base em seu histórico de compras e comportamento de
+            navegação.
           </p>
-        </section>
-        <section class="project-story-section">
-          <h2>Minha participação</h2>
           <p>
-            <!-- Conte o que você implementou e quais decisões tomou. -->
+            Para cada produto visualizado de acordo com o modelo escolhido, o sistema mostrava os
+            produtos mais comprados e visualizados relacionados, aumentando a probabilidade de
+            conversão.
           </p>
         </section>
         <section class="project-story-section">
           <h2>Manutenção e automação</h2>
           <p>
-            <!-- Descreva as rotinas de operação, manutenção e automação. -->
+            O sistema funcionava de forma autônoma, com atualizações diárias das recomendações. A
+            manutenção envolvia a verificação periódica dos algoritmos e ajustes conforme necessário
+            para melhorar a precisão das recomendações.
           </p>
         </section>
         <section class="project-story-section">
           <h2>Resultados e aprendizados</h2>
           <p>
-            <!-- Registre os resultados observados e os aprendizados do projeto. -->
+            O sistema de recomendação ajudou a aumentar a conversão de vendas, proporcionando uma
+            experiência melhor para os clientes e aumentando a fidelidade da marca.
           </p>
         </section>
-        </div>
-      </article>
-    </main>
-    <footer class="wrap footer">
-      <a class="brand" href="../index.html" aria-label="Voltar ao início">Rafael Batista</a>
-      <span>Rafael Batista</span>
-      <a href="../index.html#projetos">Todos os projetos ↑</a>
-    </footer>
-  </body>
+      </div>
+    </article>
+  </main>
+  <footer class="wrap footer">
+    <a class="brand" href="../index.html" aria-label="Voltar ao início">Rafael Batista</a>
+    <span>Rafael Batista</span>
+    <a href="../index.html#projetos">Todos os projetos ↑</a>
+  </footer>
+</body>
+
 </html>
