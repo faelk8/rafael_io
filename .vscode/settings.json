@@ -2,5 +2,13 @@
   "git.openRepositoryInParentFolders": "never",
   "git.ignoredRepositories": [
     "/home/rafael"
-  ]
+  ],
+  "[html]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "html.format.wrapLineLength": 100,
+  "html.format.wrapAttributes": "auto"
 }
