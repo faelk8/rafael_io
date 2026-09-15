@@ -21,48 +21,36 @@ window.PROFILE = {
   // Campos vazios não aparecem no site. Duplique um objeto para adicionar outro projeto.
   professionalProjects: [
     {
-      page: 'kafka.html',
-      slug: 'kafka', // Identificador da página; mantenha estável ao alterar o título.
-      name: 'Projeto com Apache Kafka',
-      description: 'Atuação em um projeto com Apache Kafka no ambiente de uma empresa.',
-      tags: ['Apache Kafka'],
-      context: '', // Qual problema o projeto precisava resolver?
-      contribution: '', // O que você fez e quais decisões tomou?
-      architecture: '', // Como os componentes se conectavam?
-      results: '', // Quais foram os resultados? Inclua números apenas se tiver os dados.
+      page: 'projetos/kafka.html',
+      slug: 'kafka',
+      name: 'Centralização de dados com Apache Kafka',
+      description: 'Integração de ~1800 tabelas por base de cliente, com Kafka, Debezium e rotinas de manutenção automatizadas no Airflow.',
+      tags: ['Apache Kafka', 'Debezium', 'Amazon EC2', 'Apache Airflow', 'Python', 'KSQL', 'Grafana', 'Loki', 'Promtail'],
+      // O relato completo é editado diretamente em projetos/kafka.html.
     },
     {
-      page: 'sistema-de-recomendacao.html',
+      page: 'projetos/anti-fraude.html',
+      slug: 'anti-fraude',
+      name: 'Sistema de detecção de fraude com estatística',
+      description: 'Sistema de detecção de fraude em transações financeiras, com análise estatística e alertas em tempo real.',
+      tags: ['Detecção de Fraude', 'Estatística', 'ClickHouse', 'PostgreSQL', 'MongoDB', 'Python', 'RabbitMQ', 'Airflow'],
+      // O relato completo é editado diretamente em projetos/anti-fraude.html.
+    },
+    {
+      page: 'projetos/sistema-de-recomendacao.html',
       slug: 'sistema-de-recomendacao', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Sistema de recomendação',
       description: 'Atuação em um sistema de recomendação desenvolvido em uma empresa.',
       tags: ['Sistema de recomendação'],
-      context: '',
-      contribution: '',
-      architecture: '',
-      results: '',
+      // Edite o relato diretamente em projetos/sistema-de-recomendacao.html.
     },
     {
-      page: 'csa.html',
-      slug: 'csa',
-      name: 'CSA',
-      description: '', // Escreva um resumo do projeto CSA.
-      tags: [], // Adicione as tecnologias utilizadas.
-      context: '', // Qual era o desafio?
-      contribution: '', // O que você fez?
-      architecture: '', // Como foi feito?
-      results: '', // Resultados e aprendizados.
-    },
-    {
-      page: 'arquitetura-medalhao.html',
+      page: 'projetos/arquitetura-medalhao.html',
       slug: 'arquitetura-medalhao', // Identificador da página; mantenha estável ao alterar o título.
       name: 'Arquitetura medalhão com Dremio e S3',
       description: 'Atuação em um projeto de arquitetura medalhão com Dremio e S3, coletando dados do PostgreSQL.',
       tags: ['Dremio', 'S3', 'PostgreSQL', 'Arquitetura medalhão'],
-      context: '',
-      contribution: '',
-      architecture: '',
-      results: '',
+      // Edite o relato diretamente em projetos/arquitetura-medalhao.html.
     },
   ],
   // Projetos preenchidos aqui têm prioridade sobre os repositórios do GitHub.
