@@ -32,3 +32,14 @@
 @media(max-width:640px){.skills-grid{grid-template-columns:1fr}.header{height:auto;min-height:86px;gap:16px;flex-wrap:wrap;padding-block:20px}nav{gap:16px;flex-wrap:wrap}}
 
 @media(min-width:641px) and (max-width:900px){.header nav{gap:20px}.header .brand{font-size:22px}}
+
+/* Relatos HTML: parágrafos contínuos com espaçamento de leitura. */
+.project-story-section p{white-space:normal;margin:0 0 1.35em}
+.project-story-section p:last-child{margin-bottom:0}
+
+/* Alinhamento dos textos corridos em todas as páginas. */
+p, li, figcaption{text-align:justify;hyphens:auto}
+.architecture-figure{margin:32px 0}
+.architecture-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+.architecture-figure figcaption{margin-top:14px;font-size:14px;color:var(--muted)}
+.architecture-download{display:inline-block;margin-top:14px;color:var(--accent);font-size:14px}
