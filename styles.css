@@ -15,7 +15,7 @@
 .project-page{max-width:880px;padding-block:48px 80px;min-height:70vh}
 .project-back{display:inline-block;color:var(--muted);font-size:14px;margin-bottom:48px}
 .project-page h1{font-size:clamp(36px,6vw,64px);letter-spacing:-2px;overflow-wrap:anywhere}
-.project-page-intro{font-size:20px;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}
+.project-page-intro{font-size:20px;color:var(--muted);white-space:normal;text-align:left;overflow-wrap:anywhere}
 .project-page .tags{margin:24px 0 40px}
 .project-story-section{border-top:1px solid var(--line);padding-top:30px;margin-top:36px}
 .project-story-section h2{font-size:28px;letter-spacing:-1px;margin-bottom:18px}
@@ -113,3 +113,20 @@ p, li, figcaption{text-align:justify;hyphens:auto}
 .project-story-section li + li {
   margin-top: 6px;
 }
+
+/* Formação acadêmica e cursos relevantes. */
+.education-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.education-card{min-width:0;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:7px;overflow-wrap:anywhere}
+.education-card .eyebrow{margin-bottom:12px;color:var(--accent)}
+.education-card h3{font-size:20px;line-height:1.3}
+.education-card p{font-size:14px;color:var(--muted);text-align:left;white-space:normal}
+.education-card .education-meta{font-size:13px}
+.education-courses-title{font-size:14px;font-weight:600;margin:20px 0 8px}
+.education-courses{padding-left:20px;margin:0 0 16px;color:var(--muted);font-size:14px}
+.education-courses li{text-align:left;overflow-wrap:anywhere}
+.education-courses li + li{margin-top:6px}
+.education-courses .education-courses{margin:8px 0 12px;padding-left:20px;list-style-type:circle}
+.education-card a{display:inline-block;color:var(--accent);font-size:13px}
+.education-card > :last-child{margin-bottom:0}
+@media(max-width:900px){.header{height:auto;min-height:86px;flex-wrap:wrap;gap:16px;padding-block:20px}.header nav{flex-wrap:wrap}}
+@media(max-width:640px){.education-grid{grid-template-columns:1fr}}
