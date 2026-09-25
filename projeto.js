@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const id = document.body.dataset.project || new URLSearchParams(window.location.search).get('projeto');
-  const projects = window.PROFILE?.professionalProjects || [];
+  const projects = [...(window.PROFILE?.professionalProjects || []), ...(window.PROFILE?.personalProjects || [])];
   const project = projects.find((item, index) => (item.slug || String(index)) === id);
   const byId = (value) => document.getElementById(value);
   if (!project) {
@@ -9,7 +9,7 @@
     document.title = 'Projeto não encontrado · Rafael Batista';
     return;
   }
-  if (['kafka', 'arquitetura-medalhao', 'sistema-de-recomendacao'].includes(project.slug)) {
+  if (!document.body.dataset.project && /^projetos\/(profissionais|pessoais)\/[a-z0-9-]+\.html$/.test(project.page || '')) {
     window.location.replace(new URL(project.page, window.location.href).href);
     return;
   }
