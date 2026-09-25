@@ -49,14 +49,13 @@
       byId('project-list').append(card);
     });
   }
-  function renderProfessionalProjects() {
-    const projects = profile.professionalProjects || [];
-    byId('professional-section').hidden = projects.length === 0;
+  function renderProjectGroup(projects, group, label) {
+    byId(`${group}-section`).hidden = projects.length === 0;
     projects.forEach((project, index) => {
       const card = document.createElement('article');
       card.className = 'project-card professional-card';
       const top = document.createElement('div'); top.className = 'project-top';
-      const category = document.createElement('span'); category.textContent = 'EXPERIÊNCIA PROFISSIONAL';
+      const category = document.createElement('span'); category.textContent = label;
       top.append(category);
       const title = document.createElement('h4'); title.textContent = project.name;
       const description = document.createElement('p'); description.className = 'project-text';
@@ -64,14 +63,14 @@
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
       const link = document.createElement('a');
-      link.href = /^(?:projetos\/)?[a-z0-9-]+\.html$/.test(project.page || '')
+      link.href = /^(?:projetos\/(?:profissionais\/|pessoais\/)?)?[a-z0-9-]+\.html$/.test(project.page || '')
         ? project.page
         : `projeto.html?projeto=${encodeURIComponent(project.slug || String(index))}`;
       link.className = 'professional-project-link';
       link.textContent = 'Conhecer o projeto →';
       link.setAttribute('aria-label', `Conhecer o projeto: ${project.name}`);
       card.append(link);
-      byId('professional-list').append(card);
+      byId(`${group}-list`).append(card);
     });
   }
   function renderSkills() {
@@ -95,8 +94,58 @@
       byId('skills-list').append(card);
     }
   }
+  function createCourseList(courses) {
+    const list = document.createElement('ul'); list.className = 'education-courses';
+    for (const course of Array.isArray(courses) ? courses : []) {
+      const name = typeof course === 'string' ? course : course?.name;
+      if (typeof name !== 'string' || !name.trim()) continue;
+      const item = document.createElement('li'); item.textContent = name;
+      if (typeof course === 'object') {
+        const children = createCourseList(course.courses);
+        if (children.children.length) item.append(children);
+      }
+      list.append(item);
+    }
+    return list;
+  }
+  function renderEducation() {
+    const entries = (profile.education || []).filter(entry => entry.name?.trim());
+    byId('education-status').hidden = entries.length > 0;
+    for (const entry of entries) {
+      const card = document.createElement('article'); card.className = 'education-card';
+      if (entry.category?.trim()) {
+        const category = document.createElement('p'); category.className = 'eyebrow';
+        category.textContent = entry.category; card.append(category);
+      }
+      const title = document.createElement('h3'); title.textContent = entry.name; card.append(title);
+      const details = [entry.institution, entry.period, entry.status].filter(value => value?.trim());
+      if (details.length) {
+        const meta = document.createElement('p'); meta.className = 'education-meta';
+        meta.textContent = details.join(' · '); card.append(meta);
+      }
+      if (entry.description?.trim()) {
+        const description = document.createElement('p');
+        description.textContent = entry.description; card.append(description);
+      }
+      const list = createCourseList(entry.courses);
+      if (list.children.length) {
+        const heading = document.createElement('h4'); heading.className = 'education-courses-title';
+        heading.textContent = 'Cursos da formação'; card.append(heading);
+        card.append(list);
+      }
+      const certificateUrl = safeUrl(entry.certificateUrl);
+      if (certificateUrl) {
+        const link = document.createElement('a'); link.href = certificateUrl;
+        link.textContent = 'Ver certificado ↗';
+        link.setAttribute('aria-label', `Ver certificado: ${entry.name}`); card.append(link);
+      }
+      byId('education-list').append(card);
+    }
+  }
+  renderEducation();
   renderSkills();
-  renderProfessionalProjects();
+  renderProjectGroup(profile.professionalProjects || [], 'professional', 'EXPERIÊNCIA PROFISSIONAL');
+  renderProjectGroup(profile.personalProjects || [], 'personal', 'PROJETO PESSOAL');
   async function loadProjects() {
     if (profile.projects?.length) { renderProjects(profile.projects); return; }
     if (!username) { setText('project-status', 'Novos projetos serão adicionados em breve.'); return; }
@@ -105,7 +154,10 @@
       const response = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=100`, { signal: AbortSignal.timeout(10000) });
       if (!response.ok) throw new Error('GitHub indisponível');
       const repos = await response.json();
-      const projects = repos.filter(repo => !repo.fork && !repo.archived).slice(0, 6).map(repo => ({ name: repo.name, description: repo.description, tags: repo.language ? [repo.language] : [], url: repo.html_url }));
+      const projects = repos
+        .filter(repo => repo.private === false && (!repo.visibility || repo.visibility === 'public') && !repo.fork && !repo.archived)
+        .slice(0, 6)
+        .map(repo => ({ name: repo.name, description: repo.description, tags: repo.language ? [repo.language] : [], url: repo.html_url }));
       renderProjects(projects);
       byId('project-status').textContent = projects.length ? 'Repositórios públicos atualizados recentemente.' : 'Novos projetos serão adicionados em breve.';
     } catch { setText('project-status', 'Não foi possível carregar os projetos agora. Você pode acessá-los pelo link do GitHub acima.'); }
