@@ -86,19 +86,69 @@ Exemplo de formato (ajuste o nível e o texto à sua experiência):
 
 Duplique um item para adicionar novas ferramentas. Envie as mudanças à branch `main` para publicá-las.
 
+## Formação e cursos relevantes
+
+Preencha a lista `education` em `profile.js` para adicionar formações, cursos e certificações à seção **Formação**. Os cartões seguem a ordem da lista. Use seus dados reais neste modelo:
+
+```js
+{
+  name: 'Nome da formação ou curso',
+  institution: 'Instituição de ensino',
+  category: 'Curso', // Ou 'Formação acadêmica' ou 'Certificação'
+  period: 'Ano ou período',
+  status: 'Concluído', // Ou 'Em andamento'
+  description: 'Conhecimentos relevantes para sua atuação profissional.',
+  certificateUrl: '', // Link público opcional para o certificado
+},
+```
+
+Apenas `name` é obrigatório para exibir o cartão. Campos vazios são omitidos. Enquanto a lista estiver vazia, a seção informa que os dados serão adicionados em breve.
+
+Nas formações da DSA, preencha `courses` com os cursos que compõem cada formação:
+
+```js
+courses: [
+  'Nome do primeiro curso',
+  'Nome do segundo curso',
+],
+```
+
+Os cursos aparecem em uma lista dentro do cartão da respectiva formação. Listas vazias ficam ocultas.
+
+Para criar sublistas, use um objeto com `name` e `courses`. É possível combinar cursos simples e grupos na mesma lista:
+
+```js
+courses: [
+  {
+    name: 'Programação e Machine Learning com C# e .NET Core',
+    courses: [
+      'Programação C# - Introdução',
+      'Programação C# - Orientação a Objetos',
+    ],
+  },
+  'Outro curso',
+],
+```
+
 ## Páginas individuais
 
-As páginas individuais ficam na pasta `projetos/`. O Kafka está em `projetos/kafka.html`. O campo `page` em `profile.js` define o endereço do cartão. Os textos continuam no objeto de cada projeto em `profile.js`.
+As páginas individuais ficam na pasta `projetos/`. O Kafka está em `projetos/profissionais/kafka.html`. O campo `page` em `profile.js` define o endereço do cartão. Os textos continuam no objeto de cada projeto em `profile.js`.
 
 O build inclui automaticamente os arquivos da pasta `projetos/`. Os endereços antigos de `projeto.html?projeto=...` continuam funcionando.
 
 
 ## Prévia com atualização automática
 
-Execute `python3 scripts/dev.py` e abra http://localhost:8000/projetos/kafka.html. Ao salvar HTML, CSS, JavaScript ou texto, o navegador recarrega automaticamente. Mantenha o terminal aberto; encerre com Ctrl+C. Se a porta estiver ocupada, use `python3 scripts/dev.py --port 8001`.
+Execute `python3 scripts/dev.py` e abra http://localhost:8000/projetos/profissionais/kafka.html. Ao salvar HTML, CSS, JavaScript ou texto, o navegador recarrega automaticamente. Mantenha o terminal aberto; encerre com Ctrl+C. Se a porta estiver ocupada, use `python3 scripts/dev.py --port 8001`.
 
-O relato do Kafka agora é editado **diretamente em `projetos/kafka.html`**, nos elementos `<h2>` e `<p>`. Ele não depende de JavaScript para aparecer. `texto/kafka.txt` permanece como rascunho de referência e não substitui mais o conteúdo do HTML. O resumo do cartão da página inicial continua em `profile.js`.
+O relato do Kafka agora é editado **diretamente em `projetos/profissionais/kafka.html`**, nos elementos `<h2>` e `<p>`. Ele não depende de JavaScript para aparecer. `texto/kafka.txt` permanece como rascunho de referência e não substitui mais o conteúdo do HTML. O resumo do cartão da página inicial continua em `profile.js`.
 
 Para gerar a versão de publicação, execute `python3 scripts/build.py`. O resultado fica em `_site/`. O GitHub Actions executa esse build a cada push para `main`; salvar localmente atualiza apenas a prévia.
 
 Se a porta solicitada estiver ocupada, a prévia escolhe automaticamente a próxima disponível (até 20 tentativas). Abra o endereço mostrado no terminal.
+
+## Projetos pessoais e profissionais
+
+Os relatos profissionais ficam em `projetos/profissionais/`; os pessoais, em `projetos/pessoais/`. Os endereços anteriores dos projetos profissionais redirecionam para as novas páginas.
+
+Edite os cartões pessoais em `personalProjects`, no `profile.js`, e o relato diretamente no HTML correspondente. Foram criadas páginas para robô trader, previsão de cotação de empresas, acompanhamento de carteira de investimentos e agente pessoal com IA local. Os detalhes aguardam preenchimento.
