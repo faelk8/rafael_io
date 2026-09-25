@@ -62,7 +62,9 @@
             A arquitetura do sistema de recomendação foi planejada para coletar e processar esses
             dados, utilizando algoritmos de filtragem colaborativa e baseada em conteúdo. O sistema
             foi projetado para identificar padrões de comportamento dos clientes e gerar
-            recomendações relevantes.
+            recomendações relevantes. As recomendações geradas eram armazenadas no Redis, um banco
+            de dados em memória utilizado para disponibilizar essas informações com baixa latência
+            e contribuir para o carregamento rápido das páginas.
           </p>
         </section>
         <section class="project-story-section">
@@ -70,9 +72,10 @@
           <p>
             Todos os dias os produtos eram analisados e classificados de acordo com a frequência de
             compra e visualização. O sistema então gerava uma lista de recomendações personalizadas
-            para cada cliente, que ficava disponível no Redis, quando um cliente acessava o site, as
-            recomendações eram exibidas com base em seu histórico de compras e comportamento de
-            navegação.
+            para cada cliente e disponibilizava os resultados no Redis. Quando o cliente acessava
+            o site, a aplicação consultava as recomendações já processadas em memória, sem precisar
+            recalculá-las durante o carregamento da página. Assim, os produtos recomendados com base
+            no histórico de compras e no comportamento de navegação podiam ser exibidos rapidamente.
           </p>
           <p>
             Para cada produto visualizado de acordo com o modelo escolhido, o sistema mostrava os
@@ -91,8 +94,9 @@
         <section class="project-story-section">
           <h2>Resultados e aprendizados</h2>
           <p>
-            O sistema de recomendação ajudou a aumentar a conversão de vendas, proporcionando uma
-            experiência melhor para os clientes e aumentando a fidelidade da marca.
+            O sistema de recomendação ajudou a aumentar a conversão de vendas e o ticket médio,
+            proporcionando uma experiência melhor para os clientes e aumentando a
+            fidelidade da marca.
           </p>
         </section>
       </div>
