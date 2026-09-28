@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="profile.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="locales/messages.js" defer></script>
+  <script src="i18n.js" defer></script>
 </head>
 
 <body>
@@ -19,10 +21,24 @@
   <header class="header wrap">
     <a class="brand" href="#" aria-label="Rafael Batista, início">Rafael Batista</a>
     <nav aria-label="Navegação principal">
-      <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a
-        href="#conhecimentos">Ferramentas</a><a href="#formacao">Formação</a><a
+      <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#formacao">Formação</a><a
         href="#contato">Contato <span aria-hidden="true">↗</span></a>
     </nav>
+      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
+          <img src="assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>BR</span>
+        </button>
+        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
+          <img src="assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>US</span>
+        </button>
+        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+          <img src="assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>ES</span>
+        </button>
+      </div>
+
   </header>
   <main id="conteudo">
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -54,17 +70,41 @@
     </section>
     <section class="section wrap about" id="sobre" aria-labelledby="about-title">
       <div>
-        <p class="eyebrow">01 / SOBRE MIM</p>
+        <p class="eyebrow">SOBRE MIM</p>
         <h2 id="about-title">Por trás<br />dos projetos<span class="accent">.</span></h2>
       </div>
       <div class="about-copy">
         <p class="large-copy" id="about-lead">
-          Um espaço para compartilhar o que estou construindo.
+          Sou engenheiro de dados e gosto de entender como as coisas funcionam — do problema de
+          negócio à arquitetura que ajuda a resolvê-lo.
         </p>
-        <p id="bio">
-          Sou Rafael Batista. Aqui você vai encontrar meus projetos e acompanhar as próximas
-          atualizações deste espaço.
-        </p>
+        <div id="bio">
+          <p>Minha trajetória com dados começou perto das áreas comerciais, analisando vendas,
+            estoque, produtos e rentabilidade. Antes de construir pipelines, eu usava as informações
+            para entender o que estava acontecendo no negócio e apoiar decisões. Essa experiência
+            continua orientando meu trabalho: procuro entender quem vai usar os dados, qual problema
+            precisa ser resolvido e que impacto a solução pode trazer.</p>
+          <p>A curiosidade sobre como os dados eram produzidos, integrados e disponibilizados me
+            levou da análise à engenharia de dados. Projetei e implementei uma arquitetura de
+            integração em tempo real com Kafka, Debezium e AWS que chegou a conectar mais de 1.800
+            bases. Também trabalhei com plataformas analíticas, soluções antifraude e sistemas de
+            recomendação.</p>
+          <p>Participei da modernização de uma plataforma de dados, incluindo a migração de 264
+            pipelines legados para Python, dbt, Airflow e Kubernetes. Em alguns dos fluxos
+            otimizados, o tempo de execução caiu em até 90%. Gosto desse trabalho de combinar
+            arquitetura, desempenho e manutenção, considerando também o custo operacional e as
+            necessidades de quem depende dos dados.</p>
+          <p>Fora do trabalho, continuo aprendendo com projetos que fazem parte da minha vida. Uso
+            todos os meses o sistema que desenvolvi para acompanhar minha carteira de investimentos
+            e construo um ambiente de IA local com agentes que me ajudam a programar, documentar e
+            analisar meus projetos. Meu interesse por finanças também me levou a experimentar redes
+            LSTM e GRU e a desenvolver um robô para operar na bolsa.</p>
+          <p>Sou formado em Análise e Desenvolvimento de Sistemas, com pós-graduação em Big Data
+            Analytics. Gosto de estudar, testar ideias e observar o que funciona na
+            prática, inclusive quando o resultado mostra os limites de uma abordagem. Este espaço
+            reúne um pouco desse percurso: os projetos que construo, os problemas que me despertam
+            curiosidade e o que aprendo pelo caminho.</p>
+        </div>
         <div class="tags" id="interests" aria-label="Interesses"></div>
         <div class="about-note">
           <span class="accent">↳</span> Este site também é um projeto em evolução.
@@ -74,7 +114,7 @@
     <section class="section wrap" id="projetos" aria-labelledby="projects-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">02 / PROJETOS</p>
+          <p class="eyebrow">PROJETOS</p>
           <h2 id="projects-title">Ideias em prática<span class="accent">.</span></h2>
         </div>
         <a class="text-link" id="github-link" hidden>Ver no GitHub ↗</a>
@@ -88,23 +128,16 @@
       </div>
       <section id="personal-section" aria-labelledby="personal-title" hidden>
         <h3 class="project-group-title" id="personal-title">Projetos pessoais</h3>
-        <p class="project-group-description">Iniciativas próprias para explorar ideias e desenvolver soluções.</p>
+        <p class="project-group-description">Iniciativas próprias para explorar ideias e desenvolver
+          soluções.</p>
         <div class="projects professional-projects" id="personal-list"></div>
       </section>
       <h3 class="project-group-title">Projetos no GitHub</h3>
       <div class="projects" id="project-list"></div>
       <p class="project-status" id="project-status" role="status"></p>
     </section>
-    <section class="section wrap" id="conhecimentos" aria-labelledby="skills-title" hidden>
-      <p class="eyebrow">03 / CONHECIMENTOS</p>
-      <h2 id="skills-title">Ferramentas que conheço<span class="accent">.</span></h2>
-      <p class="skills-intro">
-        Tecnologias e áreas de conhecimento que fazem parte da minha experiência.
-      </p>
-      <div class="skills-grid" id="skills-list"></div>
-    </section>
     <section class="section wrap" id="formacao" aria-labelledby="education-title">
-      <p class="eyebrow">04 / FORMAÇÃO</p>
+      <p class="eyebrow">FORMAÇÃO</p>
       <h2 id="education-title">Formação e cursos relevantes<span class="accent">.</span></h2>
       <p class="skills-intro">Formação acadêmica e estudos que complementam minha atuação
         profissional.</p>
@@ -113,7 +146,7 @@
         adicionadas em breve.</p>
     </section>
     <section class="section wrap contact" id="contato" aria-labelledby="contact-title">
-      <p class="eyebrow">05 / CONTATO</p>
+      <p class="eyebrow">CONTATO</p>
       <div class="contact-row">
         <h2 id="contact-title">
           Toda boa ideia começa<br />com uma conversa<span class="accent">.</span>
