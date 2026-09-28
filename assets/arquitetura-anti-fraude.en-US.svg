@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc" lang="en-US">
+<title id="title">Fraud detection system architecture</title>
+<desc id="desc">PostgreSQL and MongoDB data is processed and stored in ClickHouse. The system consumes orders from RabbitMQ and uses statistical analysis and historical data to route orders to approved or rejected queues.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#80baff" /></marker></defs>
+<rect width="1200" height="900" rx="20" fill="#10141c" />
+<g font-family="Arial, sans-serif">
+<text x="48" y="55" fill="#edf2fa" font-size="28" font-weight="700">Data architecture · Fraud detection</text>
+<rect x="48" y="120" width="280" height="95" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="68" y="153" fill="#80baff" font-size="20" font-weight="700">PostgreSQL</text>
+<text x="68" y="183" fill="#edf2fa" font-size="16">Relational data</text>
+<rect x="48" y="250" width="280" height="95" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="68" y="283" fill="#80baff" font-size="20" font-weight="700">MongoDB</text>
+<text x="68" y="313" fill="#edf2fa" font-size="16">NoSQL data</text>
+<rect x="400" y="170" width="280" height="130" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="420" y="203" fill="#80baff" font-size="20" font-weight="700">Data preparation</text>
+<text x="420" y="233" fill="#edf2fa" font-size="16">Processing</text>
+<text x="420" y="257" fill="#edf2fa" font-size="16">Summarization</text>
+<rect x="752" y="150" width="400" height="170" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="772" y="183" fill="#80baff" font-size="20" font-weight="700">ClickHouse</text>
+<text x="772" y="213" fill="#edf2fa" font-size="16">History for analysis</text>
+<text x="772" y="237" fill="#edf2fa" font-size="16">Validated legitimate purchases</text>
+<text x="772" y="261" fill="#edf2fa" font-size="16">Purchases confirmed as fraud</text>
+<path d="M328 167H362V215H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M328 297H362V255H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M680 235H752" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="48" y="450" width="280" height="130" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="68" y="483" fill="#80baff" font-size="20" font-weight="700">New orders</text>
+<text x="68" y="513" fill="#edf2fa" font-size="16">Transaction data</text>
+<text x="68" y="537" fill="#edf2fa" font-size="16">Routing for evaluation</text>
+<rect x="400" y="450" width="280" height="130" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="420" y="483" fill="#80baff" font-size="20" font-weight="700">RabbitMQ</text>
+<text x="420" y="513" fill="#edf2fa" font-size="16">Input queue</text>
+<text x="420" y="537" fill="#edf2fa" font-size="16">Order consumption</text>
+<rect x="752" y="420" width="400" height="190" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="772" y="453" fill="#80baff" font-size="20" font-weight="700">Statistical analysis</text>
+<text x="772" y="483" fill="#edf2fa" font-size="16">Browsing and purchase history</text>
+<text x="772" y="507" fill="#edf2fa" font-size="16">Personal data and other factors</text>
+<text x="772" y="531" fill="#edf2fa" font-size="16">Clustering and outlier analysis</text>
+<text x="772" y="555" fill="#edf2fa" font-size="16">Order classification</text>
+<path d="M328 515H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M680 515H752" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M952 320V420" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="400" y="730" width="280" height="115" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="420" y="763" fill="#80baff" font-size="20" font-weight="700">Approved queue</text>
+<text x="420" y="793" fill="#edf2fa" font-size="16">Approved orders</text>
+<text x="420" y="817" fill="#edf2fa" font-size="16">after evaluation</text>
+<rect x="752" y="730" width="400" height="115" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="772" y="763" fill="#80baff" font-size="20" font-weight="700">Rejected queue</text>
+<text x="772" y="793" fill="#edf2fa" font-size="16">Rejected orders</text>
+<text x="772" y="817" fill="#edf2fa" font-size="16">after evaluation</text>
+<path d="M952 610V665H540V730" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M952 665V730" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+</g></svg>
