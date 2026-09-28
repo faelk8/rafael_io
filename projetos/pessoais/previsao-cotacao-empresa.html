@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#10141c" />
-  <meta name="description" content="Projeto pessoal voltado à previsão de cotações de ações de empresas." />
+  <meta name="description" content="Estudo de redes LSTM e GRU para prever preços de abertura, mínima, máxima e fechamento nos próximos cinco pregões." />
   <title>Previsão de cotação de empresas · Rafael Batista</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../../styles.css" />
+  <script src="../../locales/messages.js" defer></script>
+  <script src="../../i18n.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -16,21 +18,74 @@
     <nav aria-label="Navegação principal">
       <a href="../../index.html#sobre">Sobre</a>
       <a href="../../index.html#projetos">Projetos</a>
-      <a href="../../index.html#conhecimentos">Ferramentas</a>
       <a href="../../index.html#formacao">Formação</a>
       <a href="../../index.html#contato">Contato ↗</a>
     </nav>
+      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
+          <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>BR</span>
+        </button>
+        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
+          <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>US</span>
+        </button>
+        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+          <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>ES</span>
+        </button>
+      </div>
+
   </header>
   <main class="wrap project-page" id="conteudo">
     <a class="project-back" href="../../index.html#personal-section">← Voltar para os projetos pessoais</a>
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Previsão de cotação de empresas</h1>
-      <p class="project-page-intro">Projeto pessoal voltado à previsão de cotações de ações de empresas.</p>
+      <p class="project-page-intro">Estudo de redes LSTM e GRU para prever preços de abertura, mínima, máxima e fechamento nos próximos cinco pregões.</p>
+      <div class="tags" aria-label="Tecnologias e técnicas utilizadas">
+        <span class="tag">Python</span>
+        <span class="tag">LSTM</span>
+        <span class="tag">GRU</span>
+        <span class="tag">Redes neurais</span>
+        <span class="tag">Séries temporais</span>
+      </div>
       <section class="project-story-section">
         <h2>Sobre o projeto</h2>
-        <p>Os detalhes deste projeto serão adicionados em breve.</p>
-        <!-- Detalhe aqui o objetivo, a arquitetura, sua implementação e os resultados observados. -->
+        <p>Desenvolvi este projeto para aprender, na prática, como trabalhar com redes neurais
+          LSTM e GRU em séries temporais. Escolhi as cotações de ações como objeto de estudo,
+          com o objetivo de prever os preços de abertura, mínima, máxima e fechamento para os
+          cinco pregões seguintes.</p>
+        <h2>Como foi desenvolvido</h2>
+        <p>Utilizei Python para desenvolver os experimentos com redes LSTM e GRU aplicadas
+          às séries temporais de cotações. O trabalho envolveu testar diferentes configurações
+          das redes e comparar os valores previstos com os observados para abertura, mínima,
+          máxima e fechamento nos cinco pregões seguintes.</p>
+        <h2>Experimentos com as redes</h2>
+        <p>Ao longo do projeto, explorei diferentes arquiteturas de LSTM: a versão básica
+          (vanilla), modelos encoder-decoder e redes bidirecionais, que processam a sequência
+          de entrada nos dois sentidos. Também experimentei redes rasas e profundas, variando
+          a quantidade de camadas, o número de neurônios e as funções de ativação.</p>
+        <p>Além das variações de LSTM, fiz experimentos com GRU. Testar essas configurações
+          tornou o projeto um espaço de exploração para observar como diferentes escolhas
+          de arquitetura influenciavam as previsões.</p>
+        <h2>Resultados observados</h2>
+        <p>Nos testes realizados, as diferenças observadas entre os valores previstos e os
+          reais variaram de cerca de −R$ 0,01 a R$ 0,63, dependendo da cotação da ação.
+          Para ações com preços de até aproximadamente R$ 20, as previsões ficaram mais
+          próximas dos valores reais. Já nas ações com cotações próximas de R$ 60, observei
+          diferenças maiores e menor precisão em termos de valores absolutos.</p>
+        <h2>Aprendizados</h2>
+        <p>Foi um projeto muito divertido de desenvolver e estudar. A possibilidade de testar
+          arquiteturas, alterar configurações e acompanhar os resultados tornou o aprendizado
+          sobre redes neurais mais concreto e despertou ainda mais meu interesse pelo tema.</p>
+        <p>A experiência me ajudou a explorar o uso de LSTM e GRU na previsão de séries
+          temporais e a perceber a importância de observar os erros em relação à escala
+          dos valores analisados.</p>
+        <p>Esses resultados me incentivaram a estudar estatística com mais profundidade para
+          compreender melhor o comportamento dos dados e avaliar as previsões. Esse percurso
+          de aprendizado me levou à criação do <a href="robo-trader.html">robô trader</a>,
+          um projeto para automatizar operações na Bolsa de Valores.</p>
       </section>
     </article>
   </main>
