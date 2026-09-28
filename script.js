@@ -10,7 +10,14 @@
   setText('hero-name', profile.name);
   setText('intro', profile.intro);
   setText('about-lead', profile.aboutLead);
-  setText('bio', profile.bio);
+  if (profile.bio) {
+    const paragraphs = profile.bio.split(/\n\s*\n/).filter(text => text.trim());
+    byId('bio').replaceChildren(...paragraphs.map(text => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      return paragraph;
+    }));
+  }
   byId('year').textContent = new Date().getFullYear();
   function addTags(parent, tags) {
     for (const tag of tags || []) {
@@ -42,6 +49,8 @@
       top.append(category);
       const title = document.createElement('h4'); title.textContent = project.name;
       const description = document.createElement('p'); description.textContent = project.description || 'Veja os detalhes e o código deste projeto no GitHub.';
+      title.setAttribute('translate', 'no');
+      if (project.description) description.setAttribute('translate', 'no');
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
       const url = safeUrl(project.url);
@@ -72,27 +81,6 @@
       card.append(link);
       byId(`${group}-list`).append(card);
     });
-  }
-  function renderSkills() {
-    const skills = profile.skills || [];
-    byId('conhecimentos').hidden = skills.length === 0;
-    for (const skill of skills) {
-      const card = document.createElement('article'); card.className = 'skill-card';
-      if (skill.category) {
-        const category = document.createElement('p'); category.className = 'eyebrow';
-        category.textContent = skill.category; card.append(category);
-      }
-      const name = document.createElement('h3'); name.textContent = skill.name; card.append(name);
-      if (skill.level?.trim()) {
-        const level = document.createElement('p'); level.className = 'skill-level';
-        level.textContent = `Domínio: ${skill.level}`; card.append(level);
-      }
-      if (skill.description?.trim()) {
-        const description = document.createElement('p'); description.className = 'skill-description';
-        description.textContent = skill.description; card.append(description);
-      }
-      byId('skills-list').append(card);
-    }
   }
   function createCourseList(courses) {
     const list = document.createElement('ul'); list.className = 'education-courses';
@@ -143,7 +131,6 @@
     }
   }
   renderEducation();
-  renderSkills();
   renderProjectGroup(profile.professionalProjects || [], 'professional', 'EXPERIÊNCIA PROFISSIONAL');
   renderProjectGroup(profile.personalProjects || [], 'personal', 'PROJETO PESSOAL');
   async function loadProjects() {
@@ -154,7 +141,9 @@
       const response = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=100`, { signal: AbortSignal.timeout(10000) });
       if (!response.ok) throw new Error('GitHub indisponível');
       const repos = await response.json();
+      const hiddenRepos = new Set(['faelk8', 'rafael_io']);
       const projects = repos
+        .filter(repo => !hiddenRepos.has(repo.name.toLowerCase()))
         .filter(repo => repo.private === false && (!repo.visibility || repo.visibility === 'public') && !repo.fork && !repo.archived)
         .slice(0, 6)
         .map(repo => ({ name: repo.name, description: repo.description, tags: repo.language ? [repo.language] : [], url: repo.html_url }));
