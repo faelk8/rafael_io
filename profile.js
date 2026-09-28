@@ -2,20 +2,12 @@
 window.PROFILE = {
   name: 'Rafael Batista',
   intro: 'Projetos, ideias e um pouco sobre mim. Bem-vindo ao meu canto da internet.',
-  aboutLead: 'Um espaço para compartilhar o que estou construindo.',
-  bio: 'Sou Rafael Batista. Aqui você vai encontrar meus projetos e acompanhar as próximas atualizações deste espaço.',
-  interests: [], // Exemplo: ['Desenvolvimento', 'Dados', 'Tecnologia']
+  aboutLead: "Sou engenheiro de dados e gosto de entender como as coisas funcionam — do problema de negócio à arquitetura que ajuda a resolvê-lo.",
+  bio: "Minha trajetória com dados começou perto das áreas comerciais, analisando vendas, estoque, produtos e rentabilidade. Antes de construir pipelines, eu usava as informações para entender o que estava acontecendo no negócio e apoiar decisões. Essa experiência continua orientando meu trabalho: procuro entender quem vai usar os dados, qual problema precisa ser resolvido e que impacto a solução pode trazer.\n\nA curiosidade sobre como os dados eram produzidos, integrados e disponibilizados me levou da análise à engenharia de dados. Na Magazord, projetei e implementei uma arquitetura de integração em tempo real com Kafka, Debezium e AWS que chegou a conectar mais de 1.800 bases. Também trabalhei com plataformas analíticas, soluções antifraude e sistemas de recomendação.\n\nNa Brid Soluções, participo da modernização de uma plataforma de dados, incluindo a migração de 264 pipelines legados para Python, dbt, Airflow e Kubernetes. Em alguns dos fluxos otimizados, o tempo de execução caiu em até 90%. Gosto desse trabalho de combinar arquitetura, desempenho e manutenção, considerando também o custo operacional e as necessidades de quem depende dos dados.\n\nFora do trabalho, continuo aprendendo com projetos que fazem parte da minha vida. Uso todos os meses o sistema que desenvolvi para acompanhar minha carteira de investimentos e construo um ambiente de IA local com agentes que me ajudam a programar, documentar e analisar meus projetos. Meu interesse por finanças também me levou a experimentar redes LSTM e GRU e a desenvolver um robô para operar na bolsa.\n\nSou formado em Análise e Desenvolvimento de Sistemas, com pós-graduação em Ciência de Dados e Big Data Analytics. Gosto de estudar, testar ideias e observar o que funciona na prática, inclusive quando o resultado mostra os limites de uma abordagem. Este espaço reúne um pouco desse percurso: os projetos que construo, os problemas que me despertam curiosidade e o que aprendo pelo caminho.",
+  interests: [],
   github: 'faelk8', // Somente o usuário, sem https://github.com/
-  email: '',
-  linkedin: '', // URL completa do seu perfil
-  // Ferramentas e conhecimentos. Duplique um item para adicionar outra ferramenta.
-  // Em level, informe seu domínio: 'Básico', 'Intermediário' ou 'Avançado'.
-  // Nível e descrição vazios ficam ocultos; preencha conforme sua experiência.
-  skills: [
-    { name: 'Python', category: 'Linguagem', level: '', description: '' },
-    { name: 'Bancos de dados', category: 'Dados', level: '', description: '' },
-    { name: 'Docker', category: 'Containers', level: '', description: '' },
-  ],
+  email: 'rbtista@hotmail.com',
+  linkedin: 'https://www.linkedin.com/in/rbtista/', // URL completa do seu perfil
   // Formação e cursos relevantes. Duplique o exemplo e preencha com seus dados reais.
   // category: 'Formação acadêmica', 'Curso' ou 'Certificação'.
   // period: ano, intervalo de anos ou previsão de conclusão; status: 'Concluído' ou 'Em andamento'.
@@ -111,7 +103,7 @@ window.PROFILE = {
           name: 'DBA',
           courses: [
             'Administração PostgreSQL com Alta Disponibilidade',
-            'Administração MySql com Alata Performace eAlta Disponibilidade',
+            'Administração MySql com Alata Performace e Alta Disponibilidade',
             'Especialista Elastic Stack - Elasticsearch, Logstash, Kibana e Beats',
           ],
         },
@@ -123,34 +115,60 @@ window.PROFILE = {
   // Campos vazios não aparecem no site. Duplique um objeto para adicionar outro projeto.
   personalProjects: [
     {
-      "slug": "robo-trader",
-      "name": "Robô trader",
-      "description": "Projeto pessoal voltado à automação de operações no mercado financeiro.",
-      "page": "projetos/pessoais/robo-trader.html",
-      "tags": []
+      "slug": "agente-pessoal-ia-local",
+      "name": "Agente pessoal com IA local",
+      "description": "Ambiente de IA local com Ollama, modelos na GPU e agentes especializados para documentação, código e análises, com chat, terminal e um grafo de relações.",
+      "page": "projetos/pessoais/agente-pessoal-ia-local.html",
+      "tags": [
+        "Ollama",
+        "Modelos de linguagem",
+        "Agentes de IA",
+        "Grafos",
+        "GPU",
+        "IA local",
+        "Memória compartilhada",
+        "Agent harnesses"
+      ]
+    },
+    {
+      "slug": "carteira-investimentos",
+      "name": "Acompanhamento de carteira de investimentos",
+      "description": "Sistema que utilizo todos os meses para gerir minha carteira, acompanhar sua evolução e analisar novos aportes com dados de mercado, relatórios e dashboards.",
+      "page": "projetos/pessoais/carteira-investimentos.html",
+      "tags": [
+        "Gestão de investimentos",
+        "Coleta de dados",
+        "Análise de dados",
+        "Relatórios e dashboards"
+      ]
     },
     {
       "slug": "previsao-cotacao-empresa",
       "name": "Previsão de cotação de empresas",
       "description": "Projeto pessoal voltado à previsão de cotações de ações de empresas.",
       "page": "projetos/pessoais/previsao-cotacao-empresa.html",
-      "tags": []
+      "tags": [
+        "Python",
+        "LSTM",
+        "GRU",
+        "Redes neurais",
+        "Séries temporais"
+      ]
     },
     {
-      "slug": "carteira-investimentos",
-      "name": "Acompanhamento de carteira de investimentos",
-      "description": "Projeto pessoal para acompanhar uma carteira de investimentos.",
-      "page": "projetos/pessoais/carteira-investimentos.html",
-      "tags": []
-    },
-    {
-      "slug": "agente-pessoal-ia-local",
-      "name": "Agente pessoal com IA local",
-      "description": "Projeto pessoal de um agente de inteligência artificial executado localmente.",
-      "page": "projetos/pessoais/agente-pessoal-ia-local.html",
-      "tags": []
+      "slug": "robo-trader",
+      "name": "Robô trader",
+      "description": "Projeto pessoal voltado à automação de operações no mercado financeiro.",
+      "page": "projetos/pessoais/robo-trader.html",
+      "tags": [
+        "Python",
+        "MetaTrader 5",
+        "Indicadores técnicos",
+        "Automação"
+      ]
     }
   ],
+
   professionalProjects: [
     {
       page: 'projetos/profissionais/kafka.html',
