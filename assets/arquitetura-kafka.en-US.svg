@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc" lang="en-US">
+<title id="title">Kafka data centralization architecture</title>
+<desc id="desc">Customer databases send data through Debezium to Kafka. The flow branches to S3, PostgreSQL, and Python and KSQL analysis. Airflow automates connection maintenance. Promtail, Loki, and Grafana support monitoring.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#80baff" /></marker></defs>
+<rect width="1200" height="820" rx="20" fill="#10141c" />
+<g font-family="Arial, sans-serif">
+<text x="48" y="55" fill="#edf2fa" font-size="28" font-weight="700">Data architecture · Apache Kafka</text>
+<rect x="48" y="155" width="280" height="140" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="68" y="188" fill="#80baff" font-size="20" font-weight="700">Customer databases</text>
+<text x="68" y="218" fill="#edf2fa" font-size="16">≈ 1,400 → 1,800 databases</text>
+<text x="68" y="242" fill="#edf2fa" font-size="16">27 tables per database</text>
+<text x="68" y="266" fill="#edf2fa" font-size="16">Source identification</text>
+<rect x="400" y="155" width="280" height="140" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="420" y="188" fill="#80baff" font-size="20" font-weight="700">Debezium</text>
+<text x="420" y="218" fill="#edf2fa" font-size="16">9 instances</text>
+<text x="420" y="242" fill="#edf2fa" font-size="16">Distributed collection</text>
+<text x="420" y="266" fill="#edf2fa" font-size="16">Per-connection configuration</text>
+<rect x="752" y="155" width="400" height="140" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="772" y="188" fill="#80baff" font-size="20" font-weight="700">Kafka cluster</text>
+<text x="772" y="218" fill="#edf2fa" font-size="16">3 Amazon EC2 instances</text>
+<text x="772" y="242" fill="#edf2fa" font-size="16">Topics per table · 7-day retention</text>
+<text x="772" y="266" fill="#edf2fa" font-size="16">≈ 45 GB/day · 24/7 operation</text>
+<path d="M328 225H400" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M680 225H752" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="48" y="355" width="632" height="130" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="68" y="388" fill="#80baff" font-size="20" font-weight="700">Apache Airflow</text>
+<text x="68" y="418" fill="#edf2fa" font-size="16">Add databases and remove discontinued connections</text>
+<text x="68" y="442" fill="#edf2fa" font-size="16">Check status, repair, and stop connections</text>
+<path d="M540 355V295" fill="none" stroke="#80baff" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)" />
+<rect x="48" y="560" width="280" height="115" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="68" y="593" fill="#80baff" font-size="20" font-weight="700">Amazon S3</text>
+<text x="68" y="623" fill="#edf2fa" font-size="16">Parquet files</text>
+<text x="68" y="647" fill="#edf2fa" font-size="16">Daily granularity</text>
+<rect x="400" y="560" width="280" height="115" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="420" y="593" fill="#80baff" font-size="20" font-weight="700">PostgreSQL</text>
+<text x="420" y="623" fill="#edf2fa" font-size="16">Data for other</text>
+<text x="420" y="647" fill="#edf2fa" font-size="16">consumers</text>
+<rect x="752" y="560" width="400" height="115" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="772" y="593" fill="#80baff" font-size="20" font-weight="700">Python + KSQL</text>
+<text x="772" y="623" fill="#edf2fa" font-size="16">Real-time queries and analysis</text>
+<text x="772" y="647" fill="#edf2fa" font-size="16">Payments, orders, and visits</text>
+<path d="M952 295V520H188V560" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M540 520V560" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M952 520V560" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<rect x="752" y="710" width="400" height="75" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="772" y="743" fill="#80baff" font-size="20" font-weight="700">Promtail → Loki → Grafana</text>
+<path d="M952 675V710" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+</g></svg>
