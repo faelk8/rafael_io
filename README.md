@@ -1,6 +1,6 @@
 # Rafael Batista · Site pessoal
 
-Portfólio em português, responsivo, feito com HTML, CSS e JavaScript. Não precisa de instalação de dependências ou build. Inclui navegação por teclado, suporte a movimento reduzido e importação opcional de repositórios públicos do GitHub.
+Portfólio em português do Brasil, inglês dos Estados Unidos e espanhol da Espanha, responsivo, feito com HTML, CSS e JavaScript. Não precisa de instalação de dependências ou build. Inclui navegação por teclado, suporte a movimento reduzido e importação opcional de repositórios públicos do GitHub.
 
 ## Visualizar localmente
 
@@ -13,6 +13,16 @@ python3 scripts/dev.py --port 8001
 ```
 
 Abra http://localhost:8000.
+
+## Idiomas
+
+As bandeiras no canto superior direito alternam entre `pt-BR`, `en-US` e `es-ES` sem sair da página. Português é o padrão da primeira visita; a escolha fica salva no navegador e acompanha a navegação. Se o armazenamento do navegador estiver bloqueado, a troca continua funcionando na página atual. Os botões têm identificação acessível, foco por teclado e indicação do idioma ativo.
+
+Os textos originais permanecem em português no HTML e em `profile.js`. O catálogo `locales/messages.js` associa cada texto a um par `[inglês, espanhol]`. Ao editar ou adicionar conteúdo, atualize a chave em português e as duas traduções. Espaços e quebras de linha são normalizados; nomes de tecnologias e instituições são preservados. Textos sem entrada no catálogo mantêm o original em português. As descrições e nomes recebidos da API do GitHub mantêm o texto publicado pelo autor do repositório.
+
+`i18n.js` traduz o conteúdo, os títulos, as descrições das páginas e os rótulos de acessibilidade, incluindo os cartões carregados após a abertura da página. Sem JavaScript, o conteúdo estático continua disponível em português.
+
+Os diagramas têm versões próprias nos dois idiomas. Depois de alterar os textos dos SVGs ou suas traduções, execute `python3 scripts/localize_diagrams.py` para atualizar os arquivos usados na prévia local. `python3 scripts/build.py` também gera essas versões ao preparar `_site` para publicação.
 
 ## Personalizar
 
@@ -73,18 +83,6 @@ Continue em outro parágrafo para detalhar uma decisão.`,
 ```
 
 Edite o arquivo localmente ou pelo GitHub e envie a alteração à branch `main` para atualizar o site. Não há editor de texto dentro da página pública.
-
-## Ferramentas e nível de domínio
-
-Edite `skills` em `profile.js`. Cada item tem `name` (ferramenta), `category` (área), `level` (seu nível de domínio) e `description` (como você usa a ferramenta). Python, bancos de dados e Docker já estão cadastrados. Os níveis começam vazios para você informar sua experiência real; nível e descrição só aparecem quando preenchidos.
-
-Exemplo de formato (ajuste o nível e o texto à sua experiência):
-
-```js
-{ name: 'Python', category: 'Linguagem', level: 'Intermediário', description: 'Descreva aqui como você utiliza Python.' },
-```
-
-Duplique um item para adicionar novas ferramentas. Envie as mudanças à branch `main` para publicá-las.
 
 ## Formação e cursos relevantes
 
