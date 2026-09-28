@@ -1,14 +1,19 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#10141c" />
-  <meta name="description" content="Projeto pessoal voltado à automação de operações no mercado financeiro." />
+  <meta name="description"
+    content="Robô desenvolvido em Python com integração ao MetaTrader 5 para automatizar operações no mercado financeiro." />
   <title>Robô trader · Rafael Batista</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../../styles.css" />
+  <script src="../../locales/messages.js" defer></script>
+  <script src="../../i18n.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="header wrap">
@@ -16,21 +21,66 @@
     <nav aria-label="Navegação principal">
       <a href="../../index.html#sobre">Sobre</a>
       <a href="../../index.html#projetos">Projetos</a>
-      <a href="../../index.html#conhecimentos">Ferramentas</a>
       <a href="../../index.html#formacao">Formação</a>
       <a href="../../index.html#contato">Contato ↗</a>
     </nav>
+      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
+          <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>BR</span>
+        </button>
+        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
+          <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>US</span>
+        </button>
+        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+          <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>ES</span>
+        </button>
+      </div>
+
   </header>
   <main class="wrap project-page" id="conteudo">
-    <a class="project-back" href="../../index.html#personal-section">← Voltar para os projetos pessoais</a>
+    <a class="project-back" href="../../index.html#personal-section">← Voltar para os projetos
+      pessoais</a>
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Robô trader</h1>
-      <p class="project-page-intro">Projeto pessoal voltado à automação de operações no mercado financeiro.</p>
+      <p class="project-page-intro">Automação de operações no mercado financeiro com Python e
+        integração ao
+        MetaTrader 5.</p>
+      <div class="tags" aria-label="Tecnologias e técnicas utilizadas">
+        <span class="tag">Python</span>
+        <span class="tag">MetaTrader 5</span>
+        <span class="tag">Indicadores técnicos</span>
+        <span class="tag">Automação</span>
+        <span class="tag">Estatística</span>
+        <span class="tag">Streaming</span>
+      </div>
       <section class="project-story-section">
         <h2>Sobre o projeto</h2>
-        <p>Os detalhes deste projeto serão adicionados em breve.</p>
-        <!-- Detalhe aqui o objetivo, a arquitetura, sua implementação e os resultados observados. -->
+        <p>Meu interesse por finanças me levou a desenvolver um robô para automatizar operações
+          na Bolsa de Valores. O projeto foi inteiramente implementado em Python, com integração
+          ao MetaTrader 5 para acompanhar o mercado e executar ordens de compra e venda.</p>
+        <h2>Funcionamento</h2>
+        <p>O robô recebia dados de mercado pelo MetaTrader 5 e calculava indicadores técnicos
+          a cada nova atualização de preço, chamada de tick. Com base nesses indicadores e em
+          regras predefinidas, o código em Python identificava sinais de entrada e saída e
+          executava as operações automaticamente pela plataforma.</p>
+        <h2>Resultados</h2>
+        <p>O robô alcançou uma taxa de acerto de aproximadamente 60% das operações. Apesar disso,
+          os ganhos por operação eram pequenos, e as taxas de negociação eram altas em relação
+          a esses ganhos. Os custos consumiam o resultado obtido, de modo que a estratégia não
+          gerava lucro líquido. Diante desse resultado, o projeto foi descontinuado.</p>
+        <h2>Aprendizados</h2>
+        <p>O principal aprendizado foi perceber, na prática, que a taxa de acerto sozinha não
+          demonstra a viabilidade de uma estratégia. É preciso avaliar quanto se ganha e se
+          perde em cada operação, além de considerar os custos de negociação e o gerenciamento
+          de risco.</p>
+        <p>O projeto também me permitiu aplicar conhecimentos de programação, análise de dados
+          e finanças em um problema real. A integração entre Python e MetaTrader 5 e o
+          processamento de dados em tempo real foram experiências importantes para aprimorar
+          minhas habilidades de automação e desenvolvimento de algoritmos.</p>
       </section>
     </article>
   </main>
@@ -40,4 +90,5 @@
     <a href="../../index.html#projetos">Todos os projetos ↑</a>
   </footer>
 </body>
+
 </html>
