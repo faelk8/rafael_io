@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#10141c" />
-  <meta name="description" content="Projeto pessoal para acompanhar uma carteira de investimentos." />
+  <meta name="description" content="Meu sistema de gestão de investimentos, utilizado todos os meses para acompanhar a carteira, analisar dados do mercado e apoiar novos aportes." />
   <title>Acompanhamento de carteira de investimentos · Rafael Batista</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../../styles.css" />
+  <script src="../../locales/messages.js" defer></script>
+  <script src="../../i18n.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -16,21 +18,91 @@
     <nav aria-label="Navegação principal">
       <a href="../../index.html#sobre">Sobre</a>
       <a href="../../index.html#projetos">Projetos</a>
-      <a href="../../index.html#conhecimentos">Ferramentas</a>
       <a href="../../index.html#formacao">Formação</a>
       <a href="../../index.html#contato">Contato ↗</a>
     </nav>
+      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
+          <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>BR</span>
+        </button>
+        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
+          <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>US</span>
+        </button>
+        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+          <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+          <span>ES</span>
+        </button>
+      </div>
+
   </header>
   <main class="wrap project-page" id="conteudo">
     <a class="project-back" href="../../index.html#personal-section">← Voltar para os projetos pessoais</a>
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Acompanhamento de carteira de investimentos</h1>
-      <p class="project-page-intro">Projeto pessoal para acompanhar uma carteira de investimentos.</p>
+      <p class="project-page-intro">Meu sistema de gestão de investimentos, utilizado todos os meses para acompanhar a carteira, analisar dados do mercado e apoiar novos aportes.</p>
+      <div class="tags" aria-label="Áreas e funcionalidades">
+        <span class="tag">Gestão de investimentos</span>
+        <span class="tag">Coleta de dados</span>
+        <span class="tag">Análise de dados</span>
+        <span class="tag">Relatórios e dashboards</span>
+      </div>
       <section class="project-story-section">
-        <h2>Sobre o projeto</h2>
-        <p>Os detalhes deste projeto serão adicionados em breve.</p>
-        <!-- Detalhe aqui o objetivo, a arquitetura, sua implementação e os resultados observados. -->
+        <h2>Um projeto que faz parte do meu dia a dia</h2>
+        <p>Este é o uso com frequência entre os projetos pessoais. Utilizo o sistema todos os meses para
+          fazer a gestão da minha carteira de investimentos e acompanhar de perto o que estou
+          construindo. Ele reúne duas coisas de que gosto muito: tecnologia e finanças, com
+          uma aplicação direta na minha rotina.</p>
+        <p>A proposta é reunir as informações de que preciso para entender meus investimentos:
+          como a carteira evolui, quantas ações tenho, qual é o preço médio de cada posição e
+          quais ativos merecem uma análise antes de um novo aporte. São perguntas que voltam
+          a cada mês e dão ao projeto uma utilidade muito concreta.</p>
+        <h2>Acompanhamento da carteira</h2>
+        <p>No sistema, acompanho a evolução dos investimentos e os detalhes das minhas posições.
+          A quantidade de ações e o preço médio ajudam a entender como cada posição foi formada
+          e servem de referência para avaliar a carteira diante dos preços de mercado.</p>
+        <p>Ter essas informações reunidas facilita a leitura do conjunto. Consigo olhar para
+          uma ação específica e também acompanhar a trajetória dos meus investimentos ao longo
+          do tempo. Esse acompanhamento faz parte da minha revisão mensal e me ajuda a manter
+          atenção sobre as decisões que tomo.</p>
+        <h2>Dados de mercado e análise de novos aportes</h2>
+        <p>O projeto coleta dados do mercado para apoiar as análises da carteira. Essas
+          informações complementam os dados das minhas posições e ajudam a identificar ativos
+          que, dentro dos critérios de retorno que considero interessantes, merecem ser
+          avaliados para compra.</p>
+        <p>Uso o sistema como apoio para decidir onde direcionar novos aportes. A análise
+          aproxima o acompanhamento do que já possuo da avaliação do que posso comprar,
+          mantendo os dados da carteira e as informações de mercado no mesmo processo de
+          decisão.</p>
+        <h2>Relatórios e dashboards</h2>
+        <p>Os relatórios e dashboards transformam os dados em formas de acompanhamento que
+          utilizo no dia a dia. Eles me permitem consultar os resultados das análises e
+          visualizar a evolução dos investimentos, tornando mais fácil interpretar as
+          informações da carteira.</p>
+        <p>Os dashboards ajudam na visão geral, enquanto os relatórios permitem examinar os
+          dados com mais atenção durante a revisão mensal. Essa combinação dá sentido à
+          coleta e à organização das informações: os dados chegam até uma apresentação que
+          posso usar para acompanhar meus investimentos e orientar minha análise.</p>
+        <h2>Como o projeto funciona</h2>
+        <p>O funcionamento reúne a gestão das posições, a coleta de dados do mercado, a análise
+          das informações e a geração de relatórios e dashboards. Cada parte contribui para
+          conectar o registro da carteira ao acompanhamento da sua evolução e à avaliação de
+          possíveis compras.</p>
+        <p>A aplicação é usada em um ciclo recorrente: todos os meses, volto aos dados para
+          revisar a carteira, observar sua evolução e analisar os próximos aportes. Esse uso
+          contínuo é uma das características mais importantes do projeto, porque coloca o
+          trabalho de desenvolvimento em contato direto com uma necessidade minha.</p>
+        <h2>Por que ele é meu projeto favorito</h2>
+        <p>Tenho um carinho especial por este projeto porque ele está presente na minha vida.
+          A cada mês, uso algo que construí para cuidar de um assunto que considero importante.
+          Ver a programação se transformar em uma ferramenta útil para acompanhar meus
+          investimentos é uma das partes mais gratificantes dessa experiência.</p>
+        <p>Ele representa bem o tipo de projeto que gosto de desenvolver: parte de uma
+          necessidade real, envolve um tema que desperta minha curiosidade e continua fazendo
+          sentido depois da implementação. É um encontro entre o prazer de construir e a
+          satisfação de usar o que foi construído.</p>
       </section>
     </article>
   </main>
