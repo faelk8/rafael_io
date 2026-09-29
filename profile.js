@@ -171,6 +171,21 @@ window.PROFILE = {
 
   professionalProjects: [
     {
+      "page": "projetos/profissionais/modernizacao-pipelines.html",
+      "slug": "modernizacao-pipelines",
+      "name": "Modernização de pipelines de dados",
+      "description": "Participação na migração de pipelines legados em Alteryx para Python, dbt, Airflow e Kubernetes, com redução de até 90% no tempo de execução de determinados fluxos.",
+      "tags": [
+        "Python",
+        "dbt",
+        "Apache Airflow",
+        "Kubernetes",
+        "GitHub Actions",
+        "Amazon Redshift",
+        "Alteryx"
+      ]
+    },
+    {
       page: 'projetos/profissionais/kafka.html',
       slug: 'kafka',
       name: 'Centralização de dados com Apache Kafka',

@@ -46,41 +46,162 @@
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Robô trader</h1>
-      <p class="project-page-intro">Automação de operações no mercado financeiro com Python e
-        integração ao
-        MetaTrader 5.</p>
+      <p class="project-page-intro">Robô experimental de day trade para mini índice e mini dólar, desenvolvido em Python com integração ao MetaTrader 5, utilizando estatística, testes de estacionaridade e execução automatizada em ambiente de teste.</p>
       <div class="tags" aria-label="Tecnologias e técnicas utilizadas">
         <span class="tag">Python</span>
         <span class="tag">MetaTrader 5</span>
-        <span class="tag">Indicadores técnicos</span>
-        <span class="tag">Automação</span>
         <span class="tag">Estatística</span>
+        <span class="tag">Séries temporais</span>
+        <span class="tag">Estacionaridade</span>
+        <span class="tag">Day Trade</span>
+        <span class="tag">Scalping</span>
+        <span class="tag">Mini Índice</span>
+        <span class="tag">Mini Dólar</span>
+        <span class="tag">Automação</span>
         <span class="tag">Streaming</span>
       </div>
+      
       <section class="project-story-section">
-        <h2>Sobre o projeto</h2>
-        <p>Meu interesse por finanças me levou a desenvolver um robô para automatizar operações
-          na Bolsa de Valores. O projeto foi inteiramente implementado em Python, com integração
-          ao MetaTrader 5 para acompanhar o mercado e executar ordens de compra e venda.</p>
-        <h2>Funcionamento</h2>
-        <p>O robô recebia dados de mercado pelo MetaTrader 5 e calculava indicadores técnicos
-          a cada nova atualização de preço, chamada de tick. Com base nesses indicadores e em
-          regras predefinidas, o código em Python identificava sinais de entrada e saída e
-          executava as operações automaticamente pela plataforma.</p>
-        <h2>Resultados</h2>
-        <p>O robô alcançou uma taxa de acerto de aproximadamente 60% das operações. Apesar disso,
-          os ganhos por operação eram pequenos, e as taxas de negociação eram altas em relação
-          a esses ganhos. Os custos consumiam o resultado obtido, de modo que a estratégia não
-          gerava lucro líquido. Diante desse resultado, o projeto foi descontinuado.</p>
-        <h2>Aprendizados</h2>
-        <p>O principal aprendizado foi perceber, na prática, que a taxa de acerto sozinha não
-          demonstra a viabilidade de uma estratégia. É preciso avaliar quanto se ganha e se
-          perde em cada operação, além de considerar os custos de negociação e o gerenciamento
-          de risco.</p>
-        <p>O projeto também me permitiu aplicar conhecimentos de programação, análise de dados
-          e finanças em um problema real. A integração entre Python e MetaTrader 5 e o
-          processamento de dados em tempo real foram experiências importantes para aprimorar
-          minhas habilidades de automação e desenvolvimento de algoritmos.</p>
+        <h2>Minha contribuição</h2>
+        <p>
+          Desenvolvi o robô em Python e implementei a integração com o MetaTrader 5 para coletar dados de mercado,
+          tratar as séries, gerar sinais e enviar ordens automaticamente. O projeto foi utilizado em ambiente
+          de teste para estudar a viabilidade de uma estratégia estatística aplicada a mini índice e mini dólar.
+        </p>
+        <p>
+          Diferente de muitas estratégias de trading baseadas em indicadores técnicos tradicionais, este projeto
+          partiu de análise estatística das séries e testes de estacionaridade para identificar condições em que
+          o comportamento observado pudesse gerar um sinal operacional.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Da previsão para a operação</h2>
+        <p>
+          Este projeto nasceu depois dos estudos com LSTM, GRU e séries temporais. Naquele trabalho, percebi que
+          prever preços com boa aproximação não significava necessariamente conseguir executar operações lucrativas.
+        </p>
+        <p>
+          O robô trader foi a tentativa de levar esse aprendizado para um problema mais próximo da execução real:
+          transformar comportamento estatístico da série em regras objetivas de entrada e saída.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Mercado e estratégia</h2>
+        <p>
+          O robô operava mini índice e mini dólar em estratégias de day trade e scalping. As análises utilizavam
+          principalmente candles de 5 e 15 minutos.
+        </p>
+        <p>
+          A estratégia não dependia de RSI, MACD, médias móveis ou outros indicadores técnicos tradicionais.
+          A lógica era construída a partir de estatística e testes de estacionaridade aplicados às séries.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Geração dos sinais</h2>
+        <p>
+          O Python recebia os dados do MetaTrader 5, realizava o tratamento necessário e avaliava as condições
+          estatísticas definidas para a estratégia. Quando o comportamento da série atingia os critérios esperados,
+          o sistema gerava um sinal.
+        </p>
+        <p>
+          Dependendo da condição detectada, o mesmo comportamento também podia indicar a inversão da operação,
+          permitindo que a lógica reagisse à mudança de direção observada na série.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Execução automatizada</h2>
+        <p>
+          O MetaTrader 5 funcionava como ponte entre o mercado e o código. O Python era responsável por conectar,
+          coletar os dados, tratar as séries e enviar as ordens.
+        </p>
+        <p>
+          O robô operava apenas uma posição por vez, sempre com um contrato. Também respeitava uma janela de operação
+          entre aproximadamente 9h30 e 13h, evitando atuar durante todo o pregão.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Stop dinâmico</h2>
+        <p>
+          O stop não era definido por um valor fixo. Ele era calculado dinamicamente de acordo com a condição da
+          estratégia e o comportamento observado no mercado.
+        </p>
+        <p>
+          Como o objetivo principal era validar a lógica estatística em ambiente de teste, o projeto não chegou a
+          evoluir para uma camada completa de gerenciamento de risco com limites diários, múltiplas posições ou
+          regras avançadas de exposição.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Validação da estratégia</h2>
+        <p>
+          Levei bastante tempo ajustando e testando a estratégia até chegar a uma taxa de acerto próxima de 60%.
+          O resultado parecia promissor quando observado apenas pela quantidade de operações vencedoras.
+        </p>
+        <p>
+          Foi justamente nessa etapa que o projeto trouxe o principal aprendizado: taxa de acerto, isoladamente,
+          não determina se uma estratégia é economicamente viável.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Quando 60% de acerto não é suficiente</h2>
+        <p>
+          Mesmo com aproximadamente 60% das operações acertando a direção esperada, o resultado líquido não era
+          satisfatório. Os ganhos por operação eram pequenos e os custos de corretagem, taxas e impostos consumiam
+          uma parcela relevante do retorno.
+        </p>
+        <p>
+          Na prática, isso mostrou que uma estratégia pode acertar mais vezes do que errar e ainda assim não possuir
+          uma expectativa matemática positiva depois dos custos.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>O principal aprendizado</h2>
+        <p>
+          O projeto mudou minha forma de avaliar estratégias quantitativas. Depois dele, ficou ainda mais claro que
+          não basta medir precisão ou taxa de acerto: é necessário observar tamanho médio dos ganhos e perdas,
+          custos de execução, risco e expectativa matemática.
+        </p>
+        <p>
+          Também reforçou um aprendizado que já havia começado no projeto de previsão de cotações: modelos e sinais
+          são apenas uma parte do problema. Transformar um resultado estatístico em uma estratégia operacional exige
+          considerar todo o contexto da execução.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Por que decidi descontinuar</h2>
+        <p>
+          Como o projeto estava em ambiente de teste e a estratégia não demonstrou vantagem líquida suficiente depois
+          dos custos, decidi não avançar para uma operação real.
+        </p>
+        <p>
+          Encerrar o projeto nesse ponto foi parte do próprio processo experimental. O objetivo não era provar que a
+          estratégia funcionava a qualquer custo, mas descobrir, com dados, se havia uma vantagem estatística que
+          justificasse continuar.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>O que eu faria diferente hoje</h2>
+        <p>
+          Se retomasse esse projeto, eu combinaria os aprendizados de estatística e séries temporais com uma camada
+          mais completa de gerenciamento de risco, custos de execução e validação fora da amostra.
+        </p>
+        <p>
+          Também exploraria estratégias híbridas, utilizando diferentes técnicas para gerar sinais, em vez de depender
+          apenas de uma única lógica estatística.
+        </p>
+        <p>
+          Outra coisa seria a implementação da risco ganho, calcular a o penticial de perda da operação comparando com o pentencial de ganho, e só entrar na operação se o potencial de ganho fosse maior que o potencial de perda. Com certeza isso ajudaria a melhorar os resultados.
+        </p>
       </section>
     </article>
   </main>

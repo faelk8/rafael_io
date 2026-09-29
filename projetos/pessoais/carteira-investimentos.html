@@ -42,67 +42,165 @@
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Acompanhamento de carteira de investimentos</h1>
-      <p class="project-page-intro">Meu sistema de gestão de investimentos, utilizado todos os meses para acompanhar a carteira, analisar dados do mercado e apoiar novos aportes.</p>
+      <p class="project-page-intro">Sistema pessoal de análise de investimentos em ações e FIIs, com coleta de dados da B3 e web scraping, ELT em Python, PostgreSQL e dashboards em Power BI para acompanhar carteira, dividendos, preço médio, preço justo e oportunidades de aporte.</p>
       <div class="tags" aria-label="Áreas e funcionalidades">
-        <span class="tag">Gestão de investimentos</span>
-        <span class="tag">Coleta de dados</span>
-        <span class="tag">Análise de dados</span>
-        <span class="tag">Relatórios e dashboards</span>
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Web Scraping</span>
+        <span class="tag">B3</span>
+        <span class="tag">ELT</span>
+        <span class="tag">Ações</span>
+        <span class="tag">FIIs</span>
+        <span class="tag">Método Bazin</span>
+        <span class="tag">Análise fundamentalista</span>
+        <span class="tag">Dividendos</span>
       </div>
+      
       <section class="project-story-section">
-        <h2>Um projeto que faz parte do meu dia a dia</h2>
-        <p>Este é o uso com frequência entre os projetos pessoais. Utilizo o sistema todos os meses para
-          fazer a gestão da minha carteira de investimentos e acompanhar de perto o que estou
-          construindo. Ele reúne duas coisas de que gosto muito: tecnologia e finanças, com
-          uma aplicação direta na minha rotina.</p>
-        <p>A proposta é reunir as informações de que preciso para entender meus investimentos:
-          como a carteira evolui, quantas ações tenho, qual é o preço médio de cada posição e
-          quais ativos merecem uma análise antes de um novo aporte. São perguntas que voltam
-          a cada mês e dão ao projeto uma utilidade muito concreta.</p>
-        <h2>Acompanhamento da carteira</h2>
-        <p>No sistema, acompanho a evolução dos investimentos e os detalhes das minhas posições.
-          A quantidade de ações e o preço médio ajudam a entender como cada posição foi formada
-          e servem de referência para avaliar a carteira diante dos preços de mercado.</p>
-        <p>Ter essas informações reunidas facilita a leitura do conjunto. Consigo olhar para
-          uma ação específica e também acompanhar a trajetória dos meus investimentos ao longo
-          do tempo. Esse acompanhamento faz parte da minha revisão mensal e me ajuda a manter
-          atenção sobre as decisões que tomo.</p>
-        <h2>Dados de mercado e análise de novos aportes</h2>
-        <p>O projeto coleta dados do mercado para apoiar as análises da carteira. Essas
-          informações complementam os dados das minhas posições e ajudam a identificar ativos
-          que, dentro dos critérios de retorno que considero interessantes, merecem ser
-          avaliados para compra.</p>
-        <p>Uso o sistema como apoio para decidir onde direcionar novos aportes. A análise
-          aproxima o acompanhamento do que já possuo da avaliação do que posso comprar,
-          mantendo os dados da carteira e as informações de mercado no mesmo processo de
-          decisão.</p>
-        <h2>Relatórios e dashboards</h2>
-        <p>Os relatórios e dashboards transformam os dados em formas de acompanhamento que
-          utilizo no dia a dia. Eles me permitem consultar os resultados das análises e
-          visualizar a evolução dos investimentos, tornando mais fácil interpretar as
-          informações da carteira.</p>
-        <p>Os dashboards ajudam na visão geral, enquanto os relatórios permitem examinar os
-          dados com mais atenção durante a revisão mensal. Essa combinação dá sentido à
-          coleta e à organização das informações: os dados chegam até uma apresentação que
-          posso usar para acompanhar meus investimentos e orientar minha análise.</p>
-        <h2>Como o projeto funciona</h2>
-        <p>O funcionamento reúne a gestão das posições, a coleta de dados do mercado, a análise
-          das informações e a geração de relatórios e dashboards. Cada parte contribui para
-          conectar o registro da carteira ao acompanhamento da sua evolução e à avaliação de
-          possíveis compras.</p>
-        <p>A aplicação é usada em um ciclo recorrente: todos os meses, volto aos dados para
-          revisar a carteira, observar sua evolução e analisar os próximos aportes. Esse uso
-          contínuo é uma das características mais importantes do projeto, porque coloca o
-          trabalho de desenvolvimento em contato direto com uma necessidade minha.</p>
-        <h2>Por que ele é meu projeto favorito</h2>
-        <p>Tenho um carinho especial por este projeto porque ele está presente na minha vida.
-          A cada mês, uso algo que construí para cuidar de um assunto que considero importante.
-          Ver a programação se transformar em uma ferramenta útil para acompanhar meus
-          investimentos é uma das partes mais gratificantes dessa experiência.</p>
-        <p>Ele representa bem o tipo de projeto que gosto de desenvolver: parte de uma
-          necessidade real, envolve um tema que desperta minha curiosidade e continua fazendo
-          sentido depois da implementação. É um encontro entre o prazer de construir e a
-          satisfação de usar o que foi construído.</p>
+        <h2>Minha contribuição</h2>
+        <p>
+          Desenvolvi este sistema para acompanhar minha própria carteira e transformar dados dispersos de
+          mercado, extratos e posições em uma visão única para análise. O projeto reúne coleta, tratamento,
+          armazenamento, cálculos financeiros e visualização.
+        </p>
+        <p>
+          A arquitetura utiliza Python e Pandas no processo de ELT, PostgreSQL como base central e Power BI
+          para análise visual. Os dados são atualizados mensalmente e combinam informações da B3, extratos e
+          dados coletados por web scraping.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>O problema que eu queria resolver</h2>
+        <p>
+          Acompanhar uma carteira apenas pela corretora mostra a posição atual, mas não necessariamente organiza
+          todo o histórico necessário para responder perguntas que voltam todos os meses: quanto cada ativo
+          representa, qual é o preço médio, como os dividendos evoluíram, qual foi a rentabilidade e quais
+          ativos merecem uma análise antes de um novo aporte.
+        </p>
+        <p>
+          O projeto nasceu para centralizar essas informações e criar um processo repetível de revisão da
+          carteira, com os mesmos critérios sendo aplicados ao longo do tempo.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Coleta e ELT dos dados</h2>
+        <p>
+          O fluxo começa com a coleta de dados de mercado, informações disponibilizadas pela B3, extratos e
+          dados obtidos por web scraping. O processamento é feito em Python com Pandas.
+        </p>
+        <p>
+          Os dados são tratados e carregados no PostgreSQL, que funciona como base histórica para os cálculos
+          e para os dashboards. Esse desenho separa a coleta da análise e permite manter a evolução da carteira
+          ao longo do tempo.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Ações e fundos imobiliários</h2>
+        <p>
+          O sistema acompanha tanto ações quanto fundos imobiliários. Para cada posição, mantenho informações
+          como quantidade, preço médio, cotação atual e desempenho percentual.
+        </p>
+        <p>
+          A análise também considera o comportamento dos últimos 12 meses e a evolução dos proventos, permitindo
+          observar o ativo não apenas pelo preço atual, mas pela forma como ele vem se comportando ao longo do
+          período.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Método Bazin e preço justo</h2>
+        <p>
+          Uma das referências utilizadas na análise é o método Bazin, principalmente pela relação entre preço,
+          dividendos e retorno esperado. O sistema calcula métricas que ajudam a avaliar preço justo e preço
+          teto antes de um novo aporte.
+        </p>
+        <p>
+          Utilizo como referência uma meta de retorno próxima de 1% ao mês. Esse valor não funciona como uma
+          decisão automática de compra: ele é um critério para destacar ativos que merecem uma análise mais
+          cuidadosa.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Análise fundamentalista</h2>
+        <p>
+          Antes de considerar um novo aporte, o sistema reúne indicadores fundamentalistas para apoiar a
+          avaliação. A análise considera métricas como múltiplos, rentabilidade, endividamento, margens,
+          payout e dividend yield.
+        </p>
+        <p>
+          A intenção não é substituir a análise do ativo por um único score, mas organizar as informações em
+          um mesmo processo para facilitar comparação e investigação.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Dividendos como parte da estratégia</h2>
+        <p>
+          O acompanhamento de dividendos é feito mensal e anualmente. Essa visão permite observar não apenas
+          valorização de preço, mas também a geração de renda ao longo do tempo.
+        </p>
+        <p>
+          Tenho preferência por analisar setores ligados a serviços essenciais e com histórico de distribuição
+          de dividendos, como telecomunicações, saneamento, energia e bancos. O sistema ajuda a acompanhar essa
+          exposição dentro da carteira.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Momento de entrada e saída</h2>
+        <p>
+          O acompanhamento de preço médio, cotação atual, retorno percentual e preço justo também serve para
+          identificar momentos em que uma posição merece nova análise.
+        </p>
+        <p>
+          Isso ajuda tanto na avaliação de possíveis aportes quanto na revisão de posições já existentes.
+          A ferramenta organiza os sinais; a decisão continua sendo feita após analisar o ativo e seu contexto.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Dashboards no Power BI</h2>
+        <p>
+          O Power BI transforma a base histórica em uma visão mais simples de acompanhar. Os dashboards reúnem
+          evolução patrimonial, composição da carteira, preço médio, cotação, retorno por ativo e histórico de
+          dividendos.
+        </p>
+        <p>
+          Durante a revisão mensal, essa camada visual permite sair de uma leitura isolada de cada ativo e
+          enxergar melhor o conjunto da carteira.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Um projeto recorrente, não apenas uma aplicação pronta</h2>
+        <p>
+          Uma característica importante deste projeto é que ele continua sendo usado. Todos os meses os dados
+          são atualizados, a carteira é revisada e os indicadores são novamente analisados.
+        </p>
+        <p>
+          Isso faz com que o sistema evolua junto com a necessidade real de uso. Mudanças no processo de
+          análise ou novas informações relevantes podem ser incorporadas ao pipeline e aos dashboards.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Por que este projeto é importante para mim</h2>
+        <p>
+          Ele reúne Engenharia de Dados, análise com Python, modelagem em PostgreSQL, BI e um tema que estudo
+          e acompanho continuamente. É também um exemplo de como gosto de trabalhar: transformar uma necessidade
+          recorrente em um processo de dados estruturado e reutilizável.
+        </p>
+        <p>
+          Mais do que acompanhar números, o sistema cria uma disciplina de análise. Cada novo aporte passa por
+          dados históricos, indicadores e critérios previamente definidos, reduzindo decisões baseadas apenas
+          na percepção do momento.
+        </p>
       </section>
     </article>
   </main>

@@ -42,50 +42,197 @@
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Previsão de cotação de empresas</h1>
-      <p class="project-page-intro">Estudo de redes LSTM e GRU para prever preços de abertura, mínima, máxima e fechamento nos próximos cinco pregões.</p>
+      <p class="project-page-intro">Projeto experimental de quatro meses com LSTM e GRU para séries temporais financeiras, comparando arquiteturas, janelas, hiperparâmetros e modelos estatísticos para prever os próximos cinco pregões.</p>
       <div class="tags" aria-label="Tecnologias e técnicas utilizadas">
         <span class="tag">Python</span>
+        <span class="tag">Keras</span>
         <span class="tag">LSTM</span>
         <span class="tag">GRU</span>
-        <span class="tag">Redes neurais</span>
+        <span class="tag">ARIMA</span>
+        <span class="tag">SARIMA</span>
+        <span class="tag">Prophet</span>
         <span class="tag">Séries temporais</span>
+        <span class="tag">RMSE</span>
+        <span class="tag">Early Stopping</span>
+        <span class="tag">Yahoo Finance</span>
+        <span class="tag">Redes neurais</span>
       </div>
+      
       <section class="project-story-section">
-        <h2>Sobre o projeto</h2>
-        <p>Desenvolvi este projeto para aprender, na prática, como trabalhar com redes neurais
-          LSTM e GRU em séries temporais. Escolhi as cotações de ações como objeto de estudo,
-          com o objetivo de prever os preços de abertura, mínima, máxima e fechamento para os
-          cinco pregões seguintes.</p>
-        <h2>Como foi desenvolvido</h2>
-        <p>Utilizei Python para desenvolver os experimentos com redes LSTM e GRU aplicadas
-          às séries temporais de cotações. O trabalho envolveu testar diferentes configurações
-          das redes e comparar os valores previstos com os observados para abertura, mínima,
-          máxima e fechamento nos cinco pregões seguintes.</p>
-        <h2>Experimentos com as redes</h2>
-        <p>Ao longo do projeto, explorei diferentes arquiteturas de LSTM: a versão básica
-          (vanilla), modelos encoder-decoder e redes bidirecionais, que processam a sequência
-          de entrada nos dois sentidos. Também experimentei redes rasas e profundas, variando
-          a quantidade de camadas, o número de neurônios e as funções de ativação.</p>
-        <p>Além das variações de LSTM, fiz experimentos com GRU. Testar essas configurações
-          tornou o projeto um espaço de exploração para observar como diferentes escolhas
-          de arquitetura influenciavam as previsões.</p>
-        <h2>Resultados observados</h2>
-        <p>Nos testes realizados, as diferenças observadas entre os valores previstos e os
-          reais variaram de cerca de −R$ 0,01 a R$ 0,63, dependendo da cotação da ação.
-          Para ações com preços de até aproximadamente R$ 20, as previsões ficaram mais
-          próximas dos valores reais. Já nas ações com cotações próximas de R$ 60, observei
-          diferenças maiores e menor precisão em termos de valores absolutos.</p>
-        <h2>Aprendizados</h2>
-        <p>Foi um projeto muito divertido de desenvolver e estudar. A possibilidade de testar
-          arquiteturas, alterar configurações e acompanhar os resultados tornou o aprendizado
-          sobre redes neurais mais concreto e despertou ainda mais meu interesse pelo tema.</p>
-        <p>A experiência me ajudou a explorar o uso de LSTM e GRU na previsão de séries
-          temporais e a perceber a importância de observar os erros em relação à escala
-          dos valores analisados.</p>
-        <p>Esses resultados me incentivaram a estudar estatística com mais profundidade para
-          compreender melhor o comportamento dos dados e avaliar as previsões. Esse percurso
-          de aprendizado me levou à criação do <a href="robo-trader.html">robô trader</a>,
-          um projeto para automatizar operações na Bolsa de Valores.</p>
+        <h2>Minha contribuição</h2>
+        <p>
+          Desenvolvi este projeto como um laboratório de estudo de redes neurais aplicadas a séries temporais.
+          Durante aproximadamente quatro meses, implementei e comparei dezenas de configurações de LSTM e GRU,
+          além de modelos estatísticos como ARIMA e SARIMA e experimentos com Prophet.
+        </p>
+        <p>
+          O objetivo não era apenas obter uma previsão, mas entender como arquitetura, profundidade, janela temporal,
+          funções de ativação, número de neurônios, batch size, learning rate e horizonte de previsão alteravam o comportamento do modelo.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>O problema que eu queria estudar</h2>
+        <p>
+          Escolhi séries históricas de ações porque elas oferecem um problema real e difícil: prever simultaneamente
+          abertura, mínima, máxima e fechamento dos próximos cinco pregões.
+        </p>
+        <p>
+          Os dados foram obtidos pelo Yahoo Finance. Para alguns ativos havia aproximadamente 20 anos de histórico;
+          para outros, cerca de cinco anos. Isso também permitiu observar como a quantidade de dados disponíveis
+          afetava o treinamento e a estabilidade das previsões.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Construção das sequências</h2>
+        <p>
+          As séries eram transformadas em janelas tridimensionais para entrada nas redes recorrentes, avançando
+          com passo de uma observação por vez. Cada amostra utilizava uma sequência histórica para gerar, de uma só vez,
+          as previsões dos cinco pregões seguintes.
+        </p>
+        <p>
+          Testei diferentes tamanhos de janela, incluindo 3, 5, 7, 9, 10, 15, 20 e 30 períodos. Um dos aprendizados
+          mais claros foi que aumentar a quantidade de dias de entrada não significava necessariamente melhorar a previsão.
+          Nos meus testes, janelas maiores tendiam a piorar o resultado.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Experimentação com LSTM e GRU</h2>
+        <p>
+          Explorei LSTM vanilla, encoder-decoder, redes bidirecionais e arquiteturas com diferentes profundidades.
+          Também testei GRU nas mesmas séries para comparar comportamento, tempo de treinamento e qualidade das previsões.
+        </p>
+        <p>
+          LSTM e GRU apresentaram resultados semelhantes em vários experimentos. Acabei preferindo LSTM porque ela me
+          oferecia mais possibilidades de variação arquitetural durante o estudo.
+        </p>
+        <p>
+          Outro aprendizado importante foi perceber que redes mais profundas não eram automaticamente melhores.
+          Em vários testes, adicionar camadas ou aumentar a complexidade não produzia ganho proporcional de qualidade.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Treinamento e controle dos experimentos</h2>
+        <p>
+          Os modelos foram desenvolvidos com Keras e treinados com Adam. Testei diferentes funções de ativação,
+          learning rates e batch sizes para entender como cada escolha alterava a convergência.
+        </p>
+        <p>
+          Alguns experimentos eram configurados com limite muito alto de épocas, chegando a 10 mil, mas normalmente
+          o treinamento convergia muito antes. Utilizei early stopping para interromper o processo quando não havia
+          evolução relevante, evitando treinos desnecessários.
+        </p>
+        <p>
+          Não observei problemas relevantes de overfitting ou underfitting nos experimentos que considerei válidos.
+          O comportamento da loss era acompanhado durante o treinamento para verificar se o modelo continuava aprendendo.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Validação temporal</h2>
+        <p>
+          A separação entre treino, validação e teste respeitava a ordem temporal. Não fazia sentido embaralhar uma série
+          financeira e permitir que informações futuras contaminassem o treinamento.
+        </p>
+        <p>
+          Também utilizei validação walk-forward para observar como o modelo se comportava ao avançar no tempo, aproximando
+          a avaliação da forma como ele seria utilizado em uma situação real.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Como eu avaliava as previsões</h2>
+        <p>
+          Utilizei RMSE e também analisava o erro em valores reais. Os gráficos de previsto versus realizado eram uma parte
+          importante do trabalho, porque permitiam enxergar visualmente o gap entre a curva prevista e o comportamento observado.
+        </p>
+        <p>
+          Ao comparar ativos com faixas de preço diferentes, percebi que olhar apenas para o erro absoluto em reais podia
+          distorcer a interpretação. Uma diferença de centavos pode ter significados diferentes dependendo do preço do ativo,
+          o que reforçou a necessidade de observar também o erro relativo e o contexto da série.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Quanto mais distante, maior o erro</h2>
+        <p>
+          O horizonte de previsão teve impacto claro. Quanto mais distante o pregão previsto, maior tendia a ser o erro.
+          Os primeiros dias apresentavam comportamento melhor e, em torno de três dias, os resultados ainda eram razoáveis
+          em vários experimentos.
+        </p>
+        <p>
+          Isso foi importante para entender uma limitação prática: prever cinco dias de uma vez era possível, mas a incerteza
+          crescia rapidamente conforme o horizonte aumentava.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Comparação com modelos estatísticos</h2>
+        <p>
+          Para não avaliar as redes neurais de forma isolada, também comparei os resultados com abordagens como ARIMA,
+          SARIMA e Prophet, além de utilizar um baseline simples baseado no comportamento recente da própria série.
+        </p>
+        <p>
+          Nos dados e configurações que testei, ARIMA, SARIMA e Prophet não apresentaram resultados melhores que justificassem
+          substituir os experimentos com redes recorrentes. O objetivo da comparação era entender se a complexidade das redes
+          realmente entregava algum ganho.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Prever preço não significa saber operar</h2>
+        <p>
+          Um dos maiores aprendizados surgiu quando comecei a olhar para o uso prático da previsão. Mesmo quando o modelo
+          acertava muito bem a direção geral, uma pequena diferença no preço podia ser suficiente para transformar uma operação
+          lucrativa em uma operação ruim.
+        </p>
+        <p>
+          Isso me fez perceber que prever o valor exato não era necessariamente o melhor objetivo para uma estratégia de trading.
+          Os modelos pareciam mais úteis para identificar direção e comportamento da série do que para decidir automaticamente
+          pontos exatos de compra e venda.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Quando percebi que o modelo não era suficiente</h2>
+        <p>
+          Esse foi o ponto de virada do projeto. Até então, meu foco estava principalmente na arquitetura das redes e nos
+          hiperparâmetros. Com os experimentos, ficou claro que um bom modelo por si só não resolvia o problema.
+        </p>
+        <p>
+          Passei então a estudar com mais profundidade conceitos estatísticos, estacionaridade, tratamento de séries e formas
+          mais adequadas de validar previsões financeiras. O projeto deixou de ser apenas um estudo de redes neurais e passou
+          a ser também um estudo sobre como formular corretamente um problema de séries temporais.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Quatro meses de tentativa, comparação e aprendizado</h2>
+        <p>
+          O que mais gostei neste projeto foi justamente a quantidade de experimentação. Foram meses alterando janelas,
+          arquiteturas, funções de ativação, profundidade, neurônios e parâmetros de treinamento, sempre comparando o previsto
+          com o observado.
+        </p>
+        <p>
+          Esse processo mostrou na prática que modelos mais sofisticados não garantem resultados melhores e que compreender
+          os dados e a forma de avaliação é tão importante quanto escolher uma arquitetura de rede neural.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Da previsão ao robô trader</h2>
+        <p>
+          Os aprendizados deste projeto serviram como base para o desenvolvimento posterior do meu robô trader. Levei comigo
+          principalmente a experiência com tratamento de séries, estacionaridade, validação temporal e a percepção de que
+          uma estratégia operacional precisa combinar previsão com outras técnicas de análise e controle de risco.
+        </p>
+        <p>
+          Hoje, se retomasse esse estudo, eu exploraria uma abordagem híbrida, combinando redes recorrentes com outras técnicas
+          estatísticas e sinais complementares, em vez de depender exclusivamente da previsão direta do preço.
+        </p>
       </section>
     </article>
   </main>

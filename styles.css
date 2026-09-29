@@ -156,3 +156,8 @@ p, li, figcaption{text-align:justify;hyphens:auto}
   .header { column-gap: 8px; }
   .language-switcher { gap: 1px; }
 }
+
+/* Keep the résumé available in the introduction and contact section. */
+.hero-actions { flex-wrap: wrap; }
+.resume-download { display: inline-flex; align-items: center; gap: 8px; }
+.resume-contact { margin: 24px 0 0; }

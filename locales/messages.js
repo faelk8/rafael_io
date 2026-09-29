@@ -1588,5 +1588,89 @@ window.SITE_TRANSLATIONS = {
   "Selecionar idioma": [
     "Select language",
     "Seleccionar idioma"
+  ],
+  "Minha contribuição": [
+    "My contribution",
+    "Mi contribución"
+  ],
+  "Projetei e implementei a arquitetura de CDC e streaming com Kafka, Debezium e AWS. Fui responsável pela configuração das instâncias e dos softwares, pelas automações em Python e Airflow para administrar as conexões e pelo acompanhamento operacional do fluxo. O ambiente chegou a mais de 1.800 bases conectadas, com coleta contínua e volume médio de 45 GB por dia.": [
+    "I designed and implemented the CDC and streaming architecture with Kafka, Debezium, and AWS. I was responsible for configuring instances and software, building Python and Airflow automation to manage connections, and monitoring the data flow. The environment reached more than 1,800 connected databases, with continuous collection averaging 45 GB per day.",
+    "Diseñé e implementé la arquitectura de CDC y streaming con Kafka, Debezium y AWS. Fui responsable de configurar las instancias y el software, desarrollar automatizaciones en Python y Airflow para gestionar las conexiones y supervisar el flujo. El entorno llegó a más de 1.800 bases conectadas, con recogida continua y un volumen medio de 45 GB diarios."
+  ],
+  "Desenvolvi a arquitetura e os pipelines que consolidavam dados de navegação, checkout e transações, integrando informações de PostgreSQL e MongoDB em uma base analítica no ClickHouse. Minha contribuição foi estruturar os dados que apoiavam a análise estatística dos pedidos. A redução de 97% nos falsos positivos foi um resultado da evolução da solução antifraude como um todo.": [
+    "I developed the architecture and pipelines that consolidated browsing, checkout, and transaction data, integrating PostgreSQL and MongoDB information into an analytics database in ClickHouse. My contribution was structuring the data that supported statistical order analysis. The 97% reduction in false positives was a result of the evolution of the overall fraud detection solution.",
+    "Desarrollé la arquitectura y los pipelines que consolidaban datos de navegación, proceso de compra y transacciones, integrando información de PostgreSQL y MongoDB en una base analítica en ClickHouse. Mi contribución fue estructurar los datos que apoyaban el análisis estadístico de los pedidos. La reducción del 97 % en falsos positivos fue un resultado de la evolución de la solución antifraude en su conjunto."
+  ],
+  "Participei da concepção e do desenvolvimento da engenharia de dados dos sistemas de recomendação. Minha atuação esteve ligada à organização dos dados de navegação, histórico de compras e similaridade entre produtos que alimentavam as recomendações. Os resultados de conversão e ticket médio descritos neste relato se referem à solução como um todo.": [
+    "I contributed to the design and development of the data engineering behind the recommendation systems. My work involved organizing browsing data, purchase history, and product similarity information used to generate recommendations. The conversion and average order value results described here refer to the solution as a whole.",
+    "Participé en el diseño y desarrollo de la ingeniería de datos de los sistemas de recomendación. Mi trabajo estuvo relacionado con la organización de datos de navegación, historial de compras y similitud entre productos que alimentaban las recomendaciones. Los resultados de conversión e importe medio de los pedidos descritos aquí corresponden a la solución en su conjunto."
+  ],
+  "Desenvolvo este ambiente para meu próprio uso: configuro os agentes e os modelos locais, organizo a memória compartilhada e as formas de interação por chat e terminal. Também exploro as relações entre assuntos no grafo e testo integrações MCP com Notion e e-mail. O projeto reúne implementação, experimentação e uso nas minhas tarefas pessoais.": [
+    "I develop this environment for my own use: I configure the agents and local models, organize shared memory, and set up chat and terminal interactions. I also explore topic relationships in the graph and test MCP integrations with Notion and email. The project combines implementation, experimentation, and use in my personal tasks.",
+    "Desarrollo este entorno para mi propio uso: configuro los agentes y modelos locales, organizo la memoria compartida y las formas de interacción por chat y terminal. También exploro las relaciones entre temas en el grafo y pruebo integraciones MCP con Notion y correo electrónico. El proyecto combina implementación, experimentación y uso en mis tareas personales."
+  ],
+  "Desenvolvi o sistema para gerir minha própria carteira e o utilizo todos os meses. Reuni o acompanhamento das posições e do preço médio, a coleta de dados de mercado e a apresentação das informações em relatórios e dashboards. Sou também o usuário da ferramenta, o que me permite avaliar sua utilidade durante a revisão dos meus investimentos.": [
+    "I developed the system to manage my own portfolio and use it every month. I brought together position and average cost tracking, market data collection, and information presented in reports and dashboards. I am also the tool’s user, which lets me assess its usefulness while reviewing my investments.",
+    "Desarrollé el sistema para gestionar mi propia cartera y lo utilizo cada mes. Reuní el seguimiento de posiciones y precios medios, la recogida de datos de mercado y la presentación de información en informes y paneles de control. También soy el usuario de la herramienta, lo que me permite evaluar su utilidad al revisar mis inversiones."
+  ],
+  "Implementei os experimentos em Python e testei diferentes configurações de LSTM e GRU para prever cinco pregões. Variei as arquiteturas, a profundidade das redes, a quantidade de neurônios e as funções de ativação, comparando as previsões com os valores observados. Meu foco foi aprender com os experimentos e compreender as limitações dos resultados.": [
+    "I implemented the experiments in Python and tested different LSTM and GRU configurations to forecast five trading days. I varied architectures, network depth, neuron counts, and activation functions, comparing predictions with observed values. My focus was learning from the experiments and understanding the limitations of the results.",
+    "Implementé los experimentos en Python y probé distintas configuraciones de LSTM y GRU para predecir cinco sesiones bursátiles. Varié las arquitecturas, la profundidad de las redes, el número de neuronas y las funciones de activación, comparando las predicciones con los valores observados. Mi objetivo fue aprender de los experimentos y comprender las limitaciones de los resultados."
+  ],
+  "Implementei o robô inteiramente em Python e fiz a integração com o MetaTrader 5 para receber dados e executar ordens. Desenvolvi as regras que utilizavam indicadores técnicos para identificar entradas e saídas e acompanhei os resultados das operações. A avaliação dos ganhos frente às taxas mostrou que a estratégia não gerava lucro líquido.": [
+    "I implemented the bot entirely in Python and integrated it with MetaTrader 5 to receive data and execute orders. I developed the rules that used technical indicators to identify entries and exits and tracked trading results. Evaluating gains against fees showed that the strategy did not generate a net profit.",
+    "Implementé el robot íntegramente en Python y lo integré con MetaTrader 5 para recibir datos y ejecutar órdenes. Desarrollé las reglas que utilizaban indicadores técnicos para identificar entradas y salidas y seguí los resultados de las operaciones. La evaluación de las ganancias frente a las comisiones mostró que la estrategia no generaba beneficio neto."
+  ],
+  "Modernização de 264 pipelines de dados": [
+    "Modernizing 264 data pipelines",
+    "Modernización de 264 pipelines de datos"
+  ],
+  "Participação na migração de pipelines legados em Alteryx para Python, dbt, Airflow e Kubernetes, com redução de até 90% no tempo de execução de determinados fluxos.": [
+    "Contributing to the migration of legacy Alteryx pipelines to Python, dbt, Airflow, and Kubernetes, reducing execution time by up to 90% in selected workflows.",
+    "Participación en la migración de pipelines heredados de Alteryx a Python, dbt, Airflow y Kubernetes, con una reducción de hasta el 90 % en el tiempo de ejecución de determinados flujos."
+  ],
+  "Na Brid Soluções, participo da modernização de uma plataforma de dados que inclui 264 pipelines legados em Alteryx. O trabalho envolve levar esses processos para uma arquitetura baseada em Python, dbt, Apache Airflow e Kubernetes, com foco em desempenho, redução de custo operacional e facilidade de manutenção.": [
+    "At Brid Soluções, I help modernize a data platform that includes 264 legacy Alteryx pipelines. The work involves moving these processes to an architecture based on Python, dbt, Apache Airflow, and Kubernetes, focusing on performance, lower operating costs, and maintainability.",
+    "En Brid Soluções participo en la modernización de una plataforma de datos que incluye 264 pipelines heredados de Alteryx. El trabajo consiste en trasladar estos procesos a una arquitectura basada en Python, dbt, Apache Airflow y Kubernetes, con atención al rendimiento, la reducción del coste operativo y la facilidad de mantenimiento."
+  ],
+  "Participo do planejamento técnico e da definição das soluções para a migração. Minha atuação inclui o desenvolvimento e a otimização de fluxos de processamento, além de trabalhos de modelagem, desempenho e controle de acesso no Amazon Redshift. Também desenvolvo observabilidade dos pipelines, com métricas de volumetria e alertas relacionados aos acordos de nível de serviço (SLAs).": [
+    "I contribute to technical planning and solution design for the migration. My work includes developing and optimizing processing workflows, as well as data modeling, performance, and access control in Amazon Redshift. I also develop pipeline observability, with data volume metrics and alerts related to service-level agreements (SLAs).",
+    "Participo en la planificación técnica y en la definición de soluciones para la migración. Mi trabajo incluye el desarrollo y la optimización de flujos de procesamiento, así como modelado, rendimiento y control de acceso en Amazon Redshift. También desarrollo observabilidad de los pipelines, con métricas de volumen de datos y alertas relacionadas con los acuerdos de nivel de servicio (SLA)."
+  ],
+  "A modernização é uma iniciativa da plataforma em que participo; os 264 pipelines representam o escopo desse trabalho. Minha contribuição está nas decisões técnicas e nas implementações em que atuo, sem atribuir a mim sozinho a entrega de toda a migração.": [
+    "The modernization is a platform initiative that I contribute to; the 264 pipelines represent its scope. My contribution lies in the technical decisions and implementations I work on, rather than sole ownership of the entire migration.",
+    "La modernización es una iniciativa de la plataforma en la que participo; los 264 pipelines representan su alcance. Mi contribución se centra en las decisiones técnicas y las implementaciones en las que trabajo, sin atribuirme en solitario la entrega de toda la migración."
+  ],
+  "Tecnologias e implementação": [
+    "Technologies and implementation",
+    "Tecnologías e implementación"
+  ],
+  "A arquitetura reúne Python, dbt, Apache Airflow e Kubernetes. As entregas são automatizadas com GitHub Actions, e o trabalho com os dados inclui o Amazon Redshift. Esse conjunto faz parte da transição dos fluxos legados para uma plataforma com maior capacidade de evolução e manutenção.": [
+    "The architecture brings together Python, dbt, Apache Airflow, and Kubernetes. Delivery is automated with GitHub Actions, and the data work includes Amazon Redshift. This stack supports the transition from legacy workflows to a platform that is easier to evolve and maintain.",
+    "La arquitectura reúne Python, dbt, Apache Airflow y Kubernetes. Las entregas se automatizan con GitHub Actions y el trabajo con los datos incluye Amazon Redshift. Este conjunto forma parte de la transición de los flujos heredados hacia una plataforma con mayor capacidad de evolución y mantenimiento."
+  ],
+  "Desempenho e observabilidade": [
+    "Performance and observability",
+    "Rendimiento y observabilidad"
+  ],
+  "Além da migração, o trabalho envolve otimizar o processamento e acompanhar a operação dos pipelines. As métricas de volumetria e os alertas de SLA ajudam a observar o comportamento dos fluxos e a identificar situações que precisam de atenção. O desempenho é considerado junto com a manutenção e o custo operacional da solução.": [
+    "Beyond migration, the work involves optimizing processing and monitoring pipeline operations. Data volume metrics and SLA alerts help track workflow behavior and identify situations that need attention. Performance is considered alongside maintainability and operating costs.",
+    "Además de la migración, el trabajo implica optimizar el procesamiento y supervisar la operación de los pipelines. Las métricas de volumen y las alertas de SLA ayudan a observar el comportamiento de los flujos e identificar situaciones que requieren atención. El rendimiento se considera junto con el mantenimiento y el coste operativo de la solución."
+  ],
+  "Em determinados fluxos otimizados, a redução do tempo de execução chegou a 90%, levando rotinas que antes demoravam horas a serem executadas em minutos. Esse resultado se refere aos casos medidos, e não a uma redução uniforme em todos os 264 pipelines.": [
+    "In selected optimized workflows, execution time was reduced by up to 90%, bringing routines that previously took hours down to minutes. This result refers to measured cases, not a uniform reduction across all 264 pipelines.",
+    "En determinados flujos optimizados, el tiempo de ejecución se redujo hasta un 90 %, pasando de rutinas que tardaban horas a ejecuciones de minutos. Este resultado corresponde a los casos medidos, no a una reducción uniforme en los 264 pipelines."
+  ],
+  "Essa experiência reforça a relação entre arquitetura, operação e uso dos dados. Modernizar uma plataforma exige olhar para a execução dos processos e também para como eles serão acompanhados, mantidos e adaptados às necessidades de negócio. É nesse encontro entre decisões técnicas e impacto prático que concentro meu trabalho.": [
+    "This experience reinforces the connection between architecture, operations, and data use. Modernizing a platform requires looking at process execution as well as how processes will be monitored, maintained, and adapted to business needs. I focus my work on this intersection of technical decisions and practical impact.",
+    "Esta experiencia refuerza la relación entre arquitectura, operación y uso de los datos. Modernizar una plataforma exige observar la ejecución de los procesos y también cómo se supervisarán, mantendrán y adaptarán a las necesidades del negocio. Centro mi trabajo en ese encuentro entre decisiones técnicas e impacto práctico."
+  ],
+  "Baixar currículo (PDF · PT-BR)": [
+    "Download résumé (PDF · PT-BR)",
+    "Descargar CV (PDF · PT-BR)"
+  ],
+  "Baixar currículo de Rafael Batista em português, formato PDF": [
+    "Download Rafael Batista’s résumé in Portuguese, PDF format",
+    "Descargar el CV de Rafael Batista en portugués, formato PDF"
   ]
 };

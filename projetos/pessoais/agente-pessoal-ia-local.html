@@ -46,134 +46,253 @@
     <article aria-labelledby="project-title">
       <p class="eyebrow">PROJETO PESSOAL</p>
       <h1 id="project-title">Agente pessoal com IA local</h1>
-      <p class="project-page-intro">Meu ambiente pessoal de IA local, com Ollama, modelos executados
-        na GPU e agentes especializados para apoiar meus projetos e tarefas do dia a dia.</p>
+      <p class="project-page-intro">Plataforma experimental de agentes de IA executados localmente, com orquestração própria, memória persistente e semântica, ferramentas controladas por perfil e integração com projetos reais.</p>
       <div class="tags" aria-label="Tecnologias e técnicas utilizadas">
         <span class="tag">Ollama</span>
-        <span class="tag">Modelos de linguagem</span>
-        <span class="tag">Agentes de IA</span>
-        <span class="tag">MCP</span>
+        <span class="tag">Qwen2.5-Coder</span>
         <span class="tag">Python</span>
         <span class="tag">PostgreSQL</span>
+        <span class="tag">pgvector</span>
         <span class="tag">Neo4j</span>
-        <span class="tag">Grafos</span>
+        <span class="tag">Embeddings</span>
+        <span class="tag">RAG</span>
+        <span class="tag">MCP</span>
+        <span class="tag">NiceGUI</span>
+        <span class="tag">Clean Architecture</span>
+        <span class="tag">Agent Harness</span>
         <span class="tag">GPU</span>
         <span class="tag">IA local</span>
-        <span class="tag">Memória compartilhada</span>
-        <span class="tag">Agent harnesses</span>
       </div>
+      
       <section class="project-story-section">
-        <h2>Uma curiosidade que começou nos estudos</h2>
-        <p>Meu interesse por este projeto começou durante meus estudos de redes neurais,
-          antes do surgimento do ChatGPT. Naquela época, eu já explorava modelos de linguagem
-          e tentava entender os desafios envolvidos na construção de sistemas capazes de
-          trabalhar com texto: o problema que precisavam resolver, os dados necessários e
-          a complexidade de desenvolver uma solução desse tipo.</p>
-        <p>Esse estudo despertou uma curiosidade que continuou comigo. Conforme as ferramentas
-          evoluíram e os modelos se tornaram mais acessíveis, encontrei uma oportunidade de
-          levar esse interesse para o meu próprio ambiente. Passei a utilizar o Ollama para
-          executar modelos localmente e construir um agente pessoal que pudesse participar
-          da minha rotina e me ajudar nos projetos.</p>
-        <h2>Um assistente dentro do meu ambiente pessoal</h2>
-        <p>O agente me ajuda a documentar códigos, gerar trechos de código, fazer análises e
-          resolver tarefas mais simples do dia a dia. Ele tem acesso aos meus projetos, o que
-          permite trabalhar com o contexto do que estou desenvolvendo e apoiar atividades
-          relacionadas a esses materiais.</p>
-        <p>Essa proximidade com meus projetos é uma das partes de que mais gosto. Posso usar
-          a IA enquanto desenvolvo, consulto um código ou preparo uma documentação. O sistema
-          faz parte do ambiente em que essas atividades acontecem e reúne formas de interação
-          que se encaixam em diferentes momentos do trabalho.</p>
-        <h2>Como foi construído</h2>
-        <p>Utilizo o Ollama para executar diferentes modelos de linguagem na minha própria
-          máquina, com processamento na GPU. A partir dessa base, organizei um ambiente com
-          agentes configurados para tarefas específicas, acesso aos projetos, um banco de
-          dados gerenciado pelo próprio sistema e interfaces de interação por chat e terminal.</p>
-        <p>Cada parte tem um papel no conjunto: os modelos dão suporte às tarefas de linguagem
-          e código; os agentes recebem configurações voltadas a atividades específicas; o
-          banco de dados apoia a organização das informações; e as interfaces permitem
-          conversar com o sistema e utilizá-lo durante minhas atividades.</p>
-        <h2>Vários agentes e modelos para diferentes tarefas</h2>
-        <p>O ambiente reúne vários agentes especializados. Essa organização permite direcionar
-          o uso da IA conforme a atividade, como documentação, geração de código ou análise.
-          Configurar agentes para finalidades específicas também faz parte dos experimentos
-          que realizo com o projeto.</p>
-        <p>Além dos agentes, utilizo diferentes modelos para diferentes propósitos, todos
-          executados localmente na minha GPU. Isso me permite explorar como cada modelo se
-          comporta nas tarefas que fazem parte da minha rotina e escolher qual utilizar
-          conforme a necessidade.</p>
-        <h2>Conversas pelo chat e acesso pelo terminal</h2>
-        <p>O sistema possui uma interface de chat para conversar com os agentes, pedir ajuda
-          e trabalhar sobre os assuntos dos meus projetos. Essa interface oferece um espaço
-          para desenvolver uma conversa e aprofundar uma solicitação conforme surgem novas
-          perguntas.</p>
-        <p>Também existe a opção de utilizar o agente pelo terminal. Essa alternativa aproxima
-          a interação com a IA do fluxo de desenvolvimento, permitindo acessá-la no mesmo
-          ambiente em que já realizo outras atividades técnicas. Ter as duas opções torna
-          o uso mais conveniente em diferentes situações.</p>
-        <h2>Memória compartilhada entre os agentes</h2>
-        <p>A memória do sistema fica armazenada no banco de dados e é compartilhada entre
-          os agentes. Assim, as informações registradas podem ser recuperadas em outras
-          interações, inclusive por um agente diferente daquele que participou da conversa
-          original. Essa memória dá continuidade ao trabalho entre tarefas e agentes.</p>
-        <p>O agente pode consultar essa memória sempre que precisar recuperar um contexto
-          anterior. Isso ajuda a retomar assuntos e aproveitar informações já discutidas,
-          conectando a conversa atual ao histórico disponível no ambiente.</p>
-        <h2>Uma janela ativa para manter o contexto recente</h2>
-        <p>Durante a conversa, o sistema mantém uma janela de contexto ativo com as últimas
-          cinco mensagens trocadas entre o usuário e o agente. Esse trecho recente acompanha
-          a interação para ajudar o agente a seguir o assunto e compreender a continuidade
-          das solicitações.</p>
-        <p>Conforme novas mensagens chegam, a janela avança. O conteúdo que fica de fora é
-          sumarizado e armazenado no banco de dados, formando uma memória que pode ser
-          consultada posteriormente. Dessa forma, o histórico anterior continua disponível
-          em forma de resumo, sem precisar permanecer inteiro no contexto ativo.</p>
-        <p>Essa organização combina o contexto imediato da conversa com a recuperação de
-          informações anteriores. As mensagens recentes ajudam a acompanhar o que está sendo
-          feito agora, enquanto os resumos permitem buscar o que já foi discutido quando
-          isso volta a ser relevante para uma tarefa.</p>
-        <h2>Harnesses para apoiar a execução dos agentes</h2>
-        <p>Também aplico harnesses, ou “arreios”, como uma estrutura de apoio à execução dos
-          agentes. Eles ajudam a orientar a atuação de cada agente no ambiente e a melhorar
-          seu desempenho nas tarefas para as quais foi configurado.</p>
-        <p>Esse cuidado faz parte do desenvolvimento do sistema ao redor dos modelos:
-          organizar como os agentes trabalham, oferecer contexto e permitir o acesso às
-          informações necessárias. A memória compartilhada, a janela ativa e a consulta ao
-          histórico compõem esse ambiente de apoio ao trabalho dos agentes.</p>
-        <h2>Um grafo para conectar assuntos e atividades</h2>
-        <p>Uma das partes mais interessantes do projeto é o uso de um grafo para representar
-          relações entre assuntos e atividades. O sistema calcula a similaridade entre esses
-          elementos para identificar conexões fortes e ajudar em tarefas que tenham relação
-          com outros temas presentes no ambiente.</p>
-        <p>A ideia é aproveitar essas relações para trazer contexto relevante à atividade
-          atual. Um assunto trabalhado em um projeto pode se conectar a uma dúvida ou tarefa
-          em outro, e o grafo ajuda a explorar essa proximidade. Essa organização acrescenta
-          ao ambiente uma forma de relacionar informações que, de outro modo, poderiam ser
-          consultadas separadamente.</p>
-        <h2>Integrações MCP em teste</h2>
-        <p>Atualmente, estou testando integrações via MCP com o Notion e com e-mail.
-          Esses experimentos exploram como conectar os agentes a outras ferramentas que
-          fazem parte do meu ambiente pessoal e ampliar as possibilidades de uso do sistema.</p>
-        <p>As integrações ainda estão em fase de testes. Esse trabalho é mais uma frente
-          de aprendizado do projeto, na qual avalio como essas conexões podem apoiar minhas
-          tarefas e se encaixar no funcionamento dos agentes.</p>
-        <h2>Aprender construindo e usando</h2>
-        <p>Este projeto reúne vários temas que gosto de estudar: redes neurais, modelos de
-          linguagem, agentes, organização de dados e relações entre informações. Construir
-          essas partes e utilizá-las no meu próprio ambiente torna o aprendizado concreto,
-          porque posso observar como elas se comportam diante das minhas tarefas.</p>
-        <p>O uso local também me coloca em contato com as escolhas envolvidas na execução dos
-          modelos na minha GPU. Experimentar diferentes modelos e configurações é parte do
-          prazer de desenvolver o sistema e compreender melhor as possibilidades da IA no
-          meu dia a dia.</p>
-        <h2>Por que gosto tanto deste projeto</h2>
-        <p>Tenho um carinho especial por este projeto porque ele dá continuidade a uma
-          curiosidade que começou nos estudos. Aquilo que eu buscava compreender nos cursos
-          ganhou uma aplicação que posso usar, modificar e explorar dentro do meu próprio
-          ambiente.</p>
-        <p>É muito gratificante ver esse percurso se transformar em agentes que me ajudam a
-          documentar, programar e analisar os meus projetos. Ao mesmo tempo em que o sistema
-          me apoia nas tarefas cotidianas, ele continua sendo um espaço para experimentar
-          ideias e aprofundar meu conhecimento sobre inteligência artificial.</p>
+        <h2>Minha contribuição</h2>
+        <p>
+          Desenvolvo este projeto como uma plataforma experimental de agentes de IA para uso no meu próprio
+          ambiente de desenvolvimento. A proposta não é apenas conversar com um modelo local, mas construir
+          toda a infraestrutura necessária ao redor dele: orquestração, memória, recuperação de contexto,
+          ferramentas, segurança, interfaces e integração com projetos.
+        </p>
+        <p>
+          O núcleo foi desenvolvido em Python com arquitetura própria, sem depender de frameworks como
+          LangChain, LangGraph, CrewAI ou AutoGen. As decisões mais importantes do projeto foram registradas
+          em ADRs para manter explícitos os motivos, alternativas avaliadas e riscos técnicos de cada escolha.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>De assistente local para uma plataforma de agentes</h2>
+        <p>
+          O projeto começou a partir do interesse em executar modelos de linguagem localmente e evoluiu para
+          uma arquitetura com múltiplos agentes especializados. Hoje existem nove perfis configurados em TOML,
+          cada um com prompt, responsabilidades e limites próprios.
+        </p>
+        <p>
+          Três deles atuam como orquestradores: <strong>jota</strong>, voltado ao trabalho geral com código e
+          ferramentas; <strong>linkedin_vagas</strong>, para consulta de vagas e acompanhamento de
+          candidaturas; e <strong>investimentos</strong>, para análise de carteira, histórico e documentos.
+        </p>
+        <p>
+          Outros seis agentes são especializados em tarefas específicas: resumo, produção de conteúdo para
+          LinkedIn, geração de docstrings, documentação Sphinx, programação Python e PostgreSQL.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Um modelo local, vários comportamentos</h2>
+        <p>
+          Os nove perfis utilizam atualmente o modelo <strong>qwen2.5-coder:7b-instruct-q4_K_M</strong>,
+          executado localmente pelo Ollama, com temperatura 0.2 e contexto de 8192 tokens.
+        </p>
+        <p>
+          Em vez de depender de um modelo diferente para cada tarefa, o comportamento é definido principalmente
+          por configuração: prompt, ferramentas permitidas, quantidade máxima de passos e contrato de saída.
+          Isso permite experimentar especialização de agentes mantendo uma base de inferência comum.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Arquitetura de orquestração própria</h2>
+        <p>
+          O fluxo principal começa com um perfil escolhido por configuração. Antes de responder, o sistema
+          combina memória recente, conhecimento recuperado e regras do agente. Em seguida, um serviço decisor
+          determina se a solicitação deve ser respondida diretamente ou encaminhada para uma ferramenta.
+        </p>
+        <p>
+          O roteamento de ações é híbrido: regras determinísticas tratam casos explícitos e, nos demais casos,
+          o próprio LLM retorna uma decisão estruturada em JSON. Se uma ferramenta for chamada, seu resultado
+          volta para o contexto antes da geração da resposta final.
+        </p>
+        <p>
+          A arquitetura utiliza componentes próprios como <code>AgentConfig</code>, <code>BaseTool</code>,
+          <code>ToolManager</code> e <code>DecisorService</code>, mantendo separadas as regras de negócio,
+          configurações dos agentes e implementações concretas.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Harness: ferramentas e limites por agente</h2>
+        <p>
+          Cada perfil possui um harness definido em TOML. Ele determina quais ferramentas o agente está
+          autorizado a utilizar e quantos passos de execução pode realizar.
+        </p>
+        <p>
+          Os três agentes orquestradores podem utilizar ferramentas e executar até oito passos dentro do ciclo
+          de decisão. Os agentes especializados de texto e programação não recebem ferramentas próprias:
+          sua responsabilidade é limitada à transformação ou análise do conteúdo fornecido.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>PostgreSQL como memória durável</h2>
+        <p>
+          As conversas são persistidas no PostgreSQL, que funciona como fonte de verdade do histórico.
+          Além das mensagens do usuário e do agente, são armazenados dados como agente utilizado, chat,
+          assunto, data e identificadores de requisição.
+        </p>
+        <p>
+          Essa decisão surgiu da necessidade de preservar conversas entre reinicializações e permitir buscas
+          e filtros. Antes de escolher PostgreSQL, considerei alternativas como JSON, SQLite e Redis.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Contexto curto sem perder o histórico</h2>
+        <p>
+          Durante uma conversa, o modelo recebe uma janela das últimas cinco mensagens individuais, combinada
+          com um resumo acumulado do histórico anterior.
+        </p>
+        <p>
+          Quando mensagens deixam a janela ativa, o próprio LLM atualiza o resumo, preservando fatos, decisões,
+          preferências e pendências. As mensagens originais continuam armazenadas no PostgreSQL; o resumo
+          funciona como uma representação compacta do contexto anterior.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Memória semântica com embeddings e Neo4j</h2>
+        <p>
+          Para encontrar assuntos relacionados sem depender apenas de busca textual, o projeto combina
+          embeddings locais com estruturas vetoriais e um grafo no Neo4j.
+        </p>
+        <p>
+          A similaridade é calculada por cosseno entre embeddings. O grafo trabalha com entidades como chats,
+          mensagens, resumos, projetos, artefatos e conhecimentos, permitindo representar relações entre
+          assuntos e contextos diferentes.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>RAG e conhecimento de projeto</h2>
+        <p>
+          O sistema possui uma camada de recuperação de conhecimento. Soluções registradas podem ser pesquisadas
+          com embeddings armazenados via pgvector, combinando similaridade semântica, termos e filtros por
+          projeto ou escopo.
+        </p>
+        <p>
+          Até cinco resultados relevantes podem ser incorporados ao contexto antes da resposta. A indexação
+          dos projetos é incremental, utiliza arquivos conhecidos pelo Git, ignora arquivos sensíveis e divide
+          código Python por funções e classes.
+        </p>
+        <p>
+          Essa camada ainda não é um RAG completo sobre todo o código indexado, e essa limitação é tratada
+          explicitamente no projeto.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Ferramentas próprias e segurança</h2>
+        <p>
+          Os agentes orquestradores podem executar ações além de gerar texto. Existem ferramentas próprias em
+          Python para arquivos, terminal, análise de código e integrações externas.
+        </p>
+        <p>
+          O acesso a arquivos é restringido à raiz configurada e arquivos de credenciais são bloqueados.
+          A execução no terminal utiliza <code>shell=False</code>, timeout, limite de saída e bloqueios para
+          determinados comandos administrativos.
+        </p>
+        <p>
+          O projeto não trata essa execução como uma sandbox completa: os processos ainda herdam as permissões
+          do processo principal, e essa limitação faz parte da arquitetura conhecida.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Integrações MCP</h2>
+        <p>
+          O projeto possui clientes MCP para integração com serviços externos como Notion e GitHub. As
+          ferramentas são descobertas pelo servidor e chamadas pelo agente quando habilitadas pelo perfil.
+        </p>
+        <p>
+          Operações de escrita no GitHub exigem confirmação explícita, mantendo uma barreira adicional para
+          ações que podem modificar recursos externos.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Clean Architecture e decisões registradas</h2>
+        <p>
+          Com o crescimento das integrações, adotei Clean Architecture e injeção de dependências para evitar
+          que regras de negócio ficassem acopladas diretamente a PostgreSQL, Neo4j, Ollama ou outras
+          implementações.
+        </p>
+        <p>
+          As principais escolhas foram formalizadas em seis ADRs: persistência do chat com PostgreSQL,
+          memória semântica com Neo4j, inferência local com Ollama, Clean Architecture, sistema extensível de
+          ferramentas e interface web com NiceGUI.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Interface web, terminal e IDE</h2>
+        <p>
+          A interface web foi construída com NiceGUI para manter o projeto predominantemente em Python, sem
+          exigir um frontend separado apenas para uso local.
+        </p>
+        <p>
+          O sistema também pode ser utilizado pelo terminal, API e integração com IDE, aproximando os agentes
+          do ambiente onde o desenvolvimento realmente acontece.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Observabilidade do próprio agente</h2>
+        <p>
+          O ambiente mede separadamente latência de geração textual e tempo gasto nas decisões de ação,
+          mantendo métricas p50 e p95 das execuções recentes. Também são acompanhados consumo de RAM e VRAM.
+        </p>
+        <p>
+          Ainda existem pontos a evoluir: não há fallback automático entre modelos, retry geral de inferência
+          nem histórico completo de cada tool call. Essas limitações são tratadas como oportunidades de
+          evolução da plataforma.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Por que executar localmente</h2>
+        <p>
+          Privacidade e custo de inferência foram fatores importantes na escolha do Ollama. Conversas,
+          contexto de projetos, embeddings e inferência podem permanecer dentro do ambiente local sem depender
+          obrigatoriamente de APIs externas.
+        </p>
+        <p>
+          A execução local também torna visíveis decisões que normalmente ficam escondidas atrás de uma API:
+          consumo de VRAM, quantização, cold start, tamanho de contexto e concorrência passam a fazer parte da
+          arquitetura.
+        </p>
+      </section>
+
+      <section class="project-story-section">
+        <h2>Um laboratório para arquitetura de IA</h2>
+        <p>
+          O valor deste projeto está menos em criar mais uma interface de chat e mais em experimentar os
+          componentes necessários para que agentes sejam realmente úteis: memória, contexto, recuperação,
+          ferramentas, permissões, arquitetura de software e observabilidade.
+        </p>
+        <p>
+          Ele funciona como meu laboratório para estudar como modelos de linguagem podem participar de
+          atividades reais de desenvolvimento mantendo controle sobre os dados, as ferramentas disponíveis
+          e as decisões tomadas pelo sistema.
+        </p>
       </section>
     </article>
   </main>
