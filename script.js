@@ -40,6 +40,52 @@
   if (profile.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(profile.email)) contactLink('E-mail', `mailto:${profile.email}`);
   if (safeUrl(profile.linkedin)) contactLink('LinkedIn', safeUrl(profile.linkedin));
   if (byId('contact-links').children.length) setText('contact-description', 'Quer conversar sobre um projeto ou trocar uma ideia? Entre em contato.');
+  function paginateProjects(list) {
+    const cards = [...list.children];
+    const pageCount = Math.ceil(cards.length / 6);
+    if (pageCount <= 1) return;
+    let page = 0;
+    let paused = false;
+    let timer;
+    const controls = document.createElement('div');
+    controls.className = 'project-pagination';
+    controls.setAttribute('role', 'group');
+    controls.setAttribute('aria-label', 'Páginas de projetos');
+    const button = (text, action) => {
+      const element = document.createElement('button');
+      element.type = 'button';
+      element.textContent = text;
+      element.setAttribute('aria-controls', list.id);
+      element.addEventListener('click', action);
+      return element;
+    };
+    const status = document.createElement('span');
+    status.setAttribute('aria-live', 'polite');
+    status.setAttribute('aria-atomic', 'true');
+    const showPage = next => {
+      page = (next + pageCount) % pageCount;
+      cards.forEach((card, index) => { card.hidden = Math.floor(index / 6) !== page; });
+      status.textContent = `${page + 1} / ${pageCount}`;
+    };
+    const restart = () => {
+      clearInterval(timer);
+      if (!paused) timer = setInterval(() => {
+        if (!document.hidden && !list.contains(document.activeElement)) showPage(page + 1);
+      }, 20000);
+    };
+    const move = direction => { showPage(page + direction); restart(); };
+    const previous = button('← Anterior', () => move(-1));
+    const next = button('Próxima →', () => move(1));
+    const pause = button('Pausar carrossel', () => {
+      paused = !paused;
+      pause.textContent = paused ? 'Retomar carrossel' : 'Pausar carrossel';
+      restart();
+    });
+    controls.append(previous, status, next, pause);
+    list.after(controls);
+    showPage(0);
+    restart();
+  }
   function renderProjects(projects) {
     byId('project-list').replaceChildren();
     projects.forEach((project, index) => {
@@ -57,6 +103,7 @@
       if (url) { const link = document.createElement('a'); link.href = url; link.textContent = 'Explorar projeto ↗'; link.setAttribute('aria-label', `Explorar projeto: ${project.name}`); card.append(link); }
       byId('project-list').append(card);
     });
+    paginateProjects(byId('project-list'));
   }
   function renderProjectGroup(projects, group, label) {
     byId(`${group}-section`).hidden = projects.length === 0;
@@ -81,6 +128,7 @@
       card.append(link);
       byId(`${group}-list`).append(card);
     });
+    paginateProjects(byId(`${group}-list`));
   }
   function createCourseList(courses) {
     const list = document.createElement('ul'); list.className = 'education-courses';
@@ -145,7 +193,6 @@
       const projects = repos
         .filter(repo => !hiddenRepos.has(repo.name.toLowerCase()))
         .filter(repo => repo.private === false && (!repo.visibility || repo.visibility === 'public') && !repo.fork && !repo.archived)
-        .slice(0, 6)
         .map(repo => ({ name: repo.name, description: repo.description, tags: repo.language ? [repo.language] : [], url: repo.html_url }));
       renderProjects(projects);
       byId('project-status').textContent = projects.length ? 'Repositórios públicos atualizados recentemente.' : 'Novos projetos serão adicionados em breve.';

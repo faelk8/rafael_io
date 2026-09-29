@@ -161,3 +161,9 @@ p, li, figcaption{text-align:justify;hyphens:auto}
 .hero-actions { flex-wrap: wrap; }
 .resume-download { display: inline-flex; align-items: center; gap: 8px; }
 .resume-contact { margin: 24px 0 0; }
+
+.project-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 20px; }
+.project-pagination button { font: inherit; font-size: 13px; color: var(--accent); background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 10px 14px; cursor: pointer; min-height: 44px; }
+.project-pagination button:hover { border-color: var(--accent); }
+.project-pagination button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-pagination span { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }

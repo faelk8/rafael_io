@@ -1672,5 +1672,10 @@ window.SITE_TRANSLATIONS = {
   "Baixar currículo de Rafael Batista em português, formato PDF": [
     "Download Rafael Batista’s résumé in Portuguese, PDF format",
     "Descargar el CV de Rafael Batista en portugués, formato PDF"
-  ]
+  ],
+  "Páginas de projetos": ["Project pages", "Páginas de proyectos"],
+  "← Anterior": ["← Previous", "← Anterior"],
+  "Próxima →": ["Next →", "Siguiente →"],
+  "Pausar carrossel": ["Pause carousel", "Pausar carrusel"],
+  "Retomar carrossel": ["Resume carousel", "Reanudar carrusel"]
 };
