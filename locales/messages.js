@@ -1675,7 +1675,5 @@ window.SITE_TRANSLATIONS = {
   ],
   "Páginas de projetos": ["Project pages", "Páginas de proyectos"],
   "← Anterior": ["← Previous", "← Anterior"],
-  "Próxima →": ["Next →", "Siguiente →"],
-  "Pausar carrossel": ["Pause carousel", "Pausar carrusel"],
-  "Retomar carrossel": ["Resume carousel", "Reanudar carrusel"]
+  "Próxima →": ["Next →", "Siguiente →"]
 };

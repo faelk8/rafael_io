@@ -45,7 +45,6 @@
     const pageCount = Math.ceil(cards.length / 6);
     if (pageCount <= 1) return;
     let page = 0;
-    let paused = false;
     let timer;
     const controls = document.createElement('div');
     controls.className = 'project-pagination';
@@ -69,19 +68,14 @@
     };
     const restart = () => {
       clearInterval(timer);
-      if (!paused) timer = setInterval(() => {
+      timer = setInterval(() => {
         if (!document.hidden && !list.contains(document.activeElement)) showPage(page + 1);
       }, 20000);
     };
     const move = direction => { showPage(page + direction); restart(); };
     const previous = button('← Anterior', () => move(-1));
     const next = button('Próxima →', () => move(1));
-    const pause = button('Pausar carrossel', () => {
-      paused = !paused;
-      pause.textContent = paused ? 'Retomar carrossel' : 'Pausar carrossel';
-      restart();
-    });
-    controls.append(previous, status, next, pause);
+    controls.append(previous, status, next);
     list.after(controls);
     showPage(0);
     restart();
