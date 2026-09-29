@@ -83,7 +83,7 @@
   function renderProjects(projects) {
     byId('project-list').replaceChildren();
     projects.forEach((project, index) => {
-      const card = document.createElement('article'); card.className = 'project-card';
+      const card = document.createElement('article'); card.className = 'project-card professional-card';
       const top = document.createElement('div'); top.className = 'project-top';
       const category = document.createElement('span'); category.textContent = project.category || 'GITHUB / REPOSITÓRIO';
       top.append(category);
@@ -94,7 +94,7 @@
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
       const url = safeUrl(project.url);
-      if (url) { const link = document.createElement('a'); link.href = url; link.textContent = 'Explorar projeto ↗'; link.setAttribute('aria-label', `Explorar projeto: ${project.name}`); card.append(link); }
+      if (url) { const link = document.createElement('a'); link.className = 'professional-project-link'; link.href = url; link.textContent = 'Explorar projeto ↗'; link.setAttribute('aria-label', `Explorar projeto: ${project.name}`); card.append(link); }
       byId('project-list').append(card);
     });
     paginateProjects(byId('project-list'));
