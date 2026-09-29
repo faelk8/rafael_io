@@ -18,23 +18,29 @@
   <header class="header wrap">
     <a class="brand" href="../../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
     <nav aria-label="Navegação principal">
-      <a href="../../index.html#sobre">Sobre</a><a href="../../index.html#projetos">Projetos</a><a href="../../index.html#contato">Contato
+      <a href="../../index.html#sobre">Sobre</a><a href="../../index.html#projetos">Projetos</a><a
+        href="../../index.html#contato">Contato
         ↗</a>
     </nav>
-      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
-        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
-          <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>BR</span>
-        </button>
-        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
-          <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>US</span>
-        </button>
-        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
-          <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>ES</span>
-        </button>
-      </div>
+    <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+      <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR"
+        aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true"
+        translate="no">
+        <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>BR</span>
+      </button>
+      <button type="button" class="language-button" data-language="en-US" lang="en-US"
+        aria-label="English (United States)" title="English (United States)" aria-pressed="false"
+        translate="no">
+        <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>US</span>
+      </button>
+      <button type="button" class="language-button" data-language="es-ES" lang="es-ES"
+        aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+        <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>ES</span>
+      </button>
+    </div>
 
   </header>
   <main class="wrap project-page" id="conteudo">
@@ -43,120 +49,304 @@
       <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
       <h1 id="project-title">Apache Kafka</h1>
       <p class="project-page-intro" id="project-description">
-        Centralização de dados de clientes com Kafka e Debezium em tempo real.
+        Plataforma de CDC e streaming em tempo real para centralizar dados de mais de 1.800 bases
+        PostgreSQL, com Kafka, Debezium, Airflow e AWS.
       </p>
       <div class="tags" id="project-tags" aria-label="Tecnologias">
-        <span class="tag">Apache Kafka</span><span class="tag">Debezium</span><span
-          class="tag">Amazon EC2</span><span class="tag">Apache Airflow</span><span
-          class="tag">Python</span><span class="tag">KSQL</span><span
+        <span class="tag">Apache Kafka</span><span class="tag">KRaft</span><span
+          class="tag">Debezium</span><span class="tag">PostgreSQL</span><span class="tag">Amazon
+          EC2</span><span class="tag">Amazon S3</span><span class="tag">Apache Airflow</span><span
+          class="tag">Python</span><span class="tag">KSQL</span><span class="tag">Dremio</span><span
           class="tag">Grafana</span><span class="tag">Loki</span><span class="tag">Promtail</span>
       </div>
-      <!-- Edite o relato diretamente nos parágrafos abaixo. -->
+      <section class="project-story-section">
+        <h2>Minha contribuição</h2>
+        <p>
+          Recebi o problema de negócio e fui responsável por definir como a solução funcionaria
+          tecnicamente.
+          Trabalhei sozinho no desenho, implementação, testes, automação e operação da arquitetura.
+          Projetei uma plataforma de CDC e streaming capaz de centralizar dados de mais de 1.800
+          bases
+          PostgreSQL, mantendo coleta contínua, baixa latência e operação automatizada.
+        </p>
+        <p>
+          A solução combinava Kafka, Debezium, Airflow, Python, PostgreSQL, S3, KSQL e ferramentas
+          de
+          observabilidade. Além da infraestrutura, desenvolvi as rotinas responsáveis por criar e
+          remover
+          conexões, validar a saúde dos connectors, monitorar replication slots e executar ações
+          preventivas
+          antes que uma falha pudesse afetar os bancos dos clientes.
+        </p>
+      </section>
+
       <div id="project-story">
         <section class="project-story-section">
-          <h2>Problema e objetivo</h2>
+          <h2>O problema</h2>
           <p>
-            O projeto nasceu da necessidade de reunir os dados das bases dos clientes em um
-            ponto central, permitindo análises em tempo real para apoiar a tomada de decisão. No
-            início, a integração envolvia aproximadamente 1.400 bases, o que exigia uma
-            estrutura capaz de organizar a coleta e preservar a identificação de cada origem. O
-            Kafka foi adotado como ponto central desse fluxo, reunindo os dados que seriam
-            utilizados nas análises e no acompanhamento da operação.
+            A empresa possuía aproximadamente 1.400 bases PostgreSQL de clientes com estruturas
+            equivalentes.
+            O desafio era transformar esse conjunto distribuído de dados em uma fonte central para
+            análises,
+            BI e monitoramento em tempo real.
+          </p>
+          <p>
+            A ideia inicial era formar um Data Lake no Amazon S3. Com o crescimento do volume e das
+            necessidades de consumo, o S3 passou a assumir principalmente o papel de armazenamento
+            histórico
+            e backup: cada nova informação ou alteração era persistida em Parquet, organizada por
+            dia e pela
+            origem da base.
+          </p>
+          <p>
+            Ao mesmo tempo, parte dos dados precisava estar disponível quase imediatamente. Entre os
+            casos
+            de uso estavam alertas de volume anormal de compras, possíveis tentativas de fraude,
+            problemas
+            no gateway de pagamentos e falhas durante o processo de compra.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Arquitetura planejada</h2>
+          <h2>Por que Kafka e Debezium</h2>
           <p>
-            A arquitetura foi planejada com um cluster Kafka distribuído em três instâncias
-            Amazon EC2 e o Debezium executado em nove instâncias. Essa distribuição buscava
-            equilibrar a carga das conexões e da coleta, com capacidade para manter a operação
-            diante de uma possível indisponibilidade de parte das instâncias. As tabelas
-            equivalentes dos
-            diferentes clientes compartilhavam os mesmos tópicos, enquanto cada mensagem
-            mantinha a identificação da base de origem para que os registros pudessem ser
-            distinguidos ao longo do processamento.
+            O Kafka foi escolhido porque permitia desacoplar a captura das bases dos consumidores
+            dos dados.
+            Uma vez registrado no Kafka, um evento podia ser consumido novamente sem retornar ao
+            banco de
+            origem para reler aquela informação. A retenção foi configurada para sete dias, dando à
+            operação
+            uma janela para reprocessamentos, investigação e recuperação de estados anteriores.
           </p>
           <p>
-            Os dados permaneciam no Kafka por 7 dias, período suficiente para que fossem
-            processados e utilizados nas análises. Após esse prazo, as mensagens eram
-            descartadas, liberando espaço para os dados mais recentes. A operação do fluxo era
-            contínua, com coleta 24 horas por dia, sete dias por semana, e um volume médio de 45
-            GB de dados por dia.
+            Essa característica foi útil em produção. Em pelo menos duas situações, alterações
+            realizadas por
+            clientes precisaram ser revertidas e a informação anterior já não estava disponível de
+            forma
+            simples no sistema de origem. Como o evento original ainda permanecia no Kafka, foi
+            possível
+            recuperar o estado anterior sem consultar novamente toda a origem.
           </p>
           <p>
-            Os dados eram enviados para o S3 em formato Parquet com granularidade diária,
-            permitindo análises históricas e consultas de longo prazo. Além disso, os dados eram
-            enviados para o PostgreSQL, onde ficavam disponíveis para outras formas de consumo.
+            O Debezium foi adotado como camada de CDC por sua estabilidade e flexibilidade de
+            configuração,
+            além da possibilidade de trabalhar com diferentes connectors. Cada conexão exigia uma
+            configuração extensa, com mais de 260 linhas de parâmetros, regras e tratamentos.
           </p>
         </section>
+
+        <section class="project-story-section">
+          <h2>Arquitetura distribuída</h2>
+          <p>
+            O núcleo da solução utilizava três nós Kafka e nove instâncias Debezium. Cada uma das 27
+            tabelas
+            monitoradas possuía um tópico correspondente, e cada tópico utilizava seis partitions.
+            Como as
+            bases tinham a mesma estrutura, os clientes compartilhavam os mesmos tópicos, enquanto
+            cada
+            registro carregava a identificação da base de origem e suas chaves de negócio.
+          </p>
+          <p>
+            As conexões eram distribuídas entre as nove instâncias Debezium de forma balanceada,
+            evitando
+            concentração de carga em um único nó. Em caso de indisponibilidade, o próprio ambiente
+            distribuído
+            realizava o rebalanceamento sem exigir intervenção manual.
+          </p>
+          <p>
+            O Kafka utilizava armazenamento em disco separado para os dados dos tópicos. A
+            estratégia de
+            replicação mantinha dois nós sincronizados e um terceiro com uma defasagem controlada de
+            aproximadamente 10 MB, criando uma camada adicional de proteção operacional.
+          </p>
+        </section>
+
         <figure class="architecture-figure">
-          <a data-i18n-diagram="../../assets/arquitetura-kafka.svg" href="../../assets/arquitetura-kafka.svg" target="_blank" rel="noopener"
+          <a data-i18n-diagram="../../assets/arquitetura-kafka.svg"
+            href="../../assets/arquitetura-kafka.svg" target="_blank" rel="noopener"
             aria-label="Abrir imagem da arquitetura Kafka em tamanho completo">
-            <img data-i18n-diagram="../../assets/arquitetura-kafka.svg" src="../../assets/arquitetura-kafka.svg" width="1200" height="820" loading="lazy"
-              alt="Arquitetura: bases dos clientes passam pelo Debezium e chegam ao Kafka, que distribui dados para S3, PostgreSQL e análises com Python e KSQL. Airflow automatiza as conexões; Promtail, Loki e Grafana apoiam o monitoramento." />
+            <img data-i18n-diagram="../../assets/arquitetura-kafka.svg"
+              src="../../assets/arquitetura-kafka.svg" width="1200" height="820" loading="lazy"
+              alt="Arquitetura: bases PostgreSQL dos clientes passam pelo Debezium e chegam ao Kafka, que distribui os dados para PostgreSQL central, S3 e análises. Airflow e Python automatizam as conexões, enquanto Grafana, Loki e Promtail apoiam o monitoramento." />
           </a>
         </figure>
+
         <section class="project-story-section">
-          <h2>Descrição e funcionamento</h2>
+          <h2>KRaft em uma fase inicial</h2>
           <p>
-            A coleta abrangia 27 tabelas de cada base de cliente. Os dados saíam dessas bases,
-            passavam pelo Debezium e eram encaminhados aos tópicos correspondentes no Kafka,
-            formando um fluxo que operava continuamente, 24 horas por dia, sete dias por semana.
-            A identificação de origem acompanhava as mensagens para permitir a consolidação dos
-            dados sem perder a associação com cada cliente.
+            Um dos desafios mais importantes foi adotar o Kafka em modo KRaft em um momento em que
+            grande
+            parte da documentação, dos exemplos e das discussões disponíveis ainda estava
+            concentrada no
+            ZooKeeper. Isso exigiu estudar os dois modelos, entender suas diferenças e validar
+            cuidadosamente
+            uma configuração que ainda era pouco comum no material disponível.
           </p>
           <p>
-            Cada conexão era feita de forma automática com um arquivo JSON com mais de 260
-            linhas, reunindo parâmetros de conexão, regras de tratamento e padronização e
-            ajustes dos identificadores dos registros. Essa configuração organizava a entrada
-            dos dados no fluxo central e definia como as informações de cada base seriam
-            tratadas antes de serem utilizadas nas etapas seguintes.
-          </p>
-        </section>
-        <section class="project-story-section">
-          <h2>Manutenção</h2>
-          <p>
-            Fui responsável pela configuração das instâncias e dos softwares utilizados no
-            projeto, além do desenvolvimento dos códigos executados no Airflow para apoiar a
-            manutenção preventiva. A operação exigia acompanhar a disponibilidade das conexões e
-            as mudanças no conjunto de clientes atendidos, incluindo a entrada de novas bases, a
-            retirada de bases descontinuadas e a verificação das conexões existentes. Esse
-            acompanhamento orientava as ações necessárias para manter a estrutura de coleta
-            alinhada ao ambiente em operação.
+            Depois de compreender como o KRaft assumia responsabilidades que tradicionalmente
+            dependiam do
+            ZooKeeper, ficou claro que esse modelo era mais adequado para a arquitetura que eu
+            estava
+            construindo. Toda a configuração, integração e validação do cluster foi feita
+            diretamente por mim.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Automação da operação</h2>
+          <h2>Automação desde o início</h2>
           <p>
-            As rotinas executadas no Airflow automatizavam a inclusão de novas bases, a remoção
-            de conexões de bases descontinuadas e a verificação do estado das conexões ativas.
-            Conforme a situação identificada, os códigos executavam ações de correção ou
-            interrompiam conexões em condições críticas. A automação foi desenvolvida com foco
-            preventivo, para acompanhar as mudanças das bases e tratar os problemas de conexão
-            dentro da própria rotina operacional.
+            A escala tornava inviável administrar manualmente centenas ou milhares de connectors.
+            Por isso,
+            a automação fez parte da arquitetura desde o início. Rotinas Python orquestradas pelo
+            Airflow
+            criavam novas conexões, removiam bases descontinuadas, verificavam connectors
+            existentes,
+            identificavam falhas e reconstruíam conexões quando necessário.
+          </p>
+          <p>
+            Depois de estabilizado, o ambiente deixou de depender de intervenção diária. O
+            acompanhamento
+            operacional passou a ser essencialmente preventivo: uma verificação diária da saúde da
+            plataforma
+            era suficiente para confirmar que a infraestrutura, os connectors e o fluxo de dados
+            continuavam
+            operando normalmente.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Evolução</h2>
+          <h2>O risco dos replication slots</h2>
           <p>
-            Após um ano de projeto, o ambiente havia passado de aproximadamente 1.400 para cerca
-            de 1.800 bases conectadas. Nesse período, não foram observados sinais de sobrecarga
-            no sistema. Esse crescimento permitiu acompanhar o comportamento da estrutura diante
-            do aumento de conexões e da continuidade da coleta no dia a dia. Não foi necessário
-            realizar ajustes na arquitetura, o que indicou que a distribuição das instâncias e a
-            configuração do fluxo estavam adequadas para o volume de dados e a quantidade de
-            conexões.
+            Como as fontes eram PostgreSQL, um ponto crítico eram os replication slots utilizados
+            pelo
+            Debezium. Se uma conexão permanecesse interrompida por muito tempo, o PostgreSQL poderia
+            continuar
+            acumulando WAL para aquele slot. Sem controle, esse crescimento poderia consumir o
+            espaço em disco
+            do servidor e afetar o próprio banco do cliente.
+          </p>
+          <p>
+            Desenvolvi rotinas de monitoramento específicas para esse risco. O processo verificava o
+            estado
+            do connector e do replication slot e, quando necessário, removia a conexão problemática,
+            eliminava
+            o slot e reconstruía a integração. Bases removidas também tinham seus connectors e slots
+            limpos
+            automaticamente.
+          </p>
+          <p>
+            Como última camada de proteção, desenvolvi uma rotina que chamava de <strong>parada de
+              emergência</strong>. Em uma situação crítica, ela era capaz de interromper todas as
+            conexões e
+            remover os replication slots em aproximadamente dois minutos, protegendo os bancos de
+            origem.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Análise de dados</h2>
+          <h2>Evolução da arquitetura</h2>
           <p>
-            Os dados dos tópicos eram consultados com KSQL e analisados em tempo real por
-            rotinas em Python. O fluxo de acompanhamento também utilizava Promtail e Loki para
-            disponibilizar informações no Grafana, onde eram monitoradas situações como falhas
-            de pagamento, aumentos de pedidos fora do padrão e volumes de acesso atípicos. Dessa
-            forma, os dados centralizados apoiavam tanto as análises quanto a identificação de
-            eventos que exigiam atenção da operação.
+            A primeira implementação chegou a operar com aproximadamente 25 a 32 instâncias Debezium
+            em
+            containers executados no ECS, com escalabilidade automática e uso de instâncias Spot. A
+            solução
+            funcionava e não causava perda de dados, mas a substituição frequente das máquinas
+            exigia
+            reconstrução de conexões, aumentava a complexidade operacional e contribuía para um
+            custo elevado.
+          </p>
+          <p>
+            A arquitetura foi então simplificada. Houve uma validação com MongoDB, mas, por se
+            tratar de dados
+            fortemente estruturados e por existir maior domínio interno de PostgreSQL, a camada
+            central de
+            persistência passou a utilizar PostgreSQL.
+          </p>
+          <p>
+            O PostgreSQL central concentrava os dados provenientes dos tópicos e atendia tanto
+            consultas de
+            monitoramento quanto consumo analítico. O Dremio era utilizado como camada de consulta
+            para BI,
+            enquanto o S3 mantinha o histórico em Parquet.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Baixa latência e consumo</h2>
+          <p>
+            Do momento em que uma alteração acontecia no PostgreSQL de origem até sua
+            disponibilidade no
+            PostgreSQL central, o fluxo levava aproximadamente 15 a 20 segundos. Essa latência
+            permitia
+            utilizar a mesma arquitetura tanto para análises quanto para alertas operacionais em
+            tempo quase
+            real.
+          </p>
+          <p>
+            Os eventos também podiam ser consultados diretamente com KSQL e processados por rotinas
+            Python.
+            Parte dos dados alimentava BI; outra parte era utilizada para detectar comportamentos
+            que
+            precisavam de atenção imediata, como volumes de compra fora do padrão, possíveis
+            tentativas de
+            fraude e falhas no fluxo de pagamento.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Observabilidade e operação preventiva</h2>
+          <p>
+            Grafana, Loki e Promtail eram utilizados para acompanhar a saúde da infraestrutura e do
+            fluxo.
+            O monitoramento permitia observar condições das instâncias, sinais de sobrecarga e o
+            funcionamento
+            geral da plataforma.
+          </p>
+          <p>
+            Paralelamente, o Airflow executava verificações automáticas sobre todas as conexões. Em
+            vez de
+            esperar que uma falha se transformasse em incidente, as rotinas buscavam sinais de
+            problema e
+            executavam ações corretivas ou reconstruíam os connectors quando necessário.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Crescimento sem redesenhar a solução</h2>
+          <p>
+            O ambiente começou com aproximadamente 1.400 bases conectadas e, ao longo do projeto,
+            ultrapassou
+            1.800. Mesmo com o aumento das conexões e do volume de dados, a arquitetura inicial
+            permaneceu
+            estável e não exigiu redesenho para suportar o crescimento.
+          </p>
+          <p>
+            Durante os dois anos e quatro meses em que fui responsável pela solução, também realizei
+            atualização de versão do Kafka mantendo o ambiente operacional. Ao final do período, os
+            processos
+            de conexão, manutenção e recuperação estavam automatizados e a plataforma continuou
+            funcionando
+            sem depender de intervenção manual.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Resultado</h2>
+          <p>
+            O resultado foi uma plataforma de dados distribuída que transformou mais de 1.800 bancos
+            isolados
+            em uma fonte central de informação. A arquitetura suportava ingestão contínua, retenção
+            para
+            reprocessamento, histórico em Parquet, consumo analítico e monitoramento em tempo quase
+            real.
+          </p>
+          <p>
+            Para mim, o principal resultado técnico não foi apenas colocar Kafka e Debezium em
+            produção, mas
+            construir uma solução capaz de crescer, se recuperar automaticamente e continuar
+            operando mesmo
+            com milhares de conexões. Quando deixei o projeto, toda a operação já estava
+            automatizada e o ambiente continuava funcionando com a mesma arquitetura.
           </p>
         </section>
       </div>
@@ -164,7 +354,8 @@
   </main>
   <footer class="wrap footer">
     <a class="brand" href="../../index.html" aria-label="Voltar ao início">Rafael
-      Batista</a><span>Rafael Batista</span><a href="../../index.html#projetos">Todos os projetos ↑</a>
+      Batista</a><span>Rafael Batista</span><a href="../../index.html#projetos">Todos os projetos
+      ↑</a>
   </footer>
 </body>
 
