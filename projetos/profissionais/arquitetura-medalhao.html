@@ -46,92 +46,169 @@
       <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
       <h1 id="project-title">Arquitetura medalhão com Dremio e S3</h1>
       <p class="project-page-intro" id="project-description">
-        Integração de dados de MongoDB e PostgreSQL em uma arquitetura medalhão na AWS,
-        com cargas automatizadas três vezes ao dia e dados preparados para acelerar as análises de
-        BI.
+        Evolução de uma arquitetura medalhão com Dremio e S3 para persistir as camadas analíticas, reduzir reprocessamentos e acelerar consultas de BI de minutos para poucos segundos.
       </p>
       <div class="tags" aria-label="Tecnologias">
         <span class="tag">Dremio</span>
         <span class="tag">Amazon EC2</span>
         <span class="tag">Amazon S3</span>
+        <span class="tag">Parquet</span>
         <span class="tag">MongoDB</span>
         <span class="tag">PostgreSQL</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Reflections</span>
         <span class="tag">Arquitetura medalhão</span>
       </div>
-      <div id="project-story">
+            <div id="project-story">
         <section class="project-story-section">
-          <h2>Problema e objetivo</h2>
+          <h2>Minha contribuição</h2>
           <p>
-            Os dashboards dependiam da execução de consultas diretamente nos bancos de origem,
-            o que aumentava o tempo de carregamento dos dados e concorrendo pelo recurso. Além
-            disso, as análises precisavam
-            combinar informações de diferentes fontes. O objetivo foi estruturar uma base analítica
-            com dados previamente tratados e integrados, reduzindo a dependência dessas consultas
-            durante o consumo pelo BI.
+            Atuei na evolução de uma arquitetura que já estava em produção. Em vez de substituir toda a
+            solução, preservei o que funcionava e concentrei as mudanças nos pontos que limitavam desempenho,
+            persistência e capacidade de atender às novas demandas de BI.
           </p>
           <p>
-            Uma grande vangatem em utilizar essa solução que era tudo feito em sql e não precisa de
-            código em python, java ou outra linguagem de programação, o que facilita a manutenção e
-            evolução da solução.
+            Minha principal decisão foi persistir as camadas da arquitetura no Amazon S3 em formato Parquet.
+            Até então, parte importante do processamento dependia de views e reflections mantidas no Dremio,
+            o que fazia algumas consultas precisarem reconstruir novamente as etapas anteriores quando os
+            resultados não estavam disponíveis em memória.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Arquitetura da solução</h2>
+          <h2>O problema que encontrei</h2>
           <p>
-            A solução utilizava o Amazon EC2 para executar as rotinas de coleta e processamento
-            de dados de MongoDB e PostgreSQL. Os dados eram organizados nas camadas da arquitetura
-            medalhão e persistidos no Amazon S3 após o processamento de cada etapa. O Dremio
-            apoiava o tratamento e a preparação das consultas para disponibilizar os dados ao BI.
+            A arquitetura já utilizava Dremio para integrar e preparar dados de diferentes fontes, mas o
+            crescimento das demandas de BI começou a expor uma limitação: as camadas intermediárias não eram
+            persistidas de forma consistente.
+          </p>
+          <p>
+            Quando uma consulta da camada Gold dependia de dados que não estavam disponíveis nas reflections,
+            o Dremio precisava reprocessar etapas anteriores. Isso aumentava o consumo de memória, elevava o
+            tempo de resposta e fazia alguns carregamentos levarem minutos.
+          </p>
+          <p>
+            Além da latência, esse comportamento criava dependência excessiva do estado em memória e aumentava
+            o custo computacional de recalcular transformações que já haviam sido executadas anteriormente.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Funcionamento</h2>
+          <h2>A decisão: persistir cada camada</h2>
           <p>
-            As cargas eram executadas automaticamente três vezes ao dia. A cada execução, os dados
-            eram coletados nas fontes, tratados ao longo das camadas e armazenados no S3 para
-            consumo analítico. Esse fluxo antecipava o trabalho de preparação dos dados, permitindo
-            que o BI acessasse informações já processadas, em vez de repetir esse trabalho a cada
-            consulta aos bancos de origem.
+            Mantive o conceito original da arquitetura medalhão, mas passei a persistir o resultado de cada
+            etapa no Amazon S3. Dessa forma, Bronze, Silver e Gold deixaram de depender apenas de estruturas
+            temporárias ou em memória e passaram a ter uma representação física reutilizável.
+          </p>
+          <p>
+            Os dados eram gravados em Parquet, permitindo que uma consulta da camada Gold utilizasse diretamente
+            dados já tratados nas etapas anteriores, sem repetir todo o fluxo de processamento.
+          </p>
+          <p>
+            Na prática, a arquitetura passou a funcionar como uma sequência de transformações persistentes,
+            permitindo reuso, reprocessamento seletivo e menor dependência de memória.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Minha participação</h2>
+          <h2>Arquitetura das camadas</h2>
           <p>
-            Atuei de ponta a ponta na sustentação e evolução da solução, com autonomia para
-            administrar a infraestrutura na AWS, desenvolver e manter as consultas e planejar as
-            cargas. Também fui responsável por adequar os dados às necessidades do BI, conectando
-            as demandas de análise ao trabalho técnico de coleta, transformação e disponibilização
-            das informações.
+            A camada Bronze recebia os dados das diferentes origens e preservava a informação necessária para
+            os próximos estágios. A Silver concentrava os tratamentos e padronizações, principalmente sobre os
+            dados vindos do MongoDB, que exigiam maior adequação de tipos e formatos.
+          </p>
+          <p>
+            A camada Gold disponibilizava estruturas prontas para consumo pelo BI, organizadas por assuntos
+            como faturamento, clientes, entrega, pagamento e navegação.
+          </p>
+          <p>
+            Todo o fluxo de transformação foi mantido em SQL dentro do Dremio. Não havia dependência de Python
+            ou outra linguagem para o processamento analítico, o que simplificava manutenção, validação e
+            evolução das regras.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Manutenção e automação</h2>
+          <h2>Cargas incrementais</h2>
           <p>
-            A operação combinava cargas automatizadas com a manutenção das consultas e dos
-            tratamentos de dados. Minha responsabilidade incluía manter a infraestrutura que
-            sustentava essas rotinas e ajustar a preparação dos dados conforme as necessidades
-            de consumo. O planejamento das cargas considerava a frequência de atualização do BI
-            e a disponibilização dos dados processados no S3.
+            As cargas eram incrementais. Uma coluna de última atualização baseada em timestamp permitia
+            identificar registros novos ou modificados e processar somente o que havia mudado desde a execução
+            anterior.
           </p>
           <p>
-            Quando tinha a necessidade de alterar a frequência das cargas, eu ajustava o agendamento
-            das rotinas e até mesmo criar novas tabelas de consumo no Dremio para atender a novas
-            demandas de análise se torna muito simples e eficiente, pois é facil de testar e colocar
-            em produção.
+            Essa estratégia evitava recargas completas desnecessárias e ajudava a manter o processamento
+            proporcional ao volume realmente alterado.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Resultados</h2>
+          <h2>Dremio como camada de transformação</h2>
           <p>
-            O carregamento dos dados para os dashboards ficou mais rápido em comparação com a
-            execução de consultas diretamente nos bancos de origem. A preparação antecipada dos
-            dados reduziu o trabalho necessário no momento do consumo. A integração de diferentes
-            fontes também ampliou as informações disponíveis para análise, permitindo novos
-            cruzamentos e insights para o negócio.
+            O Dremio continuou sendo o principal mecanismo de transformação e consulta. Views, datasets e
+            reflections eram utilizados para organizar e acelerar o acesso aos dados, enquanto o S3 passou a
+            garantir persistência entre as etapas.
+          </p>
+          <p>
+            Essa combinação preservou uma das vantagens da solução original: praticamente toda a lógica podia
+            ser desenvolvida e mantida em SQL, facilitando testes e a criação de novas estruturas analíticas
+            para atender rapidamente às demandas das áreas de negócio.
           </p>
         </section>
-      </div>
-    </article>
+
+        <section class="project-story-section">
+          <h2>Integração de múltiplas fontes</h2>
+          <p>
+            A arquitetura combinava dados provenientes de MongoDB, PostgreSQL e arquivos no S3. Também recebia
+            dados consolidados de fluxos originados no ecossistema Kafka/PostgreSQL.
+          </p>
+          <p>
+            O valor da arquitetura estava justamente em transformar essas fontes diferentes em estruturas
+            analíticas consistentes, prontas para cruzamentos e consumo por diferentes áreas da empresa.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Performance: de minutos para poucos segundos</h2>
+          <p>
+            A persistência das camadas mudou significativamente o comportamento das consultas. Antes, uma
+            solicitação à camada Gold podia exigir que transformações anteriores fossem reconstruídas e levar
+            minutos para retornar.
+          </p>
+          <p>
+            Com os dados intermediários já persistidos no S3, o Dremio podia reutilizar o resultado das etapas
+            anteriores. Em muitos cenários, consultas que antes levavam minutos passaram a retornar em poucos
+            segundos, melhorando diretamente o carregamento dos gráficos e dashboards.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Uma arquitetura orientada ao BI</h2>
+          <p>
+            A solução atendia diferentes áreas da empresa e tinha papel importante no acompanhamento de
+            indicadores e OKRs. Com o crescimento das necessidades analíticas, novas tabelas de consumo
+            precisavam ser criadas com frequência.
+          </p>
+          <p>
+            A combinação entre SQL, Dremio, S3 e Parquet tornou esse processo mais simples. Uma nova demanda
+            podia ser testada, transformada em uma nova estrutura Gold e disponibilizada ao BI sem exigir
+            mudanças complexas em toda a arquitetura.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Resultado</h2>
+          <p>
+            A principal evolução não foi trocar tecnologias, mas usar melhor as que já estavam disponíveis.
+            Ao persistir as camadas da arquitetura medalhão, reduzi a necessidade de reprocessamento completo,
+            diminuí a dependência de memória e melhorei de forma perceptível o tempo de resposta das consultas.
+          </p>
+          <p>
+            A arquitetura passou a atender melhor o crescimento das demandas de BI, mantendo transformações
+            em SQL, cargas incrementais e estruturas persistentes que podiam ser reutilizadas em diferentes
+            análises.
+          </p>
+        </section>
+      </div></article>
   </main>
   <footer class="wrap footer">
     <a class="brand" href="../../index.html" aria-label="Voltar ao início">Rafael Batista</a>
