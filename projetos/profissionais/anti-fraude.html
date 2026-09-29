@@ -11,32 +11,43 @@
     <link rel="stylesheet" href="../../styles.css" />
     <script src="../../profile.js" defer></script>
     <script src="../../projeto.js" defer></script>
-  <script src="../../locales/messages.js" defer></script>
-  <script src="../../i18n.js" defer></script>
+    <script src="../../locales/messages.js" defer></script>
+    <script src="../../i18n.js" defer></script>
 </head>
 
 <body data-project="anti-fraude" data-story="html">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="header wrap">
-        <a class="brand" href="../../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
+        <a class="brand" href="../../index.html" aria-label="Rafael Batista, início">Rafael
+            Batista</a>
         <nav aria-label="Navegação principal">
-            <a href="../../index.html#sobre">Sobre</a><a href="../../index.html#projetos">Projetos</a><a
+            <a href="../../index.html#sobre">Sobre</a><a
+                href="../../index.html#projetos">Projetos</a><a
                 href="../../index.html#contato">Contato ↗</a>
         </nav>
-      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
-        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
-          <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>BR</span>
-        </button>
-        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
-          <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>US</span>
-        </button>
-        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
-          <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>ES</span>
-        </button>
-      </div>
+        <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+            <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR"
+                aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true"
+                translate="no">
+                <img src="../../assets/flags/br.svg" width="26" height="18" alt=""
+                    aria-hidden="true" />
+                <span>BR</span>
+            </button>
+            <button type="button" class="language-button" data-language="en-US" lang="en-US"
+                aria-label="English (United States)" title="English (United States)"
+                aria-pressed="false" translate="no">
+                <img src="../../assets/flags/us.svg" width="26" height="18" alt=""
+                    aria-hidden="true" />
+                <span>US</span>
+            </button>
+            <button type="button" class="language-button" data-language="es-ES" lang="es-ES"
+                aria-label="Español (España)" title="Español (España)" aria-pressed="false"
+                translate="no">
+                <img src="../../assets/flags/es.svg" width="26" height="18" alt=""
+                    aria-hidden="true" />
+                <span>ES</span>
+            </button>
+        </div>
 
     </header>
     <main class="wrap project-page" id="conteudo">
@@ -44,64 +55,285 @@
         <article id="project-article" aria-labelledby="project-title">
             <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
             <h1 id="project-title">Detecção de fraude com estatística</h1>
-            <p class="project-page-intro" id="project-description"></p>
-            <div class="tags" id="project-tags" aria-label="Tecnologias"></div>
+            <p class="project-page-intro" id="project-description">Sistema antifraude estatístico em
+                tempo real, construído do zero para cruzar comportamento, histórico de compras,
+                navegação e relações entre dados, reduzindo falsos positivos e aumentando a precisão
+                das decisões em menos de um segundo.</p>
+            <div class="tags" id="project-tags" aria-label="Tecnologias">
+                <span class="tag">Python</span><span class="tag">ClickHouse</span><span
+                    class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
+                    class="tag">RabbitMQ</span><span class="tag">Estatística</span><span
+                    class="tag">Grafos</span><span class="tag">Clustering</span><span
+                    class="tag">IQR</span><span class="tag">Percentis</span><span class="tag">Lei de
+                    Benford</span><span class="tag">ETL</span>
+            </div>
+            <section class="project-story-section">
+                <h2>Minha contribuição</h2>
+                <p>
+                    Desenvolvi toda a solução: arquitetura, coleta, tratamento, cruzamento de dados,
+                    engenharia das variáveis, cálculos estatísticos, sistema de pontuação, pipelines
+                    de processamento
+                    e integração em tempo real. O trabalho uniu minha experiência como Engenheiro e
+                    Cientista de Dados,
+                    permitindo construir uma solução antifraude própria sem depender de modelos de
+                    machine learning
+                    prontos ou de ferramentas de IA.
+                </p>
+                <p>
+                    O objetivo não era apenas bloquear fraude. O desafio principal era tomar
+                    decisões melhores:
+                    reconhecer padrões realmente suspeitos sem impedir compras legítimas. Para isso,
+                    construí uma base
+                    analítica capaz de relacionar histórico de compras, navegação, fingerprint,
+                    comportamento e outros
+                    sinais para avaliar cada nova transação.
+                </p>
+            </section>
+
             <div id="project-story">
-              <section class="project-story-section">
-<h2>Problema e objetivo</h2>
-<p>
-              O projeto foi desenvolvido para reduzir as perdas financeiras causadas por fraudes
-              em transações. A solução utilizava técnicas estatísticas para identificar padrões
-              anômalos nos pedidos e apoiar sua classificação, buscando distinguir compras
-              legítimas de operações fraudulentas sem reprovar indevidamente os clientes.
-            </p>
-</section>
-              <section class="project-story-section">
-<h2>Arquitetura planejada</h2>
-<p>
-              Os dados eram coletados de duas fontes: o banco relacional PostgreSQL e o banco
-              NoSQL MongoDB. Após o tratamento e a sumarização, as informações eram armazenadas no
-              ClickHouse e utilizadas como referência nas análises. O histórico reunia dois
-              grupos: compras legítimas, aprovadas e validadas por terceiros, e compras
-              confirmadas como fraudulentas. Essa separação permitia comparar as características
-              dos novos pedidos com os padrões observados em cada grupo.
-            </p>
-<p>
-              O fluxo de avaliação começava com o envio dos dados de um novo pedido ao RabbitMQ. O
-              sistema de detecção consumia essas mensagens, analisava as informações do pedido em
-              conjunto com os dados históricos e publicava o resultado na fila correspondente à
-              classificação: pedidos aprovados ou reprovados.
-            </p>
-</section>
-<figure class="architecture-figure">
-<a data-i18n-diagram="../../assets/arquitetura-anti-fraude.svg" href="../../assets/arquitetura-anti-fraude.svg" target="_blank" rel="noopener" aria-label="Ampliar arquitetura do sistema de detecção de fraude">
-<img data-i18n-diagram="../../assets/arquitetura-anti-fraude.svg" src="../../assets/arquitetura-anti-fraude.svg" width="1200" height="900" loading="lazy" alt="PostgreSQL e MongoDB alimentam o tratamento dos dados e o ClickHouse. Novos pedidos chegam pelo RabbitMQ ao sistema de análise estatística, que consulta o histórico e encaminha os resultados para filas de aprovados ou reprovados." />
-</a></figure>
-              <section class="project-story-section">
-<h2>Funcionamento</h2>
-<p>
-              A análise cruzava informações de navegação, histórico de compras, dados pessoais e
-              outros fatores para avaliar a probabilidade de fraude. Técnicas de agrupamento e
-              análise de valores atípicos (outliers) ajudavam a identificar transações que se
-              afastavam do comportamento habitual dos clientes. O resultado dessa avaliação
-              orientava o encaminhamento de cada pedido para a fila de aprovados ou de reprovados.
-            </p>
-</section>
-              <section class="project-story-section">
-<h2>Resultados</h2>
-<p>
-              Com essa abordagem, foi possível reduzir em 97% os falsos positivos, ou seja, os
-              casos em que compras legítimas eram classificadas como suspeitas de fraude. Esse
-              resultado atendia ao objetivo de tornar a identificação de fraudes mais precisa e
-              reduzir as reprovações indevidas.
-            </p>
-</section>
-</div>
+                <section class="project-story-section">
+                    <h2>O problema</h2>
+                    <p>
+                        A operação utilizava uma combinação entre mecanismos antifraude
+                        proprietários e serviços de
+                        terceiros. Embora esses sistemas identificassem riscos, ainda existia um
+                        problema relevante:
+                        compras legítimas podiam ser classificadas como fraude.
+                    </p>
+                    <p>
+                        Cada falso positivo significava mais do que uma classificação incorreta. Era
+                        uma venda real
+                        sendo interrompida. A oportunidade estava em consolidar uma base histórica
+                        maior e usar o próprio
+                        comportamento validado dos clientes para distinguir melhor o que era
+                        realmente suspeito.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Da investigação ao modelo estatístico</h2>
+                    <p>
+                        O projeto começou como uma investigação dos dados. Em vez de partir
+                        diretamente para machine
+                        learning, procurei padrões de comportamento em compras aprovadas e em
+                        transações classificadas
+                        como fraude. À medida que esses padrões apareciam, comecei a estruturar um
+                        pipeline de detecção.
+                    </p>
+                    <p>
+                        A solução foi construída exclusivamente com estatística e regras derivadas
+                        dos próprios dados.
+                        Entre as técnicas utilizadas estavam IQR, percentis, médias ponderadas,
+                        clustering, teoria dos
+                        conjuntos, grafos e análises baseadas na Lei de Benford. O objetivo de cada
+                        técnica era adicionar
+                        evidência à decisão, não simplesmente produzir um número isolado.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Comportamento como evidência</h2>
+                    <p>
+                        A análise considerava muito mais do que os dados finais do pagamento. O
+                        comportamento do usuário
+                        durante a navegação também ajudava a formar o contexto da compra: tempo de
+                        navegação, grupos de
+                        interesse, fingerprint, histórico de compras, dados pessoais e relações
+                        entre informações.
+                    </p>
+                    <p>
+                        Algumas fraudes se tornavam claras justamente quando o comportamento de
+                        navegação era combinado
+                        com outros sinais. Também apareceram padrões recorrentes entre transações
+                        fraudulentas e relações
+                        entre entidades que passaram a contribuir para as regras de detecção.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Um sistema de pontuação explicável</h2>
+                    <p>
+                        Cada variável possuía um peso dentro da análise. Esses pesos não eram
+                        avaliados isoladamente:
+                        informações relacionadas eram agrupadas e a pontuação ganhava ou perdia
+                        força à medida que novos
+                        grupos de evidência eram combinados.
+                    </p>
+                    <p>
+                        Isso permitia que o sistema avaliasse não apenas se uma informação parecia
+                        suspeita, mas se ela
+                        era consistente com o histórico conhecido daquele comportamento. Dados que
+                        já haviam aparecido
+                        anteriormente em compras legítimas e validadas passavam a servir como
+                        evidência a favor da
+                        autenticidade de uma nova transação.
+                    </p>
+                    <p>
+                        O resultado não era uma simples caixa-preta. A solução produzia uma
+                        pontuação e conseguia
+                        explicar os fatores que levaram à aprovação ou à reprovação da compra.
+                        Quando necessário,
+                        casos poderiam ainda ser encaminhados para análise de um serviço terceiro.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Arquitetura de dados</h2>
+                    <p>
+                        Os dados vinham de fontes com papéis diferentes. O PostgreSQL concentrava
+                        informações relacionadas
+                        às compras, enquanto o MongoDB armazenava dados de navegação e
+                        comportamento. Esses dados eram
+                        coletados e tratados por pipelines de ETL e consolidados no ClickHouse.
+                    </p>
+                    <p>
+                        O ClickHouse foi escolhido para permitir consultas analíticas com latência
+                        muito baixa. Consultas
+                        importantes para a avaliação podiam ser executadas em aproximadamente 0,2
+                        segundo, tornando
+                        possível usar um histórico amplo durante a decisão sem comprometer a
+                        experiência de checkout.
+                    </p>
+                </section>
+
+                <figure class="architecture-figure">
+                    <a data-i18n-diagram="../../assets/arquitetura-anti-fraude.svg"
+                        href="../../assets/arquitetura-anti-fraude.svg" target="_blank"
+                        rel="noopener"
+                        aria-label="Ampliar arquitetura do sistema de detecção de fraude">
+                        <img data-i18n-diagram="../../assets/arquitetura-anti-fraude.svg"
+                            src="../../assets/arquitetura-anti-fraude.svg" width="1200" height="900"
+                            loading="lazy"
+                            alt="PostgreSQL e MongoDB alimentam a camada analítica em ClickHouse. Novas compras chegam via RabbitMQ ao sistema estatístico, que cruza histórico, comportamento e relações entre dados antes de publicar o resultado da avaliação." />
+                    </a>
+                </figure>
+
+                <section class="project-story-section">
+                    <h2>Decisão em menos de um segundo</h2>
+                    <p>
+                        Cada nova compra era publicada no RabbitMQ. O sistema consumia a mensagem,
+                        executava a análise,
+                        consultava o histórico necessário, atualizava as informações correspondentes
+                        e publicava o
+                        resultado da decisão.
+                    </p>
+                    <p>
+                        Todo esse processo acontecia em menos de um segundo. Isso era essencial
+                        porque a avaliação fazia
+                        parte do fluxo da compra e não poderia criar uma espera perceptível para o
+                        cliente.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Quando o histórico muda a decisão</h2>
+                    <p>
+                        Um dos pontos mais importantes da solução era conseguir provar, com base no
+                        histórico, que uma
+                        informação aparentemente suspeita já havia participado anteriormente de
+                        compras legítimas.
+                        Essa memória comportamental reduzia a dependência de regras rígidas e
+                        ajudava a evitar que um
+                        cliente real fosse bloqueado apenas porque uma variável isolada parecia
+                        anormal.
+                    </p>
+                    <p>
+                        Quanto maior e mais consolidada ficava a base histórica, maior era a
+                        quantidade de evidências
+                        disponíveis para avaliar cada nova compra. O próprio crescimento do
+                        histórico ajudava a melhorar
+                        progressivamente a qualidade da decisão.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Um caso de aproximadamente 60 mil</h2>
+                    <p>
+                        Em uma das situações mais marcantes do projeto, uma compra de
+                        aproximadamente 60 mil apresentou
+                        inconsistências suficientes para ser bloqueada pela solução estatística. Um
+                        mecanismo antifraude
+                        terceiro havia aprovado a mesma transação.
+                    </p>
+                    <p>
+                        O episódio mostrou o valor de analisar a compra no contexto específico do
+                        comportamento e das
+                        relações presentes nos dados da própria operação, em vez de depender
+                        exclusivamente de uma
+                        avaliação externa.
+                    </p>
+                    <p>
+                        Realmente essa compra era uma fraude.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Redução dos falsos positivos</h2>
+                    <p>
+                        A consolidação dos dados e o sistema de pontuação permitiram reduzir em
+                        aproximadamente 97% os
+                        falsos positivos observados no processo antifraude. Em outras palavras,
+                        compras legítimas que
+                        antes poderiam ser interpretadas como suspeitas passaram a ser reconhecidas
+                        com muito mais
+                        precisão.
+                    </p>
+                    <p>
+                        O ganho não veio de tornar o sistema mais permissivo, mas de aumentar a
+                        quantidade e a qualidade
+                        das evidências utilizadas em cada decisão. O sistema passou a diferenciar
+                        melhor comportamento
+                        legítimo de padrões realmente associados a fraude.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Impacto no negócio</h2>
+                    <p>
+                        O projeto teve impacto direto na capacidade de aprovar compras legítimas sem
+                        abrir mão da proteção
+                        contra fraude. Segundo os resultados observados durante a operação, a
+                        evolução da solução esteve
+                        associada a um aumento de aproximadamente 20 milhões no faturamento anual,
+                        ao
+                        mesmo tempo em que a
+                        precisão da detecção foi aprimorada.
+                    </p>
+                    <p>
+                        Esse resultado mostrou que antifraude não precisa ser tratado apenas como
+                        mecanismo de bloqueio.
+                        Uma decisão mais precisa também protege receita: reconhecer corretamente um
+                        bom cliente pode ser
+                        tão importante quanto identificar uma tentativa de fraude.
+                    </p>
+                </section>
+
+                <section class="project-story-section">
+                    <h2>Por que esse projeto foi especial</h2>
+                    <p>
+                        Esse projeto reuniu áreas que normalmente aparecem separadas: Engenharia de
+                        Dados, Ciência de
+                        Dados, estatística, análise comportamental, grafos, bancos analíticos e
+                        processamento em tempo
+                        real.
+                    </p>
+                    <p>
+                        Construir cada etapa — da coleta dos dados até a lógica estatística e a
+                        resposta da transação —
+                        permitiu transformar uma investigação de padrões em um sistema de produção
+                        com impacto direto no
+                        negócio. Foi justamente essa combinação entre investigação, engenharia e
+                        resultado que tornou o
+                        projeto um dos trabalhos mais marcantes da minha trajetória.
+                    </p>
+                </section>
+            </div>
         </article>
     </main>
     <footer class="wrap footer">
         <a class="brand" href="../../index.html" aria-label="Voltar ao início">Rafael
-            Batista</a><span>Rafael Batista</span><a href="../../index.html#projetos">Todos os projetos
+            Batista</a><span>Rafael Batista</span><a href="../../index.html#projetos">Todos os
+            projetos
             ↑</a>
     </footer>
 </body>
