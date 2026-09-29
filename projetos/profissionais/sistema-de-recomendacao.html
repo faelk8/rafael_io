@@ -24,20 +24,25 @@
 
       <a href="../../index.html#contato">Contato ↗</a>
     </nav>
-      <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
-        <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true" translate="no">
-          <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>BR</span>
-        </button>
-        <button type="button" class="language-button" data-language="en-US" lang="en-US" aria-label="English (United States)" title="English (United States)" aria-pressed="false" translate="no">
-          <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>US</span>
-        </button>
-        <button type="button" class="language-button" data-language="es-ES" lang="es-ES" aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
-          <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
-          <span>ES</span>
-        </button>
-      </div>
+    <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+      <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR"
+        aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true"
+        translate="no">
+        <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>BR</span>
+      </button>
+      <button type="button" class="language-button" data-language="en-US" lang="en-US"
+        aria-label="English (United States)" title="English (United States)" aria-pressed="false"
+        translate="no">
+        <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>US</span>
+      </button>
+      <button type="button" class="language-button" data-language="es-ES" lang="es-ES"
+        aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+        <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>ES</span>
+      </button>
+    </div>
 
   </header>
   <main class="wrap project-page" id="conteudo">
@@ -46,74 +51,248 @@
       <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
       <h1 id="project-title">Sistema de recomendação</h1>
       <p class="project-page-intro" id="project-description">
-        Recomendação de produtos para clientes de uma empresa, com base em dados de compras e
-        comportamento.
+        Sistema de recomendação desenvolvido do zero para aumentar ticket médio e melhorar a
+        navegação em uma plataforma com mais de 1.800 clientes, combinando comportamento de compra,
+        visualização, produtos mais vendidos e similaridade textual.
       </p>
       <div class="tags" aria-label="Tecnologias">
         <span class="tag">Sistema de recomendação</span>
+        <span class="tag">Python</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MongoDB</span>
         <span class="tag">Redis</span>
-        <span class="tag">Estatística</span>
         <span class="tag">TF-IDF</span>
+        <span class="tag">Similaridade de Cosseno</span>
+        <span class="tag">Estatística</span>
         <span class="tag">SQL</span>
       </div>
-      <!-- Escreva o relato nos parágrafos. Os comentários são orientações só para o editor. -->
+      <section class="project-story-section">
+        <h2>Minha contribuição</h2>
+        <p>
+          Recebi o problema de negócio e fui responsável por definir sozinho como a solução
+          funcionaria,
+          como seria construída e como chegaria à produção. Desenvolvi a arquitetura, as consultas,
+          os algoritmos em Python, o processamento diário e a integração com o Redis.
+        </p>
+        <p>
+          O sistema foi criado para melhorar a navegação e aumentar o ticket médio dos clientes,
+          utilizando o comportamento real de compra e visualização para encontrar relações entre
+          produtos.
+          A solução foi disponibilizada para todos os clientes da plataforma, que podiam escolher
+          qual
+          estratégia de recomendação utilizar.
+        </p>
+      </section>
+
       <div id="project-story">
         <section class="project-story-section">
-          <h2>Problema e objetivo</h2>
+          <h2>O problema</h2>
           <p>
-            Com o objetivo de aumentar a conversão de vendas, a empresa buscava uma solução para
-            recomendar produtos aos clientes com base em suas compras anteriores e comportamento de
-            navegação. A meta era criar um sistema que pudesse analisar os dados disponíveis e
-            fornecer recomendações personalizadas em tempo real.
+            A necessidade surgiu de uma pergunta simples: como ajudar o cliente a descobrir produtos
+            relevantes sem obrigá-lo a procurar manualmente por todo o catálogo?
+          </p>
+          <p>
+            Os catálogos podiam variar de algumas centenas a milhares de produtos. A ideia era
+            aproveitar
+            o histórico de compra e o comportamento de navegação já existentes para criar
+            recomendações
+            rápidas, úteis e diretamente relacionadas ao produto que o usuário estava visualizando.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Arquitetura planejada</h2>
-          <p>A análise considerava os seguintes dados:</p>
+          <h2>Quatro estratégias de recomendação</h2>
+          <p>
+            Em vez de depender de um único algoritmo, desenvolvi quatro modelos independentes. Cada
+            cliente
+            podia escolher a estratégia mais adequada ao seu negócio.
+          </p>
           <ul>
-            <li>Produtos mais comprados</li>
-            <li>Produtos mais visualizados</li>
-            <li>Grupos de produtos relacionados</li>
+            <li><strong>Quem comprou, comprou também:</strong> recomendação baseada na frequência de
+              produtos comprados em conjunto.</li>
+            <li><strong>Quem viu, viu também:</strong> recomendação baseada na navegação e nos
+              produtos visualizados em conjunto.</li>
+            <li><strong>Mais vendidos:</strong> utilizado como estratégia geral baseada nos produtos
+              com maior frequência de compra.</li>
+            <li><strong>Similaridade por nome:</strong> comparação textual entre produtos utilizando
+              TF-IDF e similaridade de cosseno.</li>
           </ul>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Quem comprou, comprou também</h2>
           <p>
-            A arquitetura do sistema de recomendação foi planejada para coletar e processar esses
-            dados, utilizando algoritmos de filtragem colaborativa e baseada em conteúdo. O sistema
-            foi projetado para identificar padrões de comportamento dos clientes e gerar
-            recomendações relevantes. As recomendações geradas eram armazenadas no Redis, um banco
-            de dados em memória utilizado para disponibilizar essas informações com baixa latência
-            e contribuir para o carregamento rápido das páginas.
+            O modelo de compra utilizava dados armazenados no PostgreSQL. Uma consulta selecionava
+            clientes
+            que haviam comprado três ou mais produtos nos últimos 30 dias e construía uma tabela de
+            frequência
+            entre os itens presentes nesses pedidos.
+          </p>
+          <p>
+            A partir dessas frequências, era possível identificar quais produtos apareciam juntos
+            com maior
+            recorrência. Quando um usuário visualizava determinado produto, o sistema podia sugerir
+            outros
+            itens que historicamente apareciam no mesmo grupo de compras.
+          </p>
+          <p>
+            Produtos sem estoque eram eliminados já na consulta, evitando que o sistema recomendasse
+            itens
+            indisponíveis.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Funcionamento</h2>
+          <h2>Quem viu, viu também</h2>
           <p>
-            Todos os dias os produtos eram analisados e classificados de acordo com a frequência de
-            compra e visualização. O sistema então gerava uma lista de recomendações personalizadas
-            para cada cliente e disponibilizava os resultados no Redis. Quando o cliente acessava
-            o site, a aplicação consultava as recomendações já processadas em memória, sem precisar
-            recalculá-las durante o carregamento da página. Assim, os produtos recomendados com base
-            no histórico de compras e no comportamento de navegação podiam ser exibidos rapidamente.
+            O mesmo princípio de frequência era aplicado aos dados de navegação armazenados no
+            MongoDB.
+            Nesse caso, o objetivo era entender relações entre produtos a partir daquilo que as
+            pessoas
+            estavam visualizando, mesmo quando não existia uma compra.
           </p>
           <p>
-            Para cada produto visualizado de acordo com o modelo escolhido, o sistema mostrava os
-            produtos mais comprados e visualizados relacionados, aumentando a probabilidade de
-            conversão.
-          </p>
-        </section>
-        <section class="project-story-section">
-          <h2>Manutenção e automação</h2>
-          <p>
-            O sistema funcionava de forma autônoma, com atualizações diárias das recomendações. A
-            manutenção envolvia a verificação periódica dos algoritmos e ajustes conforme necessário
-            para melhorar a precisão das recomendações.
+            A análise considerava os produtos mais visualizados durante a navegação e identificava
+            combinações recorrentes. Dessa forma, o sistema conseguia captar interesse antes mesmo
+            da conversão.
           </p>
         </section>
+
         <section class="project-story-section">
-          <h2>Resultados e aprendizados</h2>
+          <h2>Similaridade por nome</h2>
           <p>
-            O sistema de recomendação ajudou a aumentar a conversão de vendas e o ticket médio,
-            proporcionando uma experiência melhor para os clientes e aumentando a
-            fidelidade da marca.
+            Para produtos com nomes semelhantes, desenvolvi um modelo baseado na frequência dos
+            termos.
+            Os nomes eram transformados utilizando TF-IDF e comparados por similaridade de cosseno.
+          </p>
+          <p>
+            Essa abordagem permitia encontrar produtos relacionados textualmente mesmo quando ainda
+            não
+            havia uma relação forte de compra ou visualização entre eles.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Por que modelos simples e ajustados</h2>
+          <p>
+            Durante o desenvolvimento, testei abordagens de recomendação mais sofisticadas. Como
+            também atuo
+            como Cientista de Dados e já tinha experiência com modelagem, a escolha final não foi
+            determinada
+            por limitação técnica, mas pelo contexto do produto.
+          </p>
+          <p>
+            A plataforma atendia mais de 1.800 clientes, cada um com seu próprio catálogo e
+            comportamento de
+            compra. Um modelo excessivamente complexo poderia exigir ajustes específicos,
+            treinamento,
+            manutenção e acompanhamento diferentes para cada operação.
+          </p>
+          <p>
+            Por isso, optei por modelos estatísticos mais simples, ajustados ao problema e baseados
+            em sinais
+            que existiam de forma consistente em todos os clientes: frequência de compra, frequência
+            de
+            visualização, produtos mais vendidos e similaridade textual.
+          </p>
+          <p>
+            A decisão permitiu utilizar a mesma arquitetura em toda a base de clientes, mantendo os
+            modelos
+            explicáveis, previsíveis e fáceis de operar, sem abrir mão da relevância das
+            recomendações.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Cold start e ausência de histórico</h2>
+          <p>
+            Clientes sem histórico suficiente podiam receber recomendações baseadas nos produtos
+            mais vendidos ou vistos.
+            Essa estratégia permitia que o sistema continuasse útil mesmo quando ainda não existiam
+            sinais
+            comportamentais suficientes para uma recomendação baseada no histórico.
+          </p>
+          <p>
+            Produtos novos, por outro lado, não entravam imediatamente nos modelos baseados em
+            compra ou
+            navegação, porque ainda não possuíam histórico suficiente para gerar relações
+            confiáveis.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Processamento diário</h2>
+          <p>
+            Todos os modelos eram recalculados diariamente em Python. O processamento atualizava as
+            relações
+            entre produtos e gerava novamente as recomendações com base nos dados mais recentes de
+            compra e
+            navegação.
+          </p>
+          <p>
+            O resultado final era enviado para o Redis, permitindo que a aplicação consultasse
+            recomendações
+            já processadas em memória, sem executar cálculos durante o carregamento da página.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Baixa latência na experiência do usuário</h2>
+          <p>
+            As recomendações eram exibidas na parte inferior da descrição do produto. Como os
+            resultados já
+            estavam pré-calculados no Redis, a aplicação precisava apenas recuperar a lista
+            correspondente ao
+            produto atual.
+          </p>
+          <p>
+            Essa separação entre processamento analítico e consumo online permitia manter a
+            experiência de
+            navegação rápida, mesmo com catálogos contendo centenas ou milhares de itens.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Uma solução configurável por cliente</h2>
+          <p>
+            O sistema foi disponibilizado para todos os clientes da plataforma. Cada operação podia
+            escolher
+            qual modelo utilizar de acordo com o comportamento do próprio catálogo e de seus
+            consumidores.
+          </p>
+          <p>
+            Isso permitiu utilizar a mesma infraestrutura de recomendação em contextos diferentes
+            sem obrigar
+            todos os clientes a seguir uma única lógica.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Resultado</h2>
+          <p>
+            O sistema passou a utilizar dados que antes serviam apenas como histórico de compra ou
+            navegação
+            para melhorar a descoberta de produtos e apoiar o aumento do ticket médio.
+          </p>
+          <p>
+            Mais importante do que um algoritmo isolado foi a combinação de estratégias
+            complementares:
+            compra, navegação, produtos mais vendidos e similaridade textual. Essa composição
+            permitiu criar
+            uma solução única capaz de atender mais de 1.800 clientes, sem exigir um modelo
+            específico para
+            cada operação.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Continuidade em produção</h2>
+          <p>
+            A solução permaneceu em produção após minha saída da empresa e continua sendo utilizada.
+            Esse é um dos resultados mais importantes do projeto: a arquitetura e os processos foram
+            construídos
+            de forma suficientemente simples e estável para continuarem operando sem depender da
+            minha presença.
           </p>
         </section>
       </div>
