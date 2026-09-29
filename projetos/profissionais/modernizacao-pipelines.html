@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10141c" />
+  <meta name="description"
+    content="Participação na migração de pipelines legados em Alteryx para Python, dbt, Airflow e Kubernetes, com redução de até 90% no tempo de execução de determinados fluxos." />
+  <title>Modernização de pipelines de dados · Rafael Batista</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script src="../../locales/messages.js" defer></script>
+  <script src="../../i18n.js" defer></script>
+</head>
+
+<body data-project="modernizacao-pipelines" data-story="html">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header wrap">
+    <a class="brand" href="../../index.html" aria-label="Rafael Batista, início">Rafael Batista</a>
+    <nav aria-label="Navegação principal">
+      <a href="../../index.html#sobre">Sobre</a>
+      <a href="../../index.html#projetos">Projetos</a>
+
+      <a href="../../index.html#contato">Contato ↗</a>
+    </nav>
+    <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+      <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR"
+        aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true"
+        translate="no">
+        <img src="../../assets/flags/br.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>BR</span>
+      </button>
+      <button type="button" class="language-button" data-language="en-US" lang="en-US"
+        aria-label="English (United States)" title="English (United States)" aria-pressed="false"
+        translate="no">
+        <img src="../../assets/flags/us.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>US</span>
+      </button>
+      <button type="button" class="language-button" data-language="es-ES" lang="es-ES"
+        aria-label="Español (España)" title="Español (España)" aria-pressed="false" translate="no">
+        <img src="../../assets/flags/es.svg" width="26" height="18" alt="" aria-hidden="true" />
+        <span>ES</span>
+      </button>
+    </div>
+
+  </header>
+  <main class="wrap project-page" id="conteudo">
+    <a class="project-back" href="../../index.html#projetos">← Voltar para os projetos</a>
+    <article id="project-article" aria-labelledby="project-title">
+      <p class="eyebrow">EXPERIÊNCIA PROFISSIONAL</p>
+      <h1 id="project-title">Modernização de pipelines de dados</h1>
+      <p class="project-page-intro" id="project-description">Modernização de 264 pipelines legados
+        em Alteryx para uma arquitetura com Python, dbt, Airflow, Kubernetes e Amazon Redshift, com
+        padronização, paralelismo e redução de fluxos de até 4 horas para cerca de 20 minutos.</p>
+      <div class="tags" aria-label="Tecnologias">
+        <span class="tag">Python</span>
+        <span class="tag">dbt</span>
+        <span class="tag">Apache Airflow</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Amazon Redshift</span>
+        <span class="tag">Amazon S3</span>
+        <span class="tag">Alteryx</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Observabilidade</span>
+      </div>
+      <div id="project-story">
+        <section class="project-story-section">
+          <h2>Contexto e desafio</h2>
+          <p>
+            A plataforma possuía 264 pipelines legados em Alteryx. Os workflows eram grandes,
+            difíceis de
+            manter, frequentemente divididos em várias partes e com objetivos diferentes entre si.
+          </p>
+          <p>
+            A modernização precisava preservar o resultado funcional de cada fluxo, mas levar o
+            processamento
+            para uma arquitetura mais padronizada, versionável e adequada ao ambiente em cloud. Além
+            da
+            complexidade técnica, havia uma preocupação importante com custo operacional: a mudança
+            para cloud
+            aumentava a necessidade de controlar melhor processamento, uso de recursos e dependência
+            de licenças.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Minha contribuição</h2>
+          <p>
+            Atuo no planejamento técnico e na implementação da migração dos pipelines em que
+            participo,
+            ajudando a transformar workflows legados em fluxos baseados em Python, dbt, Airflow,
+            Kubernetes
+            e Amazon Redshift.
+          </p>
+          <p>
+            Minha atuação envolve entender a lógica dos workflows existentes, reconstruí-la na nova
+            arquitetura, otimizar o processamento, modelar os dados no Redshift, aplicar controles
+            de acesso
+            com roles e desenvolver mecanismos de observabilidade para acompanhar volumetria,
+            execução e SLA.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Migração 1 por 1, com padronização</h2>
+          <p>
+            Como os 264 pipelines tinham regras e entregas diferentes, a estratégia não era criar
+            uma solução
+            única que substituísse todos de uma vez. Cada workflow precisava ser entendido e migrado
+            individualmente.
+          </p>
+          <p>
+            Ao mesmo tempo, a nova arquitetura introduzia padronização. dbt passou a concentrar o
+            processamento no banco, enquanto Python era utilizado para acionar e controlar os
+            processos.
+            Airflow passou a organizar as dependências e a execução das etapas.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Processamento no banco com dbt</h2>
+          <p>
+            Uma das decisões centrais da arquitetura foi aproveitar o processamento dentro do
+            próprio
+            Amazon Redshift. Em vez de movimentar grandes volumes de dados para uma aplicação
+            externa,
+            as transformações eram executadas no banco por meio do dbt.
+          </p>
+          <p>
+            O Python funcionava como camada de controle e integração, chamando os códigos dbt
+            responsáveis
+            pelas transformações. Essa separação ajudava a manter a lógica de dados organizada e o
+            processamento próximo de onde os dados estavam armazenados.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Airflow e Kubernetes</h2>
+          <p>
+            O Airflow é responsável pela orquestração dos pipelines. Como os fluxos eram grandes e
+            podiam
+            conter processos independentes dentro da mesma DAG, cada etapa podia ser executada em
+            pods
+            separados no Kubernetes.
+          </p>
+          <p>
+            Isso permitia isolar processos e executar etapas em paralelo quando possível, evitando
+            que todo o
+            pipeline precisasse compartilhar o mesmo contexto de execução.
+          </p>
+          <p>
+            Para reduzir variações entre implementações, as DAGs utilizavam um arquivo YAML
+            padronizado e uma
+            imagem base comum. Esse padrão facilitava a criação, implantação e manutenção dos novos
+            fluxos.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>CI/CD e versionamento</h2>
+          <p>
+            As entregas eram automatizadas com GitHub Actions. O processo de build preparava os
+            artefatos
+            necessários e realizava o deploy das DAGs para o Amazon S3, local de onde o Airflow
+            fazia a leitura.
+          </p>
+          <p>
+            A arquitetura contava com ambientes separados para desenvolvimento, homologação e
+            produção,
+            permitindo validar mudanças antes de promover um novo fluxo.
+          </p>
+          <p>
+            No legado, o versionamento dependia de cópias datadas mantidas no servidor. A migração
+            passou a
+            trazer o código para um fluxo de versionamento mais adequado ao desenvolvimento moderno.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Redshift como núcleo analítico</h2>
+          <p>
+            O Amazon Redshift concentrava os dados utilizados pelos pipelines e pelas transformações
+            em dbt.
+            Minha atuação também incluía modelagem, análise de desempenho e controle de acesso por
+            meio de roles.
+          </p>
+          <p>
+            Algumas tabelas eram reutilizadas por vários pipelines, o que exigia cuidado adicional
+            com
+            dependências, impacto de mudanças e eficiência das consultas.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Documentação como parte da modernização</h2>
+          <p>
+            Um dos problemas do legado era a ausência de documentação consolidada. Muitos workflows
+            existiam
+            há bastante tempo, eram divididos em várias partes e concentravam regras de negócio
+            importantes
+            sem uma referência clara fora do próprio fluxo.
+          </p>
+          <p>
+            A migração passou a incluir também a documentação dos processos. À medida que cada
+            pipeline era
+            estudado e reconstruído, registrávamos suas tabelas de origem e destino, dependências,
+            etapas de
+            transformação e regras de negócio.
+          </p>
+          <p>
+            Isso transformou a modernização em um processo de recuperação de conhecimento. Hoje,
+            além dos
+            pipelines estarem em uma arquitetura mais moderna, existe uma documentação muito mais
+            completa
+            sobre como os dados são processados e quais regras sustentam cada entrega.
+          </p>
+          <p>
+            Essa visão consolidada também facilita identificar gargalos, etapas redundantes,
+            dependências
+            excessivas e pontos de melhoria. Em vez de analisar cada workflow isoladamente, passou a
+            ser
+            possível enxergar melhor como os processos se relacionam e onde uma otimização pode
+            gerar impacto
+            em mais de uma entrega.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Como garantíamos que a migração estava correta</h2>
+          <p>
+            Cada pipeline migrado era validado em homologação comparando seu resultado com o fluxo
+            em produção.
+            Em vários casos, o processo antigo e o novo eram executados em paralelo para confirmar
+            que a nova
+            implementação entregava os mesmos resultados antes da substituição definitiva.
+          </p>
+          <p>
+            Essa etapa era especialmente importante porque muitos workflows eram extensos e
+            divididos em
+            diversas partes. Entender toda a lógica antes de migrar era uma das maiores dificuldades
+            do trabalho.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Desempenho: de 4 horas para cerca de 20 minutos</h2>
+          <p>
+            Em um dos casos mais representativos, um pipeline que levava aproximadamente quatro
+            horas passou
+            a executar em cerca de vinte minutos.
+          </p>
+          <p>
+            A melhoria veio principalmente de duas decisões: paralelizar etapas independentes e
+            reduzir o
+            volume processado, evitando recalcular ou reler dados que não precisavam participar
+            daquela execução.
+          </p>
+          <p>
+            Outros fluxos também apresentaram reduções significativas, chegando a aproximadamente
+            90% em
+            determinados casos medidos.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Observabilidade e SLA</h2>
+          <p>
+            A modernização não se limitava à execução dos pipelines. Também desenvolvemos
+            acompanhamento de
+            volumetria, duração e cumprimento de SLA para identificar rapidamente fluxos que saíssem
+            do
+            comportamento esperado.
+          </p>
+          <p>
+            Os alertas eram enviados por e-mail e os indicadores podiam ser acompanhados no Grafana,
+            criando
+            uma visão mais clara da saúde operacional dos processos.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>O maior desafio</h2>
+          <p>
+            A maior dificuldade não estava em uma tecnologia específica, mas em compreender
+            integralmente cada
+            workflow legado. Muitos fluxos eram grandes, separados em várias partes e realizavam
+            diversas
+            transformações com dependências entre si.
+          </p>
+          <p>
+            Na prática, quase toda migração exigia um trabalho investigativo: entender o que cada
+            etapa fazia,
+            quais tabelas eram compartilhadas, quais resultados precisavam ser preservados e onde
+            havia
+            oportunidades reais de simplificação ou paralelismo.
+          </p>
+        </section>
+
+        <section class="project-story-section">
+          <h2>Resultado</h2>
+          <p>
+            A modernização transforma pipelines difíceis de manter em fluxos versionados,
+            padronizados,
+            observáveis e executados em uma arquitetura preparada para cloud.
+          </p>
+          <p>
+            Mais do que substituir Alteryx por novas ferramentas, o trabalho reduz dependência de
+            execução
+            manual e de estruturas legadas, melhora desempenho em casos críticos, cria uma base mais
+            adequada
+            para manutenção e evolução dos dados e registra de forma estruturada o conhecimento
+            antes disperso
+            nos próprios workflows.
+          </p>
+        </section>
+      </div>
+    </article>
+  </main>
+  <footer class="wrap footer">
+    <a class="brand" href="../../index.html" aria-label="Voltar ao início">Rafael Batista</a>
+    <span>Rafael Batista</span>
+    <a href="../../index.html#projetos">Todos os projetos ↑</a>
+  </footer>
+</body>
+
+</html>
