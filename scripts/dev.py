@@ -66,7 +66,7 @@ def open_server(port):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--port', type=int, default=8000)
+    parser.add_argument('--port', type=int, default=8095)
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         parser.error('A porta deve estar entre 1 e 65535.')
@@ -78,7 +78,7 @@ if __name__ == '__main__':
         port = server.server_port
         if port != args.port:
             print(f'Porta {args.port} ocupada. Usando a porta {port}.', flush=True)
-        print(f'Prévia: http://localhost:{port}/projetos/kafka.html (Ctrl+C para encerrar)', flush=True)
+        print(f'Prévia: http://localhost:{port}/ (Ctrl+C para encerrar)', flush=True)
         try:
             server.serve_forever()
         except KeyboardInterrupt:

@@ -7,12 +7,12 @@ Portfólio em português do Brasil, inglês dos Estados Unidos e espanhol da Esp
 Na pasta do projeto, execute:
 
 ```sh
-python3 -m http.server 8000
-# ou
-python3 scripts/dev.py --port 8001
+python3 scripts/dev.py
+# ou, sem recarga automática
+python3 -m http.server 8095 --bind 127.0.0.1
 ```
 
-Abra http://localhost:8000.
+Abra http://localhost:8095. A porta padrão deste projeto é 8095 para evitar conflitos com outros serviços locais. Se estiver ocupada, `scripts/dev.py` escolhe a próxima disponível e mostra o endereço no terminal.
 
 ## Idiomas
 
@@ -34,7 +34,7 @@ Edite `profile.js` para alterar nome, apresentação, bio, interesses, usuário 
 
 - `github`: usuário, sem URL. Habilita os links para o perfil.
 - `projects`: projetos escolhidos manualmente, com nome, descrição, tags e URL opcional.
-- Para importar automaticamente até seis repositórios públicos, preencha `github` e defina `projects: []`. Forks e projetos arquivados são excluídos. A API pública pode limitar requisições; o site mantém um link direto para o GitHub em caso de falha.
+- Para importar automaticamente repositórios públicos, preencha `github` e defina `projects: []`. Forks e projetos arquivados são excluídos. A API pública pode limitar requisições; o site mantém um link direto para o GitHub em caso de falha.
 - Campos de contato vazios não geram links.
 - Ao mudar o nome, ajuste também os textos fixos, título e descrição no `index.html`.
 
@@ -137,7 +137,7 @@ O build inclui automaticamente os arquivos da pasta `projetos/`. Os endereços a
 
 ## Prévia com atualização automática
 
-Execute `python3 scripts/dev.py` e abra http://localhost:8000/projetos/profissionais/kafka.html. Ao salvar HTML, CSS, JavaScript ou texto, o navegador recarrega automaticamente. Mantenha o terminal aberto; encerre com Ctrl+C. Se a porta estiver ocupada, use `python3 scripts/dev.py --port 8001`.
+Execute `python3 scripts/dev.py` e abra http://localhost:8095/projetos/profissionais/kafka.html. Ao salvar HTML, CSS, JavaScript ou texto, o navegador recarrega automaticamente. Mantenha o terminal aberto; encerre com Ctrl+C. Se a porta estiver ocupada, use `python3 scripts/dev.py --port 8096`.
 
 O relato do Kafka agora é editado **diretamente em `projetos/profissionais/kafka.html`**, nos elementos `<h2>` e `<p>`. Ele não depende de JavaScript para aparecer. `texto/kafka.txt` permanece como rascunho de referência e não substitui mais o conteúdo do HTML. O resumo do cartão da página inicial continua em `profile.js`.
 
@@ -150,3 +150,10 @@ Se a porta solicitada estiver ocupada, a prévia escolhe automaticamente a próx
 Os relatos profissionais ficam em `projetos/profissionais/`; os pessoais, em `projetos/pessoais/`. Os endereços anteriores dos projetos profissionais redirecionam para as novas páginas.
 
 Edite os cartões pessoais em `personalProjects`, no `profile.js`, e o relato diretamente no HTML correspondente. Foram criadas páginas para robô trader, previsão de cotação de empresas, acompanhamento de carteira de investimentos e agente pessoal com IA local. Os detalhes aguardam preenchimento.
+
+
+## Laboratório / Estudo de Caso e paginação
+
+As seções de projetos profissionais, pessoais, Laboratório / Estudo de Caso e GitHub mostram até quatro cartões por página, com os controles Anterior e Próxima quando há mais projetos. Cada seção tem paginação independente.
+
+Edite `laboratoryProjects` em `profile.js` para cadastrar experimentos. O relato do RaceStream Lab fica em `projetos/laboratorio/racestream-lab.html`.

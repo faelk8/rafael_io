@@ -118,7 +118,7 @@ window.SITE_TRANSLATIONS = {
     "La curiosidad por cómo se producían, integraban y facilitaban los datos me llevó del análisis a la ingeniería de datos. Diseñé e implementé una arquitectura de integración en tiempo real con Kafka, Debezium y AWS que llegó a conectar más de 1.800 bases de datos. También trabajé en plataformas analíticas, soluciones antifraude y sistemas de recomendación."
   ],
   "Participei da modernização de uma plataforma de dados, incluindo a migração de 264 pipelines legados para Python, dbt, Airflow e Kubernetes. Em alguns dos fluxos otimizados, o tempo de execução caiu em até 90%. Gosto desse trabalho de combinar arquitetura, desempenho e manutenção, considerando também o custo operacional e as necessidades de quem depende dos dados.": [
-    "I took part in modernizing a data platform, including migrating 264 legacy pipelines to Python, dbt, Airflow, and Kubernetes. In some optimized workflows, execution time fell by up to 90%. I enjoy combining architecture, performance, and maintainability while considering operating costs and the needs of the people who depend on the data.",
+    "I participated in modernizing a data platform, including migrating 264 legacy pipelines to Python, dbt, Airflow, and Kubernetes. In some optimized workflows, execution time fell by up to 90%. I enjoy combining architecture, performance, and maintainability while considering operating costs and the needs of the people who depend on the data.",
     "Participé en la modernización de una plataforma de datos, incluida la migración de 264 pipelines heredados a Python, dbt, Airflow y Kubernetes. En algunos de los flujos optimizados, el tiempo de ejecución se redujo hasta un 90 %. Me gusta combinar arquitectura, rendimiento y mantenimiento, teniendo también en cuenta el coste operativo y las necesidades de quienes dependen de los datos."
   ],
   "Fora do trabalho, continuo aprendendo com projetos que fazem parte da minha vida. Uso todos os meses o sistema que desenvolvi para acompanhar minha carteira de investimentos e construo um ambiente de IA local com agentes que me ajudam a programar, documentar e analisar meus projetos. Meu interesse por finanças também me levou a experimentar redes LSTM e GRU e a desenvolver um robô para operar na bolsa.": [
@@ -1241,10 +1241,6 @@ window.SITE_TRANSLATIONS = {
     "Curiosity about how data was produced, integrated, and made available led me from analytics to data engineering. At Magazord, I designed and implemented a real-time integration architecture with Kafka, Debezium, and AWS that connected more than 1,800 databases. I also worked on analytics platforms, fraud detection solutions, and recommendation systems.",
     "La curiosidad por cómo se producían, integraban y facilitaban los datos me llevó del análisis a la ingeniería de datos. En Magazord diseñé e implementé una arquitectura de integración en tiempo real con Kafka, Debezium y AWS que llegó a conectar más de 1.800 bases de datos. También trabajé en plataformas analíticas, soluciones antifraude y sistemas de recomendación."
   ],
-  "Participei da modernização de uma plataforma de dados, incluindo a migração de 264 pipelines legados para Python, dbt, Airflow e Kubernetes. Em alguns dos fluxos otimizados, o tempo de execução caiu em até 90%. Gosto desse trabalho de combinar arquitetura, desempenho e manutenção, considerando também o custo operacional e as necessidades de quem depende dos dados.": [
-    "I participated in modernizing a data platform, including migrating 264 legacy pipelines to Python, dbt, Airflow, and Kubernetes. In some optimized workflows, execution time fell by up to 90%. I enjoy combining architecture, performance, and maintainability while considering operating costs and the needs of the people who depend on the data.",
-    "Participé en la modernización de una plataforma de datos, incluida la migración de 264 pipelines heredados a Python, dbt, Airflow y Kubernetes. En algunos de los flujos optimizados, el tiempo de ejecución se redujo hasta un 90 %. Me gusta combinar arquitectura, rendimiento y mantenimiento, teniendo también en cuenta el coste operativo y las necesidades de quienes dependen de los datos."
-  ],
   "Sou formado em Análise e Desenvolvimento de Sistemas, com pós-graduação em Ciência de Dados e Big Data Analytics. Gosto de estudar, testar ideias e observar o que funciona na prática, inclusive quando o resultado mostra os limites de uma abordagem. Este espaço reúne um pouco desse percurso: os projetos que construo, os problemas que me despertam curiosidade e o que aprendo pelo caminho.": [
     "I have a degree in Systems Analysis and Development and postgraduate training in Data Science and Big Data Analytics. I enjoy studying, testing ideas, and seeing what works in practice, even when the results reveal the limits of an approach. This space brings together some of that journey: the projects I build, the problems that spark my curiosity, and what I learn along the way.",
     "Soy graduado en Análisis y Desarrollo de Sistemas y tengo un posgrado en Ciencia de Datos y Big Data Analytics. Me gusta estudiar, probar ideas y observar qué funciona en la práctica, incluso cuando los resultados muestran los límites de un enfoque. Este espacio reúne parte de ese recorrido: los proyectos que construyo, los problemas que despiertan mi curiosidad y lo que aprendo por el camino."
@@ -1673,7 +1669,188 @@ window.SITE_TRANSLATIONS = {
     "Download Rafael Batista’s résumé in Portuguese, PDF format",
     "Descargar el CV de Rafael Batista en portugués, formato PDF"
   ],
-  "Páginas de projetos": ["Project pages", "Páginas de proyectos"],
-  "← Anterior": ["← Previous", "← Anterior"],
-  "Próxima →": ["Next →", "Siguiente →"]
+  "Páginas de projetos": [
+    "Project pages",
+    "Páginas de proyectos"
+  ],
+  "← Anterior": [
+    "← Previous",
+    "← Anterior"
+  ],
+  "Próxima →": [
+    "Next →",
+    "Siguiente →"
+  ],
+  "Laboratório / Estudo de Caso": [
+    "Laboratory / Case Study",
+    "Laboratorio / Estudio de Caso"
+  ],
+  "LABORATÓRIO": [
+    "LABORATORY",
+    "LABORATORIO"
+  ],
+  "Experimentos para estudar ferramentas e entender seu comportamento na prática.": [
+    "Experiments to study tools and understand how they behave in practice.",
+    "Experimentos para estudiar herramientas y entender su comportamiento en la práctica."
+  ],
+  "RaceStream Lab": [
+    "RaceStream Lab",
+    "RaceStream Lab"
+  ],
+  "Laboratório local de streaming e engenharia de dados, usando uma corrida simulada para estudar Kafka, contratos Avro, projeções em PostgreSQL e processamento com Spark.": [
+    "A local streaming and data engineering laboratory, using a simulated race to study Kafka, Avro contracts, PostgreSQL projections, and Spark processing.",
+    "Laboratorio local de streaming e ingeniería de datos que utiliza una carrera simulada para estudiar Kafka, contratos Avro, proyecciones en PostgreSQL y procesamiento con Spark."
+  ],
+  "← Voltar para o laboratório": [
+    "← Back to the laboratory",
+    "← Volver al laboratorio"
+  ],
+  "Um laboratório para estudar ferramentas": [
+    "A laboratory for studying tools",
+    "Un laboratorio para estudiar herramientas"
+  ],
+  "Uso uma corrida simulada de vinte carros como cenário para estudar streaming, arquitetura orientada a eventos e engenharia de dados. Voltas, parciais e pit stops geram eventos que ajudam a acompanhar o caminho dos dados e a observar o comportamento das ferramentas em um ambiente local.": [
+    "I use a simulated race with twenty cars to study streaming, event-driven architecture, and data engineering. Laps, sectors, and pit stops generate events that help trace the data flow and observe how tools behave in a local environment.",
+    "Utilizo una carrera simulada de veinte coches para estudiar streaming, arquitectura orientada a eventos e ingeniería de datos. Las vueltas, los parciales y las paradas en boxes generan eventos que permiten seguir el recorrido de los datos y observar el comportamiento de las herramientas en un entorno local."
+  ],
+  "Do evento ao painel em tempo real": [
+    "From events to a real-time dashboard",
+    "Del evento al panel en tiempo real"
+  ],
+  "O simulador publica eventos Avro no Kafka, com contratos versionados no Schema Registry. Um consumer Python processa esses eventos e mantém as projeções operacionais no PostgreSQL. A API em FastAPI entrega o estado por WebSocket a um dashboard em React e TypeScript, que apresenta a classificação, o mapa da pista e a telemetria dos carros.": [
+    "The simulator publishes Avro events to Kafka, with versioned contracts in Schema Registry. A Python consumer processes these events and maintains operational projections in PostgreSQL. A FastAPI API delivers state over WebSocket to a React and TypeScript dashboard showing standings, the track map, and car telemetry.",
+    "El simulador publica eventos Avro en Kafka, con contratos versionados en Schema Registry. Un consumer Python procesa estos eventos y mantiene las proyecciones operativas en PostgreSQL. La API en FastAPI entrega el estado por WebSocket a un panel en React y TypeScript que muestra la clasificación, el mapa del circuito y la telemetría de los coches."
+  ],
+  "Histórico e processamento analítico": [
+    "History and analytical processing",
+    "Histórico y procesamiento analítico"
+  ],
+  "O mesmo fluxo também é consumido pelo Spark Structured Streaming e arquivado em Parquet no MinIO. Jobs batch geram análises de desempenho das voltas e comparam agregações com os resultados do consumer online. Isso permite estudar como um evento atende tanto ao acompanhamento da corrida quanto à análise histórica.": [
+    "The same stream is also consumed by Spark Structured Streaming and archived as Parquet in MinIO. Batch jobs analyze lap performance and compare aggregates with the online consumer results. This makes it possible to study how an event supports both live race monitoring and historical analysis.",
+    "Spark Structured Streaming también consume el mismo flujo y lo archiva en Parquet en MinIO. Los jobs batch analizan el rendimiento de las vueltas y comparan agregaciones con los resultados del consumer online. Esto permite estudiar cómo un evento sirve tanto al seguimiento de la carrera como al análisis histórico."
+  ],
+  "O que estudo na prática": [
+    "What I study in practice",
+    "Qué estudio en la práctica"
+  ],
+  "O laboratório permite investigar ordenação por entidade, evolução de contratos, replay, deduplicação e recuperação de projeções. Com a stack organizada em Docker Compose, posso reproduzir o ambiente e explorar a relação entre transporte de eventos, estado transacional, atualização da interface e armazenamento analítico.": [
+    "The laboratory lets me investigate per-entity ordering, contract evolution, replay, deduplication, and projection recovery. With the stack organized in Docker Compose, I can reproduce the environment and explore the relationship between event transport, transactional state, interface updates, and analytical storage.",
+    "El laboratorio permite investigar el orden por entidad, la evolución de contratos, el replay, la deduplicación y la recuperación de proyecciones. Con la stack organizada en Docker Compose, puedo reproducir el entorno y explorar la relación entre transporte de eventos, estado transaccional, actualización de la interfaz y almacenamiento analítico."
+  ],
+  "Desenvolvo o RaceStream Lab como um ambiente local para estudar ferramentas de engenharia de dados. O projeto reúne um simulador em Python, eventos no Kafka, projeções no PostgreSQL, uma API em FastAPI e um painel em React, além de processamento e armazenamento histórico com Spark e MinIO.": [
+    "I develop RaceStream Lab as a local environment for studying data engineering tools. The project combines a Python simulator, Kafka events, PostgreSQL projections, a FastAPI API, and a React dashboard, alongside processing and historical storage with Spark and MinIO.",
+    "Desarrollo RaceStream Lab como un entorno local para estudiar herramientas de ingeniería de datos. El proyecto reúne un simulador en Python, eventos en Kafka, proyecciones en PostgreSQL, una API en FastAPI y un panel en React, además de procesamiento y almacenamiento histórico con Spark y MinIO."
+  ],
+  "A proposta é acompanhar o ciclo completo de um evento: como ele nasce, é transportado, validado, transforma o estado da aplicação e passa a fazer parte do histórico. A corrida oferece um cenário visual para experimentar essas etapas e entender as decisões de arquitetura na prática.": [
+    "The goal is to follow the full lifecycle of an event: how it is produced, transported, validated, changes application state, and becomes part of the historical record. The race provides a visual setting for experimenting with these stages and understanding architectural decisions in practice.",
+    "La propuesta es seguir el ciclo completo de un evento: cómo se genera, se transporta, se valida, transforma el estado de la aplicación y pasa a formar parte del histórico. La carrera ofrece un escenario visual para experimentar estas etapas y entender las decisiones de arquitectura en la práctica."
+  ],
+  "O problema": [
+    "The problem",
+    "El problema"
+  ],
+  "Estudar ferramentas isoladamente nem sempre mostra o que acontece quando elas precisam trabalhar juntas. Em um fluxo contínuo, surgem questões de ordenação, contratos, duplicidade, recuperação e consistência entre o que aparece na interface e o que foi persistido.": [
+    "Studying tools in isolation does not always reveal what happens when they need to work together. A continuous stream raises questions about ordering, contracts, duplication, recovery, and consistency between what the interface shows and what was persisted.",
+    "Estudiar herramientas por separado no siempre muestra qué ocurre cuando necesitan trabajar juntas. En un flujo continuo surgen cuestiones de orden, contratos, duplicados, recuperación y coherencia entre lo que muestra la interfaz y lo que se ha persistido."
+  ],
+  "Uma corrida de vinte carros como fonte de eventos": [
+    "A twenty-car race as an event source",
+    "Una carrera de veinte coches como fuente de eventos"
+  ],
+  "A simulação produz aproximadamente um snapshot por segundo real para cada carro, além de eventos de passagem, volta, pit stop e incidente. Velocidade, posição, combustível e pneus tornam o fluxo fácil de observar, enquanto voltas e parciais permitem comparar os resultados do processamento.": [
+    "The simulation produces approximately one snapshot per real second for each car, along with passage, lap, pit stop, and incident events. Speed, position, fuel, and tyres make the stream easy to observe, while laps and sectors allow processing results to be compared.",
+    "La simulación produce aproximadamente un snapshot por segundo real para cada coche, además de eventos de paso, vuelta, parada en boxes e incidente. La velocidad, la posición, el combustible y los neumáticos hacen que el flujo sea fácil de observar, mientras que las vueltas y los parciales permiten comparar los resultados del procesamiento."
+  ],
+  "Contratos e transporte com Kafka": [
+    "Contracts and transport with Kafka",
+    "Contratos y transporte con Kafka"
+  ],
+  "Os eventos são serializados em Avro, com schemas versionados no Schema Registry e compatibilidade backward. O Kafka desacopla a produção dos diferentes consumidores e permite estudar ordenação por chave e replay dentro do período de retenção.": [
+    "Events are serialized in Avro, with versioned schemas in Schema Registry and backward compatibility. Kafka decouples production from the different consumers and enables studying ordering by key and replay within the retention period.",
+    "Los eventos se serializan en Avro, con schemas versionados en Schema Registry y compatibilidad backward. Kafka desacopla la producción de los distintos consumidores y permite estudiar el orden por clave y el replay durante el periodo de retención."
+  ],
+  "Arquitetura de dados": [
+    "Data architecture",
+    "Arquitectura de datos"
+  ],
+  "O consumer Python valida os eventos, trata duplicidades e atualiza as projeções operacionais no PostgreSQL. Recibos e outbox participam desse fluxo para relacionar o processamento dos eventos à persistência e à publicação de eventos derivados. O banco também guarda a configuração das corridas e seus resultados.": [
+    "The Python consumer validates events, handles duplicates, and updates operational projections in PostgreSQL. Receipts and an outbox connect event processing to persistence and the publication of derived events. The database also stores race configuration and results.",
+    "El consumer Python valida los eventos, trata duplicados y actualiza las proyecciones operativas en PostgreSQL. Los recibos y la outbox relacionan el procesamiento de eventos con la persistencia y la publicación de eventos derivados. La base de datos también guarda la configuración de las carreras y sus resultados."
+  ],
+  "O mesmo barramento alimenta dois caminhos: o estado usado pelo painel e o arquivo analítico. Cada componente tem uma responsabilidade própria, permitindo observar como o transporte de eventos se relaciona com o estado transacional e o armazenamento histórico.": [
+    "The same event bus feeds two paths: the state used by the dashboard and the analytical archive. Each component has its own responsibility, making it possible to observe how event transport relates to transactional state and historical storage.",
+    "El mismo bus alimenta dos caminos: el estado que utiliza el panel y el archivo analítico. Cada componente tiene su propia responsabilidad, lo que permite observar cómo se relaciona el transporte de eventos con el estado transaccional y el almacenamiento histórico."
+  ],
+  "Um painel para observar o processamento": [
+    "A dashboard for observing processing",
+    "Un panel para observar el procesamiento"
+  ],
+  "A API em FastAPI recebe comandos de configuração e controle por HTTP e acompanha eventos do Kafka para entregar atualizações por WebSocket. No navegador, o painel em React, TypeScript e SVG apresenta mapa da pista, classificação, telemetria, voltas e parciais. Assim, o comportamento do fluxo de dados ganha uma representação visível durante a corrida.": [
+    "The FastAPI API receives configuration and control commands over HTTP and follows Kafka events to deliver updates over WebSocket. In the browser, the React, TypeScript, and SVG dashboard shows the track map, standings, telemetry, laps, and sectors. This gives data flow behaviour a visible representation during the race.",
+    "La API en FastAPI recibe comandos de configuración y control por HTTP y sigue eventos de Kafka para entregar actualizaciones por WebSocket. En el navegador, el panel en React, TypeScript y SVG muestra el mapa del circuito, la clasificación, la telemetría, las vueltas y los parciales. Así, el comportamiento del flujo de datos adquiere una representación visible durante la carrera."
+  ],
+  "O Spark Structured Streaming consome os envelopes do Kafka e os arquiva em Parquet no MinIO, junto com metadados do transporte. Os checkpoints também ficam no armazenamento de objetos. Em uma etapa batch, o Spark calcula desempenho por carro e compara contagens e tempos de volta com as agregações do consumer online.": [
+    "Spark Structured Streaming consumes Kafka envelopes and archives them as Parquet in MinIO, alongside transport metadata. Checkpoints are also kept in object storage. In a batch stage, Spark calculates performance per car and compares counts and lap times with the online consumer aggregates.",
+    "Spark Structured Streaming consume los envelopes de Kafka y los archiva en Parquet en MinIO, junto con metadatos del transporte. Los checkpoints también se guardan en el almacenamiento de objetos. En una etapa batch, Spark calcula el rendimiento por coche y compara recuentos y tiempos de vuelta con las agregaciones del consumer online."
+  ],
+  "O resultado é um laboratório executável localmente com Docker Compose, em que posso acompanhar eventos desde a simulação até o painel e o histórico analítico. O projeto cria condições para investigar evolução de contratos, deduplicação, replay e recuperação de projeções, além de comparar processamento online e batch usando o mesmo conjunto de eventos.": [
+    "The result is a laboratory that runs locally with Docker Compose, where I can follow events from the simulation to the dashboard and analytical history. The project provides a setting for investigating contract evolution, deduplication, replay, and projection recovery, and for comparing online and batch processing using the same event set.",
+    "El resultado es un laboratorio ejecutable localmente con Docker Compose, donde puedo seguir eventos desde la simulación hasta el panel y el histórico analítico. El proyecto permite investigar la evolución de contratos, la deduplicación, el replay y la recuperación de proyecciones, además de comparar procesamiento online y batch con el mismo conjunto de eventos."
+  ],
+  "A simulação é um recurso de estudo: os parâmetros físicos são aproximados e não representam medições oficiais de carros ou pistas. O valor do projeto está em tornar as ferramentas e seus limites observáveis, com um domínio que ajuda a entender o efeito de cada decisão sobre os dados.": [
+    "The simulation is a learning resource: physical parameters are approximate and do not represent official measurements of cars or tracks. The value of the project lies in making tools and their limits observable, with a domain that helps explain the effect of each decision on the data.",
+    "La simulación es un recurso de estudio: los parámetros físicos son aproximados y no representan mediciones oficiales de coches o circuitos. El valor del proyecto reside en hacer observables las herramientas y sus límites, con un dominio que ayuda a entender el efecto de cada decisión sobre los datos."
+  ],
+  "Arquitetura do RaceStream Lab": [
+    "RaceStream Lab architecture",
+    "Arquitectura de RaceStream Lab"
+  ],
+  "Ampliar arquitetura do RaceStream Lab": [
+    "Enlarge RaceStream Lab architecture",
+    "Ampliar arquitectura de RaceStream Lab"
+  ],
+  "O simulador publica eventos no Kafka. O consumer mantém projeções no PostgreSQL e publica eventos derivados. A API entrega atualizações ao dashboard; Spark arquiva e analisa os dados no MinIO.": [
+    "The simulator publishes events to Kafka. The consumer maintains PostgreSQL projections and publishes derived events. The API delivers dashboard updates; Spark archives and analyzes data in MinIO.",
+    "El simulador publica eventos en Kafka. El consumer mantiene proyecciones en PostgreSQL y publica eventos derivados. La API entrega actualizaciones al panel; Spark archiva y analiza los datos en MinIO."
+  ],
+  "Simulador Python": [
+    "Python simulator",
+    "Simulador Python"
+  ],
+  "Eventos Avro": [
+    "Avro events",
+    "Eventos Avro"
+  ],
+  "Contratos versionados": [
+    "Versioned contracts",
+    "Contratos versionados"
+  ],
+  "Projeções e outbox": [
+    "Projections and outbox",
+    "Proyecciones y outbox"
+  ],
+  "Eventos derivados": [
+    "Derived events",
+    "Eventos derivados"
+  ],
+  "Estado operacional": [
+    "Operational state",
+    "Estado operativo"
+  ],
+  "Painel em tempo real": [
+    "Real-time dashboard",
+    "Panel en tiempo real"
+  ],
+  "Arquivo contínuo": [
+    "Continuous archive",
+    "Archivo continuo"
+  ],
+  "Histórico e checkpoints": [
+    "History and checkpoints",
+    "Histórico y checkpoints"
+  ],
+  "Agregações batch": [
+    "Batch aggregations",
+    "Agregaciones batch"
+  ]
 };

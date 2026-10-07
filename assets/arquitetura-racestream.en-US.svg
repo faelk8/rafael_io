@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc" lang="en-US">
+<title id="title">RaceStream Lab architecture</title>
+<desc id="desc">The simulator publishes events to Kafka. The consumer maintains PostgreSQL projections and publishes derived events. The API delivers dashboard updates; Spark archives and analyzes data in MinIO.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#80baff" /></marker></defs>
+<rect width="1200" height="900" rx="20" fill="#10141c" />
+<g font-family="Arial, sans-serif">
+<text x="48" y="55" fill="#edf2fa" font-size="28" font-weight="700">RaceStream Lab architecture</text>
+<rect x="48" y="110" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="66" y="150" fill="#80baff" font-size="19" font-weight="700">Python simulator</text>
+<text x="66" y="186" fill="#edf2fa" font-size="17">Avro events</text>
+<rect x="450" y="110" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="468" y="150" fill="#80baff" font-size="19" font-weight="700">Apache Kafka</text>
+<text x="468" y="186" fill="#edf2fa" font-size="17">Derived events</text>
+<rect x="48" y="280" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="66" y="320" fill="#80baff" font-size="19" font-weight="700">Schema Registry</text>
+<text x="66" y="356" fill="#edf2fa" font-size="17">Versioned contracts</text>
+<rect x="450" y="280" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="468" y="320" fill="#80baff" font-size="19" font-weight="700">Consumer Python</text>
+<text x="468" y="356" fill="#edf2fa" font-size="17">Projections and outbox</text>
+<rect x="850" y="280" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="868" y="320" fill="#80baff" font-size="19" font-weight="700">PostgreSQL</text>
+<text x="868" y="356" fill="#edf2fa" font-size="17">Operational state</text>
+<rect x="450" y="470" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="468" y="510" fill="#80baff" font-size="19" font-weight="700">FastAPI / WebSocket</text>
+<text x="468" y="546" fill="#edf2fa" font-size="17">API</text>
+<rect x="850" y="470" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="868" y="510" fill="#80baff" font-size="19" font-weight="700">React / TypeScript</text>
+<text x="868" y="546" fill="#edf2fa" font-size="17">Real-time dashboard</text>
+<rect x="48" y="660" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="66" y="700" fill="#80baff" font-size="19" font-weight="700">Spark Structured Streaming</text>
+<text x="66" y="736" fill="#edf2fa" font-size="17">Continuous archive</text>
+<rect x="450" y="660" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="468" y="700" fill="#80baff" font-size="19" font-weight="700">MinIO / Parquet</text>
+<text x="468" y="736" fill="#edf2fa" font-size="17">History and checkpoints</text>
+<rect x="850" y="660" width="300" height="110" rx="12" fill="#18283d" stroke="#476e9e" />
+<text x="868" y="700" fill="#80baff" font-size="19" font-weight="700">Spark</text>
+<text x="868" y="736" fill="#edf2fa" font-size="17">Batch aggregations</text>
+<path d="M348 165H450" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M348 335H450" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M600 220V280" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M750 335H850" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M650 280V245H775V165H750" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M700 220H800V525H750" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M750 525H850" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M450 190H390V615H198V660" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M348 715H450" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M850 695H750" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+<path d="M750 745H850" fill="none" stroke="#80baff" stroke-width="2" marker-end="url(#arrow)" />
+</g>
+</svg>

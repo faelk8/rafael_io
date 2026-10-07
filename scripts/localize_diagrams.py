@@ -11,7 +11,7 @@ def localize_diagrams(destination=None):
     source = (ROOT / 'locales/messages.js').read_text()
     messages = json.loads(source.split('window.SITE_TRANSLATIONS = ', 1)[1].strip().removesuffix(';'))
     ET.register_namespace('', 'http://www.w3.org/2000/svg')
-    for name in ('arquitetura-kafka', 'arquitetura-anti-fraude'):
+    for name in ('arquitetura-kafka', 'arquitetura-anti-fraude', 'arquitetura-racestream'):
         for index, locale in enumerate(('en-US', 'es-ES')):
             tree = ET.parse(ROOT / 'assets' / f'{name}.svg')
             tree.getroot().set('lang', locale)

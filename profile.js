@@ -169,6 +169,28 @@ window.PROFILE = {
     }
   ],
 
+  laboratoryProjects: [
+    {
+        "slug": "racestream-lab",
+        "name": "RaceStream Lab",
+        "description": "Laboratório local de streaming e engenharia de dados, usando uma corrida simulada para estudar Kafka, contratos Avro, projeções em PostgreSQL e processamento com Spark.",
+        "page": "projetos/laboratorio/racestream-lab.html",
+        "tags": [
+            "Python",
+            "Apache Kafka",
+            "Avro",
+            "PostgreSQL",
+            "Apache Spark",
+            "MinIO",
+            "FastAPI",
+            "WebSocket",
+            "React",
+            "TypeScript",
+            "Docker Compose"
+        ]
+    }
+],
+
   professionalProjects: [
     {
       "page": "projetos/profissionais/modernizacao-pipelines.html",

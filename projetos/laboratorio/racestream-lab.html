@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10141c" />
+    <meta name="description" content="Laboratório local de streaming e engenharia de dados, usando uma corrida simulada para estudar Kafka, contratos Avro, projeções em PostgreSQL e processamento com Spark." />
+    <title>RaceStream Lab · Rafael Batista</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../locales/messages.js" defer></script>
+    <script src="../../i18n.js" defer></script>
+</head>
+
+<body data-project="racestream-lab" data-story="html">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header wrap">
+        <a class="brand" href="../../index.html" aria-label="Rafael Batista, início">Rafael
+            Batista</a>
+        <nav aria-label="Navegação principal">
+            <a href="../../index.html#sobre">Sobre</a><a
+                href="../../index.html#projetos">Projetos</a><a
+                href="../../index.html#contato">Contato ↗</a>
+        </nav>
+        <div class="language-switcher" role="group" aria-label="Selecionar idioma" hidden>
+            <button type="button" class="language-button" data-language="pt-BR" lang="pt-BR"
+                aria-label="Português (Brasil)" title="Português (Brasil)" aria-pressed="true"
+                translate="no">
+                <img src="../../assets/flags/br.svg" width="26" height="18" alt=""
+                    aria-hidden="true" />
+                <span>BR</span>
+            </button>
+            <button type="button" class="language-button" data-language="en-US" lang="en-US"
+                aria-label="English (United States)" title="English (United States)"
+                aria-pressed="false" translate="no">
+                <img src="../../assets/flags/us.svg" width="26" height="18" alt=""
+                    aria-hidden="true" />
+                <span>US</span>
+            </button>
+            <button type="button" class="language-button" data-language="es-ES" lang="es-ES"
+                aria-label="Español (España)" title="Español (España)" aria-pressed="false"
+                translate="no">
+                <img src="../../assets/flags/es.svg" width="26" height="18" alt=""
+                    aria-hidden="true" />
+                <span>ES</span>
+            </button>
+        </div>
+
+    </header>
+    <main class="wrap project-page" id="conteudo">
+        <a class="project-back" href="../../index.html#laboratory-section">← Voltar para o laboratório</a>
+        <article id="project-article" aria-labelledby="project-title">
+            <p class="eyebrow">LABORATÓRIO</p>
+            <h1 id="project-title">RaceStream Lab</h1>
+            <p class="project-page-intro" id="project-description">Laboratório local de streaming e engenharia de dados, usando uma corrida simulada para estudar Kafka, contratos Avro, projeções em PostgreSQL e processamento com Spark.</p>
+            <div class="tags" id="project-tags" aria-label="Tecnologias">
+        <span class="tag">Python</span>
+        <span class="tag">Apache Kafka</span>
+        <span class="tag">Avro</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Apache Spark</span>
+        <span class="tag">MinIO</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">WebSocket</span>
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Docker Compose</span>
+                  </div>
+                <section class="project-story-section">
+                    <h2>Minha contribuição</h2>
+                    <p>Desenvolvo o RaceStream Lab como um ambiente local para estudar ferramentas de engenharia de dados. O projeto reúne um simulador em Python, eventos no Kafka, projeções no PostgreSQL, uma API em FastAPI e um painel em React, além de processamento e armazenamento histórico com Spark e MinIO.</p>
+                    <p>A proposta é acompanhar o ciclo completo de um evento: como ele nasce, é transportado, validado, transforma o estado da aplicação e passa a fazer parte do histórico. A corrida oferece um cenário visual para experimentar essas etapas e entender as decisões de arquitetura na prática.</p>
+                </section>
+            <div id="project-story">
+                <section class="project-story-section">
+                    <h2>O problema</h2>
+                    <p>Estudar ferramentas isoladamente nem sempre mostra o que acontece quando elas precisam trabalhar juntas. Em um fluxo contínuo, surgem questões de ordenação, contratos, duplicidade, recuperação e consistência entre o que aparece na interface e o que foi persistido.</p>
+                </section>
+                <section class="project-story-section">
+                    <h2>Uma corrida de vinte carros como fonte de eventos</h2>
+                    <p>A simulação produz aproximadamente um snapshot por segundo real para cada carro, além de eventos de passagem, volta, pit stop e incidente. Velocidade, posição, combustível e pneus tornam o fluxo fácil de observar, enquanto voltas e parciais permitem comparar os resultados do processamento.</p>
+                </section>
+                <section class="project-story-section">
+                    <h2>Contratos e transporte com Kafka</h2>
+                    <p>Os eventos são serializados em Avro, com schemas versionados no Schema Registry e compatibilidade backward. O Kafka desacopla a produção dos diferentes consumidores e permite estudar ordenação por chave e replay dentro do período de retenção.</p>
+                </section>
+                <section class="project-story-section">
+                    <h2>Arquitetura de dados</h2>
+                    <p>O consumer Python valida os eventos, trata duplicidades e atualiza as projeções operacionais no PostgreSQL. Recibos e outbox participam desse fluxo para relacionar o processamento dos eventos à persistência e à publicação de eventos derivados. O banco também guarda a configuração das corridas e seus resultados.</p>
+                    <p>O mesmo barramento alimenta dois caminhos: o estado usado pelo painel e o arquivo analítico. Cada componente tem uma responsabilidade própria, permitindo observar como o transporte de eventos se relaciona com o estado transacional e o armazenamento histórico.</p>
+                </section>
+                <figure class="architecture-figure">
+                    <a data-i18n-diagram="../../assets/arquitetura-racestream.svg" href="../../assets/arquitetura-racestream.svg" target="_blank" rel="noopener" aria-label="Ampliar arquitetura do RaceStream Lab">
+                        <img data-i18n-diagram="../../assets/arquitetura-racestream.svg" src="../../assets/arquitetura-racestream.svg" width="1200" height="900" loading="lazy" alt="O simulador publica eventos no Kafka. O consumer mantém projeções no PostgreSQL e publica eventos derivados. A API entrega atualizações ao dashboard; Spark arquiva e analisa os dados no MinIO." />
+                    </a>
+                </figure>
+                <section class="project-story-section">
+                    <h2>Um painel para observar o processamento</h2>
+                    <p>A API em FastAPI recebe comandos de configuração e controle por HTTP e acompanha eventos do Kafka para entregar atualizações por WebSocket. No navegador, o painel em React, TypeScript e SVG apresenta mapa da pista, classificação, telemetria, voltas e parciais. Assim, o comportamento do fluxo de dados ganha uma representação visível durante a corrida.</p>
+                </section>
+                <section class="project-story-section">
+                    <h2>Histórico e processamento analítico</h2>
+                    <p>O Spark Structured Streaming consome os envelopes do Kafka e os arquiva em Parquet no MinIO, junto com metadados do transporte. Os checkpoints também ficam no armazenamento de objetos. Em uma etapa batch, o Spark calcula desempenho por carro e compara contagens e tempos de volta com as agregações do consumer online.</p>
+                </section>
+                <section class="project-story-section">
+                    <h2>Resultados e aprendizados</h2>
+                    <p>O resultado é um laboratório executável localmente com Docker Compose, em que posso acompanhar eventos desde a simulação até o painel e o histórico analítico. O projeto cria condições para investigar evolução de contratos, deduplicação, replay e recuperação de projeções, além de comparar processamento online e batch usando o mesmo conjunto de eventos.</p>
+                    <p>A simulação é um recurso de estudo: os parâmetros físicos são aproximados e não representam medições oficiais de carros ou pistas. O valor do projeto está em tornar as ferramentas e seus limites observáveis, com um domínio que ajuda a entender o efeito de cada decisão sobre os dados.</p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer class="wrap footer">
+        <a class="brand" href="../../index.html" aria-label="Voltar ao início">Rafael
+            Batista</a><span>Rafael Batista</span><a href="../../index.html#projetos">Todos os
+            projetos
+            ↑</a>
+    </footer>
+</body>
+
+</html>

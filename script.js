@@ -42,7 +42,7 @@
   if (byId('contact-links').children.length) setText('contact-description', 'Quer conversar sobre um projeto ou trocar uma ideia? Entre em contato.');
   function paginateProjects(list) {
     const cards = [...list.children];
-    const pageCount = Math.ceil(cards.length / 6);
+    const pageCount = Math.ceil(cards.length / 4);
     if (pageCount <= 1) return;
     let page = 0;
     let timer;
@@ -63,7 +63,7 @@
     status.setAttribute('aria-atomic', 'true');
     const showPage = next => {
       page = (next + pageCount) % pageCount;
-      cards.forEach((card, index) => { card.hidden = Math.floor(index / 6) !== page; });
+      cards.forEach((card, index) => { card.hidden = Math.floor(index / 4) !== page; });
       status.textContent = `${page + 1} / ${pageCount}`;
     };
     const restart = () => {
@@ -113,7 +113,7 @@
       const tags = document.createElement('div'); tags.className = 'tags'; addTags(tags, project.tags);
       card.append(top, title, description, tags);
       const link = document.createElement('a');
-      link.href = /^(?:projetos\/(?:profissionais\/|pessoais\/)?)?[a-z0-9-]+\.html$/.test(project.page || '')
+      link.href = /^(?:projetos\/(?:profissionais\/|pessoais\/|laboratorio\/)?)?[a-z0-9-]+\.html$/.test(project.page || '')
         ? project.page
         : `projeto.html?projeto=${encodeURIComponent(project.slug || String(index))}`;
       link.className = 'professional-project-link';
@@ -175,6 +175,7 @@
   renderEducation();
   renderProjectGroup(profile.professionalProjects || [], 'professional', 'EXPERIÊNCIA PROFISSIONAL');
   renderProjectGroup(profile.personalProjects || [], 'personal', 'PROJETO PESSOAL');
+  renderProjectGroup(profile.laboratoryProjects || [], 'laboratory', 'LABORATÓRIO');
   async function loadProjects() {
     if (profile.projects?.length) { renderProjects(profile.projects); return; }
     if (!username) { setText('project-status', 'Novos projetos serão adicionados em breve.'); return; }
